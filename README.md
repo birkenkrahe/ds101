@@ -1,4 +1,4 @@
-# ds101
+# ds101 - introduction to data science
 
 # Table of Contents
 

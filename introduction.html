@@ -1,0 +1,1073 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2020-08-19 Mi 15:21 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>A data science overview</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Marcus Birkenkrahe" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">A data science overview</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgeb83b01">1. [raw] DATA + [code] + SCIENCE [methods] = Value</a></li>
+<li><a href="#orga8165ac">2. How popular is data science?</a></li>
+<li><a href="#orgb91efd0">3. What skills do you need to do it?</a></li>
+<li><a href="#orgb07d127">4. Which technical skills are required? <code>[9/9]</code></a></li>
+<li><a href="#org5fe871a">5. What exactly is Frankenstein's data scientist made up of? <code>[6/6]</code></a></li>
+<li><a href="#org80782da">6. What's the (US) job market like?</a></li>
+<li><a href="#orga12d5fd">7. What problems are solved with it?</a></li>
+<li><a href="#org4700219">8. What is the data science process?</a></li>
+<li><a href="#orgffda8c4">9. SUMMARY</a></li>
+<li><a href="#org378b863">10. REFERENCES</a></li>
+<li><a href="#orgad274f7">11. Challenges</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgeb83b01" class="outline-2">
+<h2 id="orgeb83b01"><span class="section-number-2">1</span> [raw] DATA + [code] + SCIENCE [methods] = Value</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li class="off"><code>[&#xa0;]</code> How popular is data science?</li>
+<li class="off"><code>[&#xa0;]</code> What skills do you need?</li>
+<li class="off"><code>[&#xa0;]</code> What problems are solved with it?</li>
+<li class="off"><code>[&#xa0;]</code> What is the data science process?</li>
+</ul>
+
+<div class="notes">
+<p>
+In this talk, I am giving an overview of several aspects of data
+science. Though young, it is a field both ill-defined and (or
+perhaps because of it) vast and hard to pin down. This outline will
+be applied rather than scholarly, focusing on applications and
+practice rather than concepts or theory.
+</p>
+
+<p>
+In its name, "data science" carries both aspects of science and
+craft: the 'science' part is responsible for the modus operandi,
+which is informed by statistics and math, systematic and logically
+rigorous. The 'data' part relates mostly to craft: the ability to
+extract insights from data using computing tools. Most data
+scientists are more occupied by and with the craft part than with
+the science part (cp. <a href="#org9c2a520">Kozyrkov 2018</a>).
+</p>
+
+<p>
+Hence, data science so far is a typical support science. It supports
+other, more established disciplines in the natural and in the social
+sciences. Prominent examples are: economics, genomics, and
+epidemiology.
+</p>
+
+<p>
+The need to use the data "to tell a story" sets data science apart
+from both traditional data craft and science. It is the reason why
+visualization techniques and theory ("grammar of graphics", cp. <a href="#org12abc8f">Sarkar 2018</a>) play
+such an important role.
+</p>
+
+<p>
+I would argue that data science is most successful when supporting
+fields that themselves are interdisciplinary and therefore need a
+higher degree of communication across different cultures of science
+and practice.
+</p>
+
+<p>
+I want to focus on four aspects of data science: the popularity it
+currently enjoys (and has enjoyed for the past 10 years), the skills
+required to "do data science", and the processes or activities
+involved in doing it. We will look at each of these with some
+examples.
+</p>
+
+</div>
+</div>
+</div>
+<div id="outline-container-orga8165ac" class="outline-2">
+<h2 id="orga8165ac"><span class="section-number-2">2</span> How popular is data science?</h2>
+<div class="outline-text-2" id="text-2">
+
+<div class="figure">
+<p><img src="./img/ds_trends.png" alt="ds_trends.png" />
+</p>
+<p><span class="figure-number">Figure 1: </span>Google Trends, August 2020</p>
+</div>
+<div class="notes">
+<p>
+In this graph from trends.google.com, "numbers represent search
+interest relative to the highest point on the chart for the given
+region [worldwide] and time [since logging trends in 2004]." The
+trend increased is noticeable. It peaked in February 2020 (<a href="https://trends.google.com/trends/explore?date=all&amp;q=data%20science">Source</a>).
+</p>
+
+<p>
+See also: <a href="#orge719d80">Challenge</a> (1)
+</p>
+
+</div>
+</div>
+</div>
+<div id="outline-container-orgb91efd0" class="outline-2">
+<h2 id="orgb91efd0"><span class="section-number-2">3</span> What skills do you need to do it?</h2>
+<div class="outline-text-2" id="text-3">
+
+<div class="figure">
+<p><img src="./img/ds_skills.jpg" alt="ds_skills.jpg" />
+</p>
+<p><span class="figure-number">Figure 2: </span>Robinson/Nolis, 2020</p>
+</div>
+<div class="notes">
+<p>
+The three skill areas give rise to different tasks and problem settings:
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Skill</th>
+<th scope="col" class="org-left">Sample area</th>
+<th scope="col" class="org-left">Sample activity</th>
+<th scope="col" class="org-left">Sample analysis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Domain</td>
+<td class="org-left">Marketing</td>
+<td class="org-left">Analyze customer data</td>
+<td class="org-left">What do customers like?</td>
+</tr>
+
+<tr>
+<td class="org-left">knowledge</td>
+<td class="org-left">Education</td>
+<td class="org-left">Learner data</td>
+<td class="org-left">How did students learn?</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">Finance</td>
+<td class="org-left">Investment data</td>
+<td class="org-left">Which stock performed?</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">Coding &amp;</td>
+<td class="org-left">R, Python, SQL</td>
+<td class="org-left">Analzye/automate/query</td>
+<td class="org-left">Count customers by type</td>
+</tr>
+
+<tr>
+<td class="org-left">databases</td>
+<td class="org-left">Cloud computing</td>
+<td class="org-left">Share data and code</td>
+<td class="org-left">Work in virtual teams</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">RStudio, Emacs</td>
+<td class="org-left">Improve your workflow</td>
+<td class="org-left">Create a notebook<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup></td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">Package creation</td>
+<td class="org-left">Write new functions</td>
+<td class="org-left">Distribute package</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">Maths &amp;</td>
+<td class="org-left">Data structure</td>
+<td class="org-left">Data wrangling</td>
+<td class="org-left">Check data <a href="https://rafalab.github.io/dsbook/tidyverse.html">tidyness</a></td>
+</tr>
+
+<tr>
+<td class="org-left">stats</td>
+<td class="org-left">Model building</td>
+<td class="org-left">Linear <a href="https://rafalab.github.io/dsbook/regression.html">regression</a></td>
+<td class="org-left">Fit line graph to data</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">Distribution</td>
+<td class="org-left">Check significance</td>
+<td class="org-left">Apply t-test<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup></td>
+</tr>
+</tbody>
+</table>
+
+<p>
+Between two of these areas each are application areas: (1) domain
+knowledge and statistics support decision science. See <a href="https://medium.com/@ibobriakov/data-science-vs-decision-science-infographic-7ad6e16698d">infographic</a>
+(<a href="#orgeaabce3">Bobriakov 2019</a>). (2) Data analytics are the result of applying
+database programming (e.g. with SQL) to domain knowledge problems
+(this is also sometimes called 'business intelligence' or BI). (3)
+Programming, maths and statistics give rise to various machine
+learning (ML) techniques concerned in particular with prediction and
+pattern recognition.
+</p>
+
+<p>
+See also: <a href="#orgfdc75c3">Challenge</a> (2)
+</p>
+
+</div>
+</div>
+</div>
+<div id="outline-container-orgb07d127" class="outline-2">
+<h2 id="orgb07d127"><span class="section-number-2">4</span> Which technical skills are required? <code>[9/9]</code></h2>
+<div class="outline-text-2" id="text-4">
+
+<div class="figure">
+<p><img src="./img/ds_tech_skills.png" alt="ds_tech_skills.png" />
+</p>
+<p><span class="figure-number">Figure 3: </span>UC Berkeley School of Information, 2020</p>
+</div>
+<div class="notes">
+<p>
+A little background on the names mentioned:
+</p>
+<ul class="org-ul">
+<li><a href="https://d3js.org/">D3.js</a> is a JavaScript library for manipulating documents based on
+data. D3 helps you bring data to life using HTML, SVG, and CSS.</li>
+<li><a href="http://hadoop.apache.org/">Apache Hadoop</a> "software library framework that allows for the
+distributed processing of large data sets across clusters of
+computers using simple programming models. It is designed to scale
+up from single servers to thousands of machines, each offering
+local computation and storage. Rather than rely on hardware to
+deliver high-availability, the library itself is designed to
+detect and handle failures at the application layer, so delivering
+a highly-available service on top of a cluster of computers, each
+of which may be prone to failures." (Source: Apache.org)</li>
+<li><a href="https://www.ibm.com/analytics/hadoop/mapreduce">MapReduce</a> "MapReduce is a programming paradigm that enables
+massive scalability across hundreds or thousands of servers in a
+Hadoop cluster. As the processing component, MapReduce is the
+heart of Apache Hadoop. The term "MapReduce" refers to two
+separate and distinct tasks that Hadoop programs perform. The
+first is the map job, which takes a set of data and converts it
+into another set of data, where individual elements are broken
+down into tuples (key/value pairs). The reduce job takes the
+output from a map as input and combines those data tuples into a
+smaller set of tuples. As the sequence of the name MapReduce
+implies, the reduce job is always performed after the map job."
+Source: IBM. See also: <a href="https://www.tutorialspoint.com/hadoop/hadoop_mapreduce.htm">tutorialspoint</a>.</li>
+<li><a href="https://databricks.com/spark/about">Apache Spark</a> "is a lightning-fast unified analytics engine for
+big data and machine learning. It was originally developed at UC
+Berkeley in 2009." Source: databricks.</li>
+<li><a href="https://aws.amazon.com/nosql/">NoSQL</a> "databases are purpose built for specific data models
+and have flexible schemas for building modern applications. NoSQL
+databases are widely recognized for their ease of development,
+functionality, and performance at scale." Source: AWS.</li>
+<li><a href="https://pig.apache.org/">Apache Pig</a> "is a platform for analyzing large data sets that
+consists of a high-level language for expressing data analysis
+programs, coupled with infrastructure for evaluating these
+programs. The salient property of Pig programs is that their
+structure is amenable to substantial parallelization, which in
+turns enables them to handle very large data sets. At the present
+time, Pig's infrastructure layer consists of a compiler that
+produces sequences of Map-Reduce programs, for which large-scale
+parallel implementations already exist (e.g., the Hadoop
+subproject). Pig's language layer currently consists of a textual
+language called Pig Latin." Source: apache.org. <a href="https://www.tutorialspoint.com/apache_pig/index.htm">Tutorialspoint</a>.</li>
+<li><a href="https://www.tableau.com/">Tableau</a> (owned by Salesforce): commercial interactive data
+visualization software (SQL-based dashboards). <a href="https://public.tableau.com/en-us/s/">Tableau public</a>.</li>
+<li><a href="http://ipython.org/notebook.html">iPython notebooks</a> (now "Jupyter Notebook"): "interactive
+computational environment, in which you can combine code
+execution, rich text, mathematics, plots and rich media." Source:
+<a href="https://jupyter.org/">jupyter.org</a>. Part of <a href="https://www.anaconda.com/">Anaconda</a>. See also: Google <a href="https://colab.research.google.com/notebooks/intro.ipynb">Colaboratory</a>.</li>
+<li><p>
+GitHub (owned by Microsoft): "is a website and cloud-based
+service that helps developers store and manage their code, as well
+as track and control changes to their code" (Source: <a href="https://kinsta.com/knowledgebase/what-is-github/">kinsta.com</a>)
+centered on the open-source version control software <a href="https://git-scm.com/">Git</a>. There
+are many platforms like GitHub (e.g. GitLab, BitBucket,
+SourceForge).
+</p>
+
+<p>
+Of these applications, only Git (not GitHub) is really absolutely
+necessary for a professional data scientist working in
+teams. Though a working knowledge of the principles behind all of
+them will be very useful (especially if they come up in
+interviews). Hence, no reason to be scared.
+</p>
+
+<p>
+See also: <a href="#org4fa1680">Challenge</a> (3)
+</p></li>
+</ul>
+
+</div>
+</div>
+</div>
+<div id="outline-container-org5fe871a" class="outline-2">
+<h2 id="org5fe871a"><span class="section-number-2">5</span> What exactly is Frankenstein's data scientist made up of? <code>[6/6]</code></h2>
+<div class="outline-text-2" id="text-5">
+
+<div class="figure">
+<p><img src="./img/datasciencefrankenstein.png" alt="datasciencefrankenstein.png" />
+</p>
+<p><span class="figure-number">Figure 4: </span>source: bigcloud (bigcloud.io)</p>
+</div>
+<div class="notes">
+<p>
+"Frankenstein's monster" (based on the novel by "Frankenstein, or
+The Modern Prometheus", by Mary Shelley, 1818) is used here as a
+metaphor for a working data scientist. it is a rich metaphor with
+many connotations.
+</p>
+
+<ul class="org-ul">
+<li>"Eyes": experience with detecting data patterns. to do this
+actually with your eyes is unlikely - you need some tools for
+that, but you also need experience to know which tools will
+work. example: <code>head(dataset)</code> only prints the first 6 rows of a
+dataset giving you an idea of the type of data in the dataset.</li>
+<li>"Heart": passion for and creativity with data. "passion" is
+perhaps more relevant for the data's origin and for what you can
+do with well interpreted data - namely change the world! example:
+hans rosling's gapminder animations (and his passionate
+storytelling, demonstrated <a href="https://youtu.be/fack2knc08e">in this video</a> (<a href="#orgcd344b0">gapminder 2014</a>).</li>
+<li>"Hands": domain knowledge gained by working in an industry for
+years, supported by activity in communities like <a href="https://www.infoworld.com/article/3564164/kaggle-where-data-scientists-learn-and-compete.html">kaggle</a> (owned by
+google since 2017), which hosts datasets, notebooks and ml
+competitions.</li>
+<li>"Brain": analytical mindset and knowledge of analysis tools
+(none of the tools mentioned here, hadoop, spark, <a href="https://hive.apache.org/">hive</a> - a data
+warehouse - or <a href="https://www.sas.com/">sas</a> - another statistical analysis workbench - are
+necessary - they are merely nice to know). how do you know that
+you have this kind of brain? e.g. if you enjoy getting
+quantitative (number-based) answers and if you like visualizations
+of complex or complicated data (like the gapminder data). also, if
+you like programming or maths, you've likely got such a brain.</li>
+<li>"Mouth": communication with colleagues - but not only. in
+fact, especially being able to communicate with people who are not
+your colleagues (so they are perhaps very different from you) is
+key. this is another way of saying that you need to be able to
+"tell a story" after data analysis (e.g. prevos 2020).</li>
+<li>"Feet": data science is a very fast-moving technology field,
+especially its "machine learning" offshoot (which is not part of
+this course) - cp. kozyrkov 2019. you need to keep on top of the available
+information. at the same time, there is too much to take in and
+digest - this means that it is very important to have a sound
+understanding of the foundations of data science.</li>
+</ul>
+
+<p>
+See also: <a href="#orgab99930">Challenge</a> (4) and <a href="#org088c3cb">Challenge</a> (5)
+</p>
+
+</div>
+</div>
+</div>
+<div id="outline-container-org80782da" class="outline-2">
+<h2 id="org80782da"><span class="section-number-2">6</span> What's the (US) job market like?</h2>
+<div class="outline-text-2" id="text-6">
+
+<div class="figure">
+<p><img src="./img/ds_demand.png" alt="ds_demand.png" />
+</p>
+<p><span class="figure-number">Figure 5: </span>US Jobmarket for Data Science (Source: UC Berkeley, June 2020)</p>
+</div>
+<div class="notes">
+<p>
+Statistics like these are highly volatile, of course. They depend on
+the exact definitions of the job, on the ability of business to
+recruit exactly for what they want etc. I have personally not spoken
+to any recruiter about this - I only read career-related blogs and
+looked at statistics like these (published by <a href="https://ischoolonline.berkeley.edu/data-science/">Berkeley School of
+Information 2020</a>, a site that is interested in attracting data
+science students, therefore highly biased). However, as a rule, you
+can never go wrong with growing your skill stack, especially with
+regard to STEM skills, and within these especially with regard to
+your ability to analyse data quantitatively - which is what data
+science boils down to. For more details on "data science careers",
+see <a href="#org75aa9ca">Robinson/Nolis (2020)</a>.
+</p>
+
+<p>
+See also: <a href="#org3089c5f">Challenge</a> (6)
+</p>
+
+</div>
+</div>
+</div>
+<div id="outline-container-orga12d5fd" class="outline-2">
+<h2 id="orga12d5fd"><span class="section-number-2">7</span> What problems are solved with it?</h2>
+<div class="outline-text-2" id="text-7">
+
+<div class="figure">
+<p><img src="./img/data_science_adventure.png" alt="data_science_adventure.png" />
+</p>
+<p><span class="figure-number">Figure 6: </span>Source: Cassie Kozyrkov (@quaesita)</p>
+</div>
+<div class="notes">
+<p>
+The cartoon is by Google's head of "decision intelligence",
+<a href="#org31f4389">Cassie Kozyrkov (2018)</a>. She has a specific, business- and
+decision-oriented idea of the purpose of data science, which I
+share: data science is there to help you make decisions. The
+option tree shown distinguishes three sub-fields of data science:
+data analytics, statistics and machine learning. It asks if
+you're "making decisions" at the start (many, few, hardly any),
+it quickly focuses on the type of data (few vs big) and the
+'uncertainty' and 'importance' of the decisions. This is still a
+data-centric, not a decision-centric taxonomy. A focus on the
+latter would allow for many more options (e.g. strategic
+vs. tactical, organizational vs. managerial, routine
+vs. exceptional decisions etc.) Hence, for decision science, this
+kind of breakdown is not very useful.
+</p>
+
+<p>
+The dominance of "big data" has also been doubted, especially
+when it comes to making (business) decisions. "Small [not big]
+data" (<a href="#org0736002">Saklani, 2017</a>) and "thick [qualitative, descriptive] data"
+may be just as good depending on what you want to know. The
+article by <a href="#org4bbcbfd">Chiu (2020)</a> is a bit of a history hack (in the
+scholarly sense) but it raises some good points.
+</p>
+
+<p>
+Brandon Rohrer, [then] a data scientist at Microsoft, has
+addressed this question in a 3-part series of short articles
+(<a href="#orgdbe144b">Rohrer, 2015a, 2015b, 2015c</a>). His examples are a more specific,
+especially because he also says which family of algorithms match
+which type of data-related question. It is too early for us to
+discuss his taxonomy but at the end of the course, you should
+have a better idea about what you can do with data science tools.
+</p>
+
+</div>
+</div>
+</div>
+<div id="outline-container-org4700219" class="outline-2">
+<h2 id="org4700219"><span class="section-number-2">8</span> What is the data science process?</h2>
+<div class="outline-text-2" id="text-8">
+
+<div class="figure">
+<p><img src="./img/ria_process1.png" alt="ria_process1.png" />
+</p>
+<p><span class="figure-number">Figure 7: </span>Source: Wickham/Grolemund, 2017</p>
+</div>
+
+<div class="notes">
+<p>
+The figure shows a process that begins with raw data. Such data are
+usually not formatted as "tidy" data, i.e. "each row represents one
+observation and columns represent the different variables available
+for each of these observations" (<a href="#orgd6031a7">Irizarry 2020</a>). This is also the
+tabular format, which is usual for storing data in relational
+databases for analysis with SQL.
+</p>
+
+<p>
+Once we have tidy data, an (often repeated) sub-process begins:
+"transform" refers to any operation on the dataset that helps us
+understand the data better. Depending on the size of the data
+tables, we will use different methods of visualization to make
+underlying structure visible. But visualization does not always have
+to be graphical. Let's look at three examples:
+</p>
+
+<p>
+(1) Sometimes, even data selection is helpful - e.g. to see the
+variables of a dataset, the <a href="https://www.rdocumentation.org/packages/utils/versions/3.6.2/topics/head"><code>head(dataset)</code></a> function, which gives us
+the first 6 observations for all variables, may suffice.
+</p>
+
+</div>
+<div class="org-src-container">
+<pre class="src src-R">data(mtcars) <span style="color: #00cd66;"># </span><span style="color: #00cd66;">load dataset 'mtcars'</span>
+head(mtcars) <span style="color: #00cd66;"># </span><span style="color: #00cd66;">first six lines of dataset</span>
+</pre>
+</div>
+<pre class="example">
+:                    mpg cyl disp  hp drat    wt  qsec vs am gear carb
+: Mazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
+: Mazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
+: Datsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1
+: Hornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1
+: Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2
+: Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1
+</pre>
+
+<div class="notes">
+<p>
+(2) The <a href="https://www.rdocumentation.org/packages/utils/versions/3.6.1/topics/str"><code>str(dataset)</code></a> function, which gives an overview of
+the dataset size and all variables including the data types. Here
+are examples for all three of these utility functions for the
+built-in dataset <a href="https://www.rdocumentation.org/packages/datasets/versions/3.6.2/topics/mtcars"><code>mtcars</code></a> ('Motor Trend Car Road Tests'):
+</p>
+
+</div>
+<div class="org-src-container">
+<pre class="src src-R">data(mtcars) <span style="color: #00cd66;"># </span><span style="color: #00cd66;">load dataset 'mtcars'</span>
+str(mtcars)  <span style="color: #00cd66;"># </span><span style="color: #00cd66;">variables in dataset</span>
+</pre>
+</div>
+<pre class="example">
+'data.frame':	32 obs. of  11 variables:
+ $ mpg : num  21 21 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 ...
+ $ cyl : num  6 6 4 6 8 6 8 4 4 6 ...
+ $ disp: num  160 160 108 258 360 ...
+ $ hp  : num  110 110 93 110 175 105 245 62 95 123 ...
+ $ drat: num  3.9 3.9 3.85 3.08 3.15 2.76 3.21 3.69 3.92 3.92 ...
+ $ wt  : num  2.62 2.88 2.32 3.21 3.44 ...
+ $ qsec: num  16.5 17 18.6 19.4 17 ...
+ $ vs  : num  0 0 1 1 0 1 0 1 1 1 ...
+ $ am  : num  1 1 1 0 0 0 0 0 0 0 ...
+ $ gear: num  4 4 4 3 3 3 3 4 4 4 ...
+ $ carb: num  4 4 1 1 2 1 4 2 2 4 ...
+</pre>
+
+<div class="notes">
+<p>
+(3) The <a href="https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/summary"><code>summary(dataset)</code></a> function, which computes various
+statistical standard measures for the variables and helps you
+understand data content.
+</p>
+
+</div>
+<div class="org-src-container">
+<pre class="src src-R">data(mtcars) <span style="color: #00cd66;"># </span><span style="color: #00cd66;">load dataset 'mtcars'</span>
+summary(mtcars)  <span style="color: #00cd66;"># </span><span style="color: #00cd66;">summaries of various model fitting functions</span>
+</pre>
+</div>
+<pre class="example">
+     mpg             cyl             disp             hp       
+Min.   :10.40   Min.   :4.000   Min.   : 71.1   Min.   : 52.0  
+1st Qu.:15.43   1st Qu.:4.000   1st Qu.:120.8   1st Qu.: 96.5  
+Median :19.20   Median :6.000   Median :196.3   Median :123.0  
+Mean   :20.09   Mean   :6.188   Mean   :230.7   Mean   :146.7  
+3rd Qu.:22.80   3rd Qu.:8.000   3rd Qu.:326.0   3rd Qu.:180.0  
+Max.   :33.90   Max.   :8.000   Max.   :472.0   Max.   :335.0  
+     drat             wt             qsec             vs        
+Min.   :2.760   Min.   :1.513   Min.   :14.50   Min.   :0.0000  
+1st Qu.:3.080   1st Qu.:2.581   1st Qu.:16.89   1st Qu.:0.0000  
+Median :3.695   Median :3.325   Median :17.71   Median :0.0000  
+Mean   :3.597   Mean   :3.217   Mean   :17.85   Mean   :0.4375  
+3rd Qu.:3.920   3rd Qu.:3.610   3rd Qu.:18.90   3rd Qu.:1.0000  
+Max.   :4.930   Max.   :5.424   Max.   :22.90   Max.   :1.0000  
+      am              gear            carb      
+Min.   :0.0000   Min.   :3.000   Min.   :1.000  
+1st Qu.:0.0000   1st Qu.:3.000   1st Qu.:2.000  
+Median :0.0000   Median :4.000   Median :2.000  
+Mean   :0.4062   Mean   :3.688   Mean   :2.812  
+3rd Qu.:1.0000   3rd Qu.:4.000   3rd Qu.:4.000  
+Max.   :1.0000   Max.   :5.000   Max.   :8.000
+</pre>
+
+<div class="notes">
+<p>
+As an example of graphical visualization, let's plot two variables
+of the <code>mtcars</code> dataset against one another: e.g. miles-per-gallon
+(<code>mpg</code>) as a function of the car's weight (<code>wt</code>):
+</p>
+
+</div>
+<div class="org-src-container">
+<pre class="src src-R">data(mtcars)
+x <span style="color: #40e0d0;">&lt;-</span> mtcars$wt   <span style="color: #00cd66;"># </span><span style="color: #00cd66;">x-axis: weight of each car</span>
+y <span style="color: #40e0d0;">&lt;-</span> mtcars$mpg  <span style="color: #00cd66;"># </span><span style="color: #00cd66;">y-axis: miles-per-gallon of each car</span>
+plot(x, y, xlab = <span style="color: #bdb76b;">"Weight"</span>, ylab = <span style="color: #bdb76b;">"Miles per gallon"</span>)
+</pre>
+</div>
+
+
+<div class="figure">
+<p><img src="mtcars_plot.png" alt="mtcars_plot.png" />
+</p>
+</div>
+
+<div class="notes">
+<p>
+The last step in the cycle, "model", is technically the most
+difficult one. It requires at least a basic understanding of
+algorithms and statistics to be done correctly, and domain
+knowledge, to be done meaningfully. In our example, we assume that
+the miles per gallon fall linearly with the weight of the car - the
+heavier the car, the less economical it will run. The model used
+here is linear regression, <code>lm</code> in R (see Porras 2018 for a
+tutorial):
+</p>
+
+</div>
+<div class="org-src-container">
+<pre class="src src-R">data(mtcars)
+x <span style="color: #40e0d0;">&lt;-</span> mtcars$wt   <span style="color: #00cd66;"># </span><span style="color: #00cd66;">x-axis: weight of each car</span>
+y <span style="color: #40e0d0;">&lt;-</span> mtcars$mpg  <span style="color: #00cd66;"># </span><span style="color: #00cd66;">y-axis: miles-per-gallon of each car</span>
+plot(x, y, xlab = <span style="color: #bdb76b;">"Weight"</span>, ylab = <span style="color: #bdb76b;">"Miles per gallon"</span>)
+lm_model <span style="color: #40e0d0;">&lt;-</span> lm(y ~ x, data = mtcars) <span style="color: #00cd66;"># </span><span style="color: #00cd66;">create a linear regression lm</span>
+abline(lm_model) <span style="color: #00cd66;"># </span><span style="color: #00cd66;">add the line for lm to the plot</span>
+</pre>
+</div>
+
+
+<div class="figure">
+<p><img src="mtcars_lm.png" alt="mtcars_lm.png" />
+</p>
+</div>
+
+<div class="notes">
+<p>
+Once we've found a model that seems to fit the data, we understand
+the data much better than before, when we only had the raw
+data. We are now ready to communicate our insights. Often, this
+leads to the need to begin all over again, e.g. gather more or
+different data, and try different models. <a href="https://h5p.org/node/910614">See here for a BPMN
+model</a> in which I have detailed some of the steps of the model by
+<a href="#org60ccf58">Grolemund and Wickham (2017)</a>. 
+</p>
+
+<p>
+See also: <a href="#org39ca115">Challenge</a> (8)
+</p>
+
+</div>
+</div>
+</div>
+<div id="outline-container-orgffda8c4" class="outline-2">
+<h2 id="orgffda8c4"><span class="section-number-2">9</span> SUMMARY</h2>
+<div class="outline-text-2" id="text-9">
+<ul class="org-ul">
+<li class="off"><code>[&#xa0;]</code> You can define data science in terms of relevant areas.</li>
+
+<li class="off"><code>[&#xa0;]</code> You can name some data science skills and traits.</li>
+
+<li class="off"><code>[&#xa0;]</code> You can say what data scientists do with data.</li>
+
+<li class="off"><code>[&#xa0;]</code> <p>
+R code examples:
+</p>
+<div class="notes">
+<p>
+We have already seen quite a bit of R code in the examples - the
+why, what and how of R will be the subject of the next
+lecture. You don't need to remember these now - we'll practice
+them soon and often enough - but if you do, it might be helpful:
+</p>
+
+</div>
+<pre class="example">
+data()
+head()
+str()
+summary()
+plot()
+lm()
+abline()
+</pre>
+<div class="notes">
+<p>
+After hearing a lot of information, I find it sometimes necessary
+to anchor myself again. You can do this and test your basic
+understanding of data science by addressingT <a href="#org3d479e7">Challenge</a> (9).
+</p>
+
+</div></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org378b863" class="outline-2">
+<h2 id="org378b863"><span class="section-number-2">10</span> REFERENCES</h2>
+<div class="outline-text-2" id="text-10">
+<ol class="org-ol">
+<li><a id="org41fd020"></a> Blum A/Hopcroft J/Kannan R (4 Jan 2018). Foundations of Data
+Science - Cornell U. Online: <a href="https://www.cs.cornell.edu/jeh/book.pdf">cornell.edu</a>.</li>
+<li><a id="orgeaabce3"></a> Bobriakov I (16 Apr 2020). Data Science vs. Decision Science
+[Infographic]. Online: <a href="https://medium.com/@ibobriakov/data-science-vs-decision-science-infographic-7ad6e16698d">medium.com/@bobriakov</a>.</li>
+<li><a id="org4bbcbfd"></a> Chiu J (17 Aug 2020). Why Data Doesn't Have to Be That
+Big. Online: <a href="https://www.datacamp.com/community/blog/small-and-thick-data">datacamp.com</a>.</li>
+<li><a id="orgd9d0c22"></a> Davenport TH/Patil DJ (2012). Data Scientist:
+The Sexiest Job of the 21st Century. Online: <a href="https://hbr.org/2012/10/data-scientist-the-sexiest-job-of-the-21st-century">hbr.org</a>.</li>
+<li><a id="org2e55c8d"></a> Devlin K (1 Jan 2017). Number Sense: the most
+important mathematical concept in 21st Century K-12
+education. Online: <a href="https://www.huffpost.com/entry/number-sense-the-most-important-mathematical-concept_b_58695887e4b068764965c2e0">huffpost.com</a>.</li>
+<li><a id="orgcd344b0"></a> Gapminder Foundation (15 Dec 2014). DON'T
+PANIC - Hans Rosling showing the facts about population. Online:
+<a href="https://youtu.be/FACK2knC08E">youtube.com</a></li>
+<li><a id="org60ccf58"></a> Grolemund G/Wickham H (2017). <a href="https://r4ds.had.co.nz/">R for Data Science</a>. O’Reilly.</li>
+<li><a id="orgd6031a7"></a> Irizarry R (2020). <a href="https://rafalab.github.io/dsbook/">Introduction to Data Science</a>. CRC Press.</li>
+<li><a id="org9c2a520"></a> Kozyrkov C (10 Aug 2018). What on earth is data science?
+Online: <a href="https://hackernoon.com/what-on-earth-is-data-science-eb1237d8cb37">hackernoon.com</a>.</li>
+<li><a id="org31f4389"></a> Kozyrkov C (22 May 2019). Automated Inspiration. Online:
+<a href="https://www.forbes.com/sites/insights-intelai/2019/05/22/automated-inspiration/#76e940a31c44">Forbes.com</a>.</li>
+<li><a id="orgb018093"></a> Knuth D (1992). <a href="http://www.literateprogramming.com/knuthweb.pdf">Literate Programming</a>. Stanford,
+Center for the Study of Language and Information Lecture
+Notes 27.</li>
+<li>Myers A (28 Apr 2020). Data Science Notebooks - A
+Primer. Online: <a href="https://medium.com/memory-leak/data-science-notebooks-a-primer-4af256c8f5c6">medium.com/memory-leak</a>.</li>
+<li>Porras E M (18 Jul 2018). Linear Regression in R. Online: <a href="https://www.datacamp.com/community/tutorials/linear-regression-R">datacamp.com</a>.</li>
+<li>Prevos P (14 Aug 2020). Storytelling with Data: Visualising the
+Receding Sea Ice Sheets. Online: <a href="https://lucidmanager.org/data-science/storytelling-with-data/">lucidmanager.org</a>.</li>
+<li><a id="org75aa9ca"></a> Robinson E/Nolis, J (2020). <a href="https://www.manning.com/books/build-a-career-in-data-science">Build a
+Career in Data Science</a>. Manning.</li>
+<li><a id="orgdbe144b"></a> Rohrer B (2015a). What Can Data Science Do
+For Me? Online: <a href="https://docs.microsoft.com/en-us/archive/blogs/machinelearning/what-can-data-science-do-for-me">microsoft.com</a>.</li>
+<li>Rohrer B (2015b). What Types of Questions Can Data Science
+Answer? Online: <a href="https://docs.microsoft.com/en-us/archive/blogs/machinelearning/what-types-of-questions-can-data-science-answer">microsoft.com</a>.</li>
+<li>Rohrer B (2015c). Which Algorithm Family Can Answer My Question?
+Online: <a href="https://docs.microsoft.com/en-us/archive/blogs/machinelearning/which-algorithm-family-can-answer-my-question">microsoft.com</a>.</li>
+<li><a id="org0736002"></a> Saklani P (19 Jul 2017). Sometimes “Small Data” Is Enough to
+Create Smart Products. Online: <a href="https://hbr.org/2017/07/sometimes-small-data-is-enough-to-create-smart-products">hbr.org</a>.</li>
+<li><a id="org12abc8f"></a> Sarkar DJ (12 Sept 2018). A Comprehensive Guide
+to the Grammar of Graphics for Effective Visualization of
+Multi-dimensional Data. Online: <a href="https://towardsdatascience.com/a-comprehensive-guide-to-the-grammar-of-graphics-for-effective-visualization-of-multi-dimensional-1f92b4ed4149">towardsdatascience.com</a></li>
+<li><a id="orgf91d132"></a> Wing JM (2 Jul 2019). The data life cycle. Harvard Data Science
+Review. Online: <a href="https://hdsr.mitpress.mit.edu/pub/577rq08d/release/3">hdsr.mitpress.mit.edu.</a></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgad274f7" class="outline-2">
+<h2 id="orgad274f7"><span class="section-number-2">11</span> Challenges</h2>
+<div class="outline-text-2" id="text-11">
+<ol class="org-ol">
+<li class="off"><code>[&#xa0;]</code> <a id="orge719d80"></a> How do you explain this curve? What
+happened in 2012? [Answer: check out <a href="#orgd9d0c22">Davenport/Patil 2012.</a>]</li>
+<li class="off"><code>[&#xa0;]</code> <a id="orgfdc75c3"></a> Where do you have your skills? How do
+you know that you have that skill? In which area would you like
+to improve your skills? Recently, an MBA student asked me these
+same questions and here is my answer: "<a href="https://1drv.ms/b/s!AhEvK3qWokrvhPhyO8vS3nRXWah9jA">My IT Skill Stack</a>".</li>
+<li class="off"><code>[&#xa0;]</code> <a id="org4fa1680"></a> Which software packages are these?
+What do they do? Can you use them freely? [Answer: see
+script. Tip: when you come across products you don't know, make
+it a habit to look them up - knowing the names and what they
+stand for will help you anchor yourself in anything you read, and
+the most important products, which are most talked about, are
+often talked about for a reason - e.g. because they represent an
+innovation and/or an advantage. By knowing the products, you can
+also learn something about the innovation. This dependency on
+products also shows that computer and data science are crafts.]</li>
+<li class="off"><code>[&#xa0;]</code> <a id="orgab99930"></a> What if you don't have a brain for
+numbers, can you still do data science? What if numbers don't
+turn you on but instead put you to sleep?  What if graphs scare
+you because you suspect that difficult mathematics is necessary
+to understand the graph and what's behind it? What if you like
+novels but don't care for manuals - what if you don't even like
+computers? Can you still have a "brain for data science"? [Note:
+other terms for this are "number sense" (in maths education), or
+"computational thinking" (in computer science) or, more recently,
+"data literacy". All of these are relatively new concepts, so
+feel free to speculate and make up your own mind! Cp. <a href="#org2e55c8d">Devlin 2017</a>]</li>
+<li class="off"><code>[&#xa0;]</code> <a id="org088c3cb"></a> What are the connotations of using
+"Frankenstein's monster" as a metaphor for "data scientist"?</li>
+<li class="off"><code>[&#xa0;]</code> <a id="org3089c5f"></a> What is the "foundation of data science" in
+terms of skills?  How can you learn them? Check out an online job
+portal like [Answer: see skills slide - mathematics, especially
+statistics, programming and databases are the skill-based
+disciplines that you need to master. Having said that:
+"mastering" could easily take not one, but several life
+times. You need to begin somewhere. If you do this in earnest,
+you'll soon find that you start learning faster and faster the
+more connections with what you already know you can make.] There
+is also a (free) book called "<a href="https://www.cs.cornell.edu/jeh/book.pdf">Foundations of Data Science</a>"
+(<a href="#org41fd020">Blum et al 2015, 466 p.</a>). It includes some geometry, graph theory, linear
+algebra, markov chains, and a variety of algorithms for "massive
+data problems" like streaming, sketching and sampling.]</li>
+<li class="off"><code>[&#xa0;]</code> <a id="org90bb405"></a> Think about any decision you make -
+what are the steps you go through? Do they amount to a "data
+science adventure" and why (or why not)?</li>
+<li class="off"><code>[&#xa0;]</code> <a id="org39ca115"></a> Compare the process in the figure with
+the "data life cycle" by <a href="#orgf91d132">Wing 2019</a>. There is no graphical model
+so you may have to draw one yourself (e.g. as a BPMN process
+model). What's the purpose of such a life cycle model? Do you
+know of any other models like this?</li>
+<li class="off"><code>[&#xa0;]</code> <a id="org3d479e7"></a> Read the seminal article by
+<a href="#orgd9d0c22">Davenport/Patil (2012)</a>, which put data science on the map for
+business. What has changed since then (if anything)? Test their
+claims (e.g. "there are no university programs offering degrees
+in data science" - is this still true?). How would you measure
+the performance of a data scientist? Has the understanding of
+data science and data scientist ("a hybrid of data hacker,
+analyst, communicator, and trusted adviser") changed since then?</li>
+</ol>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+A data science notebook is a "literate programming"
+artifact. This concept goes back to 1984 (<a href="#orgb018093">Knuth 1984</a>). Today, there are
+plenty of commercial notebook implementations for many different
+programming languages (see <a href="https://medium.com/memory-leak/data-science-notebooks-a-primer-4af256c8f5c6">Myers 2020</a> "primer").
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <div class="footpara"><p class="footpara">
+"A t-test is a type of inferential statistic used to determine
+if there is a significant difference between the means of two groups,
+which may be related in certain features." (<a href="https://www.investopedia.com/terms/t/t-test.asp">Source</a>)
+</p></div></div>
+
+
+</div>
+</div></div>
+<div id="postamble" class="status">
+<p class="date">Date: Winter 2020</p>
+<p class="author">Author: Marcus Birkenkrahe</p>
+<p class="date">Created: 2020-08-19 Mi 15:21</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

@@ -1,15 +1,25 @@
 # ds101 - introduction to data science
 
+
 # Table of Contents
 
-1.  [Unpack the ZIP file](#org6b81c08)
-2.  [Open the HTML file](#org0c1b317)
-3.  [Read the PDF file](#org627d70c)
-4.  [Trouble?](#org6bb5f00)
-5.  [Copyright](#org658ebcf)
+1.  [Download the ZIP file](#org5a76f21)
+2.  [Unpack the ZIP file](#orgc6d9f1b)
+3.  [Open the HTML file](#org543f6d1)
+4.  [Read the PDF file](#org9f9b384)
+5.  [Trouble?](#orgf2bf90d)
+6.  [Copyright](#org138dd8b)
 
 
-<a id="org6b81c08"></a>
+<a id="org5a76f21"></a>
+
+# Download the ZIP file
+
+Find the `Code` menu on this page, open the menu and click on
+`Download ZIP`. This will download the ZIP file to your computer.
+
+
+<a id="orgc6d9f1b"></a>
 
 # Unpack the ZIP file
 
@@ -66,7 +76,7 @@ There's nothing to do for you with the `.org` file or with the `img`
 folder unless you want to change it.
 
 
-<a id="org0c1b317"></a>
+<a id="org543f6d1"></a>
 
 # Open the HTML file
 
@@ -78,7 +88,7 @@ where `browser` is `firefox` or `google-chrome` or any other
 browser.
 
 
-<a id="org627d70c"></a>
+<a id="org9f9b384"></a>
 
 # Read the PDF file
 
@@ -87,14 +97,14 @@ have active links embedded in the text, but it does have all
 images. If you're after the links, go to the HTML file.
 
 
-<a id="org6bb5f00"></a>
+<a id="orgf2bf90d"></a>
 
 # Trouble?
 
 If you encounter any trouble, contact me at `birkenkrahe@hwr-berlin.de`.
 
 
-<a id="org658ebcf"></a>
+<a id="org138dd8b"></a>
 
 # Copyright
 

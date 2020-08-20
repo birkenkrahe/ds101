@@ -1,5 +1,6 @@
 # ds101 - introduction to data science
 
+Course materials for an introductory data science course in the extracurricular program of the Berlin School of Economics and Law, winter 2020.
 
 # Table of Contents
 

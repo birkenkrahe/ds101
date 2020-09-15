@@ -1,502 +1,506 @@
 
 # Table of Contents
 
-1.  [RMarkdown / R Notebook / learnr / RTutor / OER](#org652b18b)
-    1.  [Image clipper into RStudio (add-in)](#orgcf0a1dc)
-    2.  [Getting started with R and RStudio (Dataquest tutorial)](#org9f6860f)
-    3.  [Replacing PowerPoint with R](#org718bab4)
-    4.  ["Dashboards are dead" see also https://count.co](#org8ee571a)
-    5.  [Interactive R tutorials with learnr (youtube)](#org212d7fb)
-    6.  [Tips and tricks in RStudio and R Markdown](#org752d256)
-    7.  [Jupyter Notebooks](#org464003a)
-    8.  [Literate Programming](#org220bb78)
-        1.  [Org-mode litprog in Emacs (2018) - long youtube video](#orgc747348)
-        2.  [Configuring Emacs with Org mode and literate programming](#org523ba1e)
-        3.  [Interview with Donald Knuth (1993) - LitProg, CWEB](#org45a88a4)
-        4.  [Stanford page on LitProg](#org63828fc)
-        5.  [LitProg article by Knuth 1984](#orgac43db6)
-        6.  [The CWEB System of Structured Documentation (1993-2001)](#org0d04850)
-        7.  [LitProg - Propaganda and Tools (Christopher Lee 1994)](#orgcfccf69)
-    9.  [DS in education](#org5503f6e)
-        1.  [Open-Source Authorship of Data Science in Education Using R,](#orgd3f2b4d)
-    10. [R Markdown](#orgaab2505)
-        1.  [Converting LaTeX to Bookdown (accessible lecture notes)](#org064e2d1)
-        2.  [How R Markdown changed my life (video 23 min)](#org4c04e37)
-        3.  [Meta RMarkdown - Taxonomy and Use cases](#org80cb143)
-        4.  [Useful YAML options for generating HTML reports in R](#orgd2ec7c1)
-        5.  [R Markdown Crash course (bookdown)](#org62bfaa5)
-        6.  [Book: Practical R for Mass Communication and Journalism](#org2b393ee)
-        7.  [Course: Datacamp course R Markdown](#org2b3f5bd):datacamp:
-        8.  [RTutor](#orgab3c9be)
-        9.  [Interactive Tutorials for R](#org29740f1):R:learnr:
-        10. [Markdown + XMInd (Blog)](#orgba70f98)
-        11. [How I teach R Markdown 29.5.2020](#orgb1133ee)
-        12. [Making slides with xaringan 16.1.2019](#org3fd5def)
-        13. [R Markdown Tutorial (Video 2018, 8 min)](#org3e73d2c)
-        14. [Advantages of Using R Notebooks For Data Analysis Instead of Jupyter Notebooks (6.6.17)](#org6126b2b)
-        15. [Markdown Tutorial](#orga7446cb)
-        16. [Pimp my RMD: a few tips for R Markdown by Yan Holtz - 10 December 2018](#org15dc0b9)
-        17. [Bookdown - R Markup](#org56e4f0c)
-        18. [R Markdown from R Studio](#org259d53c)
-    11. [learnr](#org6e0278a)
-        1.  [Teaching in learnr](#org2312bc9)
-        2.  [Publishing learnr Tutorials on shinyapps.io](#org83b448a)
-2.  [Emacs / ESS](#orgb5ac908)
-3.  [Teaching - other courses and ideas](#org3f63c20)
-    1.  [STAT 220 labs Amelia McNamara](#orgd880416)
-    2.  [A fresh look at introductory data science (paper 2020)](#orgf031558)
-    3.  [Data science in a box (tidyverse, learnr)](#org82f9df4)
-    4.  [DS112 tutorials (net apps, learnR and GitHub exercises)](#org93174cc)
-        1.  [R Basics](#orgb977e3d)
-        2.  [ggplot() and dplyr tutorial](#orgab8e366)
-    5.  [Teaching Statistics with R](#orgc0ccf78)
-    6.  [Future of Statistical Programming](#orgcc0e9ea)
-    7.  [Bridging the Gap Between Tools for Learning and for Doing Statistics](#orgee157a1)
-    8.  [Codementor](#orgdee3dd3)
-    9.  [Online course: Adventures in R](#org2b267c5)
-    10. [Proposal for an educational data science course](#orgcfc9305)
-    11. [R Studio Cloud Primers](#orgc9200c6)
-    12. [How I Taught Scientific Blogging with R Markdown, Online](#org440fd6c)
-    13. [RStudio Instructor Certification Exams](#org2cc178e)
-    14. [Market analysis course (interactive, free, and with a lot of R)](#org1617d22)
-    15. [R for Bio Data Science (DTU Wiki)](#org5ee21f0)
-    16. [Data science for biologists (playlist youtube)](#orga596b15)
-    17. [A novice’s guide to learning to code with CS50](#orga0844db)
-    18. [Introduction to SQL (Coursera)](#org29b5e8f)
-    19. [Syllabus](#orgf214431)
-    20. [Mismatch Between Academic and Real-world Data Science Projects](#orgc8c4286)
-    21. [UC Berkeley Connector Courses](#org537f218)
-    22. [John DeNero | YouTube |  Intro Foundations of Data Science Intro | Online Book](#org3523aca)
-    23. [Computational and inferential thinking | Online book](#org7b356c8)
-    24. [Data 8 - The foundations of data science (UC Berkeley) | Site: data8.org | Spring 2020 syllabus](#org5288425)
-    25. [Harvard edX Program](#org1f15365)
-    26. [Heidi Seibold | video 55 min |  presentation](#org454bec9)
-    27. [The Johns Hopkins Data Science Lab](#orgf60f9bb)
-4.  [Data wrangling](#org7ac652e)
-    1.  [Cleaning messy data with tidyverse](#orgbbc4f98)
-    2.  [Data Cleaning and Exploratory Analysis in Python and R](#org7f023fe)
-    3.  [Beyond Ordinary PCA: Nonlinear Principal Component Analysis](#orge9d8edb):medium:
-5.  [R](#orgdbe9514)
-    1.  [R vs Python](#orgf4a1d4d)
-        1.  [Python vs. R: A Text Mining Approach for analyzing the Research Trends in Scopus Database](#org39f7e6a)
-        2.  [Trying R for the First Time](#org80c7f73)
-        3.  [Debunking R and Python Myths: Answering Your Questions](#org2cbac21)
-    2.  [Finding factorials](#orgf5c9411)
-    3.  [Packages](#orgb1251b0)
-    4.  [Text mining with R and quanteda](#org3614ac3)
-        1.  [renv - Why Package & Environment Management](#org3dc1525)
-        2.  [R Packages: A Beginner's Guide](#orgc68adce)
-        3.  [Introduction to the DataRobot R Package](#org974a81f)
-        4.  [tidyverse](#org719d265)
-        5.  [data.table](#org0712d34)
-    5.  [Data manipulation in r using data frames - an extensive article of basics](#orge8521cd)
-    6.  [How to Extract Day from Datetime in R with Examples](#org2cabb8e)
-    7.  [How to subset a data frame column data in R](#org7386903)
-    8.  [Common R error messages](#org2de2890)
-    9.  [A Guide to the Pipe in R](#org978c13d)
-    10. [Visualize as flow diagrams](#orgd9f21cd)
-    11. [Demonstrating the central limit theorem in R](#orge5194dd)
-    12. [R & RStudio - The Interoperability Environment for Data Analytics](#orga8d6d01)
-    13. [First sample sessions (R documentation)](#org837032c)
-    14. [How R still outperforms Python](#orgacfc3dc)
-    15. [metR - meteorogical (tidy) data package](#org48a8f84)
-    16. [How to evaluate R Packages](#org5e41c43)
-    17. [R Style guides](#orgd368469)
-        1.  [R code style guide richie cotton](#org255c6a2)
-        2.  [R-Style-Guide &#x2013; Towards a Goal of RED Code (Matloff 2019)](#org7508500)
-        3.  [R Style guide (jean)](#orgea74467)
-        4.  [Google’s R Style Guide](#org91dee9e)
-        5.  [Bioconductor (bioinformatics)](#org143581b)
-    18. [Working with text in R (presentation)](#org81de2b4)
-    19. [doubleheadR (surveymonkey data analysis)](#orgca7b037)
-    20. [magrittr - pipeline library](#org1c74af7)
-    21. [Functional Programming in R with purrr](#org9a38cc1)
-    22. [Few things I learned while writing an R package](#org2c1d94f)
-    23. [Unit Testing in R](#org98ddce4)
-    24. [Building a collection of Hello World functions in R](#org99b05f2)
-    25. [Build a Corporate R Package for Pleasure and Profit by Brad Lindblad, Mar 5, 2019](#orgc2cda1a)
-    26. [Doing Maths Symbolically: R as a Computer Algebra System (CAS)](#org2f9c4c7)
-    27. [Five Tidyverse Tricks You May Not Know About](#org8bcb1b4)
-    28. [How to write your own R package and publish it on CRAN](#org24b3c3b)
-    29. [Setting up your R environment (webinar w/Richie Cotton)](#org626ea75)
-    30. [R Coding Style Guide](#org8fc3637)
-    31. [Installing R 4.0 under Ubuntu 18.04](#org1804ef9)
-    32. [Text Mining with R (bookdown)](#org2623b35)
-    33. [causaloptim: An Interface to Specify Causal Graphs and Compute Bounds on Causal Effects](#org7698f5c)
-    34. [Machine learning using H2O](#orgd38caea)
-    35. [Learning R With Education Datasets](#orgd5337cb)
-    36. [Select first or last rows of a data frame](#org8b9c826)
-    37. [Good coding style (Wickham, Advanced R)](#org85ce19d)
-    38. [formatr: Format code automatically (Yhui Yie, 2019)](#orge3e8848)
-    39. [Performance Optimization in R: Parallel Computing and Rcpp](#org6f9c8b5)
-    40. [R Exercises](#org0067b8b)
-    41. [R Programming 101 (YouTube Playlist Data Professor)](#org0ae1b37):R:RStudio:
-    42. [Testing statistical packages in R](#orga9760c2)
-    43. [Ten more random useful things in R you may not know about](#org6409775)
-    44. [Onboard Help System: help.start()](#org7de19df)
-    45. [How to do more with R (playlist)](#org0b874cd)
-    46. [The Seven Key Things You Need To Know About dplyr 1.0.0](#orgb80b4bd)
-    47. [A Year in Review of R Programming 2019](#org337af13)
-    48. [R Programming Pundits (Telegram channel) - free tutorials](#orgcad5d04)
-    49. [Programming with R (online tutorial)](#orgd399f06)
-    50. [Introduction to R and RStudio (online tutorial)](#org43b0b6b)
-    51. [R for Data Science (book, 2017)](#orgf4db37c)
-    52. [Vlog by Philip Guo on the R ecosystem and R for Data Science - 5 Feb 2018](#org43ca1f7)
-    53. [Ten Time-Saving R Hacks (27.2.20)](#orgc857e33)
-    54. [Textmining with R (book - 2014)](#orge41ecd6)
-    55. [Geocomputation with R (book - 2018)](#orgfdbf317)
-    56. [Build interactive tutorials with learnr (2020)](#orgd36a978)
-    57. [Example: setting up R, RStudio, tidyverse R package](#orgc0e8407)
-    58. [R and Jupyter Notebook](#org63b749d)
-    59. [Datacamp blog (30 Nov 2016)](#org49552a5)
-6.  [Visualization](#orgb9b5a0d)
-    1.  [“What Data Visualisation Experts Wish They Knew When They First Started”](#orga877416)
-    2.  [Tutorial: Plotting in R for Python Refugees](#org21c1607)
-    3.  [Microsoft Research: Expressive Pixels](#org88f6f08)
-    4.  [Challenges](#org3a17a38)
-        1.  [Does the chart support the text? (COVID-19 and economic data)](#org4f256de)
-    5.  [Most popular on Netflix. Daily Tops for last 60 days](#orga2316c4)
-    6.  [How dynamic is the browser market?](#org13adb32)
-    7.  [Energy consumption in last 140 years](#orgd16e041)
-    8.  [Gapminder](#orgdf1dc0e)
-        1.  [How to build Animated Charts like Hans Rosling — doing it all in R](#orgb1f22f0)
-        2.  [Exploring the Gapminder Data with R](#org4f03d22)
-        3.  [Empfehlungen Roland Müller (Rosling pro and con):](#org97c57b5)
-    9.  [ggplot](#org736a2a8)
-    10. [Create a line graph with ggplot](#orgb5dd85f)
-        1.  [Dataquest beginner's tutorial ggplot2](#org724a752)
-        2.  [Graphics in R with ggplot2](#orgca2aef2)
-        3.  [ggplot2 easthetics cheat sheet](#org4a1cc3c)
-        4.  [Storytelling with Data and ggplot: Visualising the Receding Ice Sheets](#orgdcfe446)
-        5.  [A ggplot2 Tutorial for Beautiful Plotting in R](#org4c2dffb)
-        6.  [Tutorial: why data visualization is important (ggplot2)](#orga569548)
-        7.  [Writing Functions to Automate Repetitive Plotting Tasks in ggplot2](#orgb04b82c)
-        8.  [a ggplot2 grammar guide](#org72e6e3b)
-        9.  [Top 50 ggplot2 Visualizations - The Master List (with full R code)](#org9502bcb)
-        10. [Storytelling with Data and ggplot: Visualising the Receding Ice Sheets](#orgb1a34f1)
-    11. [Abstractions - Physarum model visualizations](#orga461eb0)
-    12. [You’re Plotting the Wrong Things](#org0154b58)
-    13. [Analytics is not storytelling (Kozyrkov](#org259d954)
-    14. [You Can Design a Good Chart with R](#org83fac2f)
-    15. [The Goldilocks Principle - investing in stocks (beautiful graphs)](#org7769ea5)
-    16. [Embed Interactive Plots in Your Slides with Plotly](#org2d593cd)
-    17. [PowerPoint is evil (E Tufte, 9 Jan 1983)](#org9210b45)
-    18. [Cheesecake Diagrams: Pie Charts with a Different Flavour](#org7a489c4)
-    19. [Demo: Create beautiful charts with Datawrapper](#org405b319)
-    20. [Making tables with the gt package](#orgdbd5917)
-    21. [A Comprehensive Guide to the Grammar of Graphics for Effective Visualization of Multi-dimensional Data](#orgc8e5b58)
-    22. [Package for colorblind plots](#org7ffd2d6)
-    23. [Guide to gt tables (Richard Iannone)](#org973c6c2)
-    24. [Visualization examples](#org58aa385)
-        1.  [Making Interactive Maps in R with Less Than 15 Lines of Code](#org013a728)
-        2.  [Sqrt(2) puzzle animation](#org698d496)
-        3.  [Power socket types Europe (Twitter account gesperrt!)](#org931835a)
-        4.  [Size of Africa](#orgad1fa4f)
-    25. [fabricerin package to draw on shinyapp documents (?)](#org28c5790)
-    26. [The ultimate EDA visualization in R (raincloud plots)](#orgba93099)
-    27. [SpaceX Satellites Ruin Perfectly Good View of Comet NEOWISE](#orgb22d698)
-    28. [Re-engineer graphs to extract the data (WebPlotDigitizer)](#orgf93ce32)
-    29. [COVID-19 cases in India drop every Sunday - how to explain?](#org7dd98f7)
-    30. [Animated charts: visualizing “changes” in R](#org51757df)
-    31. [Making Interactive Maps of Public Data in R by Ryan Rosenberg](#orgb7d00a7)
-    32. [ggtext - formating text in graphs](#org8fd60ff)
-    33. [A Layered Grammar of Graphics](#org738a11b)
-    34. [My top 5 visualization tools for data science](#org71353d3)
-    35. [Visualization good/bad examples](#org92429bf)
-    36. [How to Visualize Data with R](#orgd02a4c6)
-    37. [Hadley Wickham: Managing many models with R (2016)](#orgf4cb517):modeling:R:wickham:video:
-    38. [Past project examples (Andrew Heiss)](#orgc6944ad)
-    39. [R Visualizations David Gerbing 2020](#org91bcb6f)
-    40. [Online course in data visualization with R (May 2020) - Georgia State U / Dr Andrew Heiss](#org7d37daa)
-    41. [Free book: Data Visualization with R (Rob Kabacoff, 2018)](#org6478606)
-    42. [Free book: Data Visualization - A practical introduction](#org1383c68)
-    43. [Free book: Fundamentals of Data Visualization by Claus O Wilke](#org3f64725)
-    44. [Easy Ways to Make Your Charts Look More Professional 28 May 2020](#org2ea7e5b)
-    45. [Stacked Bar Graphs, Why and How 28 May 2020](#org590c3f3)
-    46. [Effective Visualizations for Credible, Data-Driven Decision Making (16.4.20)](#org560c524)
-    47. [Visualisation example: Data Privacy in the Age of Big Data](#org62588f3)
-    48. [Practical Implications of Sharing Data: A Primer on Data Privacy,](#orgc8808b2)
-7.  [Git/Github](#orgd708dbb)
-    1.  [Happy Git and GitHub for the useR (bookdown)](#org4c4985a)
-    2.  [Git Emacs integration](#org889e4c8)
-    3.  [How to upload your R code on GitHub: example with an R script on MacOS](#org6a516e7)
-    4.  [The State of the Octoverse](#org94a28aa)
-    5.  [Building a blog using github and jekyll](#org1f1c08d)
-    6.  [Using GitHub Actions for MLOps & Data Science](#orgfa4ae89)
-    7.  [BIRKENKRAHE @github](#org5f1c33e)
-    8.  [Git Your SQL Together (with a Query Library)](#org6e9005c)
-    9.  [Using GitHub Classroom to teach statistics (paper 2019)](#orgbae58c2)
-    10. [How to use Git and Github with R (15 min video)](#org15f86aa)
-    11. [How to upload your R code on GitHub: example with an R script on MacOS (24.5.20)](#orgb6cb583)
-    12. [Why You Should Blog with Hugo?An Introduction to the 'Blog with Hugo'](#org3df4fe5)
-8.  [Mixed Links](#orgb837083)
-9.  [Math](#orgf241096)
-    1.  [ML](#org6711686)
-        1.  [Math Companion to The Art of Machine Learning](#org1de3085):matloff:pdf:
-    2.  [Stats](#orgc362fe9)
-        1.  [Why Bayesian Stats Needs Monte-Carlo Methods](#orgf6cbc1d)
-        2.  [Introduction to Probability (2nd 3d) PDF](#org9fde625)
-        3.  [A trick question for data science buffs](#org0afcb3a)
-        4.  [Descriptive vs Inferential Statistics in One Picture](#org98fa9f9)
-        5.  [What the Null Hypothesis Really Means— According to a Statistics Professor](#orgedaabcf)
-        6.  [P-values Explained By Data Scientist](#org6b5d8e6)
-        7.  [How most statistical tests are linear models (with cheat sheet)](#org81bfc84)
-        8.  [What is p-value short for? (Kozyrkov)](#org3738ffa)
-        9.  [The Magic of The Bell Curve (turn Python script into R)](#org21f2c0c)
-        10. [Monte Carlo Simulation in R (see also Matloff 2020)](#org9e68f95)
-        11. [Outliers detection in R](#org6f836ff)
-        12. [Stop using p=0.05](#org60213e1)
-        13. [Essentially random isn't the same as actually random](#org5ff2a11)
-    3.  [General maths](#org62ce388)
-        1.  [The Directed Edge Reinforced Random Walk: The Ant Mill Phenomenon](#org1211afc)
-        2.  [Understanding Mathematical Symbols with Code](#org4099f39)
-        3.  [A computational approach to the Prisoner’s Dilemma](#orgd571d52)
-        4.  [What is Graph Theory, and why should you care?](#org5b20e5d)
-        5.  [Matrices are Graphs (12 Aug 2020)](#org1e30f26)
-        6.  [The Fastest Way to Compute the Fibonacci Sequence](#orgeec74dc)
-        7.  [The Collatz Conjecture](#org3527fd0)
-        8.  [The Riemann Hypothesis, explained](#orgf4d57cd)
-        9.  [What is the determinant?](#org4cdcfc3)
-        10. [A Tribute to Leonard Euler (youtube)](#org454f8b1)
-        11. [Philosophy of Mathematics (Stanford Encyclopedia of Philosophy)](#org5c7bc0a)
-        12. [Introduction to Group Theory (see also book by Charles Pinter, kindle)](#orgd0a42ab)
-        13. [Six Difficult Ways of Becoming a Millionaire by Francesco Di Lallo](#org0a6003c)
-        14. [The algebra and machine representation of statistical models (PhD)](#orgf3ea01e)
-        15. [Mathematics for machine learning (book)](#org8441ca5)
-        16. [Statistics with R specialization @Coursera](#org223698d)
-        17. [Business statistics and analysis specialization @Coursera](#org9ba831f)
-        18. [Statistics and probability in data science using Python](#org451ab90)
-        19. [Linear algebra: foundations to frontiers @edX](#org3ac5e23)
-        20. [Mathematics for machine learning: linear algebra @Coursera](#org2d641dd)
-        21. [Pre-university calculus @edX](#org5bc7a81)
-        22. [Calculus I @KhanAcademy](#org770c20f)
-        23. [Mathematics for machine learning: multivariable calculus  \* Discrete Mathematics <code>[0/8]</code>](#orga7e7152)
-        24. [Introduction to discrete mathematics for computer science specialization @Coursera](#orga4377e4)
-        25. [Introduction to mathematical thinking @Coursera](#orgc4eac4c)
-        26. [Master discrete mathematics: sets, math logic, and more @Udemy](#org37abfd8)
-        27. [Optimization methods in business analytics @edX](#org65909b7)
-        28. [Discrete optimization @Coursera](#org17dca3d)
-        29. [Deterministic optimization @edX](#org9cc2e83)
-10. [NN](#org29d0b88)
-    1.  [The Neural Network, A Visual Introduction | Visualizing Deep Learning](#orgb354af4)
-    2.  [RobustFill: Neural Program Learning under Noisy I/O (2017)](#org2360f96)
-    3.  [Building a neural net from scratch using R (part 1, part 2)](#org10610fb)
-    4.  [The Beginner’s Glossary of Neural Network Terms](#org1029d67)
-    5.  [Every Machine Learning Algorithm Can Be Represented as a Neural Network](#org4f5a255)
-    6.  [NN and ML vs Stats (culture wars)](#org0f9a504)
-    7.  [BrainOS — The Most Brain-Like AI](#org5294cb7)
-    8.  [Understanding How Neural Networks Think](#org202183a)
-    9.  [Can you remove 99% of a neural network without losing accuracy?](#org8c802f8)
-    10. [Symbolic Mathematics Finally Yields to Neural Networks](#org752b16f)
-    11. [Explainable AI: Neural Networks (IBM)](#orgf683c95)
-    12. [Why are neural networks so powerful?](#org24b959c)
-    13. [22 articles about NN Jan 2019g](#org9c6a640)
-11. [Careers](#orgb114699)
-    1.  [Podcast "A career in data science"](#org90a57e4)
-    2.  [How You Should Change Your Data Science Education](#orgfe915be)
-    3.  [Professional Machine Learning Engineer (Google)](#org9cc9a82)
-    4.  [50 Questions to Test True Data Science Knowledge](#org3f1321f)
-    5.  [Data Science questions](#org72354a4)
-    6.  [Data Scientist’s 2020 Toolbox: A List of Tools to Increase Your Productivity](#org91a0d1e)
-    7.  [Some Important Data Science Tools that aren’t Python, R, SQL or Math](#org4607253)
-    8.  [The Essential Skills Most Data Science Courses Won’t Teach You](#org9b8de19)
-    9.  [Top 9 Data Science Careers of the Future](#orgeeecc35)
-    10. [Data Science’s Most Misunderstood Hero](#org0ec69cd)
-    11. [Data Science Concepts Explained to a Five-year-old](#org28f9d91)
-    12. [I Worked Through 500+ Data Science Interview Questionsg](#orgc2f0d1e)
-    13. [Business Analytics vs Data Analytics in One Picture](#orgd4782aa)
-    14. [The Role of the Data Scientist](#orgd3c06ac)
-    15. [How a Biologist Became a Data Scientist](#org2266f94)
-    16. [Data science pioneers (movie, 60 min, 2020)](#orgf5a79e3)
-    17. [Curiosity-Driven Data Science (27 Nov 2018)](#org336012f)
-    18. [66 job interview questions for data scientists (13.2.2013)](#org7670028)
-    19. [Data science workflow: Overview and Challenge (Philip Guo 10/2013)](#org2be1957)
-    20. [Twelve Tips for Data-Driven Research (Philip Guo, Nov 2015)](#orgea95c83)
-    21. [Data Scientist: The Sexiest Job of the 21st Century (HBR 10/2012)](#orge87a962)
-    22. [What Data Scientists Really Do, According to 35 Data Scientists (HBR 15.8.2018)](#org40c53a0)
-    23. [Discover data science - How to become a data scientist (programs)](#org422f889)
-    24. [Data Scientist: The Dirtiest Job of the 21st Century (20.2.20)](#orgeebe8f0)
-    25. [How I went from zero coding skills to data scientist in 6 months (2020)](#org0d9a4ab)
-    26. [How I Would Learn Data Science (If I Had to Start Over) (2020)](#org3b4a289)
-    27. [How To Learn Data Science If You’re Broke (2018)](#org85dabbc)
-    28. [If I had to start learning Data Science again, how would I do it? (2020)](#org12dc34f)
-    29. [Yes, You Can Become a Data Scientist Online. Here’s How. (19.5.20)](#orga48e816)
-12. [RStudio](#orgea5f804)
-    1.  [RStudio addins, or how to make your coding life easier](#org7497305)
-    2.  [Do, Share, Teach, and Learn Data Science with RStudio Cloud, Lou](#orge8e1a01)
-    3.  [A Dashboard of Shiny Apps by Andy Merlino 2020/07/17](#org9f27efe)
-    4.  [keyboard shortcuts and tips and tricks](#org0d04bc6)
-    5.  [Using version control with RStudio](#org24f3c4c)
-    6.  [Interactive code with Shiny - Example](#orgba7e8f4)
-    7.  [Xaringan presentations](#org218d7ce)
-    8.  [Connections window / database connections in RStudio](#org72a43f6)
-    9.  [RStudio Primers (cloud) created using learnr (github)](#org42d8514)
-    10. [RStudio Blog](#org90f9286)
-13. [AI/ML](#org1c9c2d4)
-14. [SQL/(R)SQLite](#org408a2dd)
-    1.  [Machine learning example with SQL only](#org64f4981)
-    2.  [Data Lakes vs. Data Warehouses](#org0968b2b)
-    3.  [Apache Spark, JDBC, sparklyr](#orgd84cf36)
-    4.  [R and ODBC – Pulling Data From A SQL Database](#org1492a20)
-    5.  [4 SQL Tips for Data Scientists and Data Engineers](#org581e3d5)
-    6.  [SQL equivalents in R](#orgb60281b)
-    7.  [Building Complex SQL Queries with R](#org33836f9)
-    8.  [Ten SQL Concepts You Should Know for Data Science Interviews](#org7053b2e)
-    9.  [Linear Regression with SQL (whitepaper) & R Notebook](#orge78e134)
-    10. [Using SQL in RStudio (29.4.20)](#orgac91265)
-    11. [Appropriate uses for SQLite](#orga5776fd)
-    12. [Relational Algebra (tutorialspoint)](#orga4d1753)
-    13. [RSQLite](#orgf6b45cd):rsqlite:
-        1.  [access in RStudio with the connections pane](#org36d7d57)
-        2.  [Read Data from an SQLite Database (video 8 min)](#org1d5b82b)
-        3.  [RSQLite = SQLite in R](#org5558f7c)
-        4.  [Beginners Guide to SQLite (in R)](#org0933e9e)
-    14. [JSON (JavaScript Object Notation) Files](#orgae567b2)
-        1.  [RJSON package](#orgf9572c4)
-        2.  [Tutorial: Working with Large Data Sets using Pandas and JSON in Python](#orgfb4c16b)
-    15. [SQL Joins Grafik](#org3893c0d)
-    16. [SQL Data Types (Mode)](#orgf257abf)
-    17. [Crunchbase - data dashboard solution](#org893692a)
-    18. [SQL for Data Scientists, in Under 6 Minutes](#org6e0cfb2)
-    19. [SQL Case Study: Investigating a Drop in User Engagement](#orgd8e04ac)
-    20. [SQL Case Study: Investigating a Drop in User Engagement (21 May 2020)](#org9bec9b9)
-15. [Blogs worth reading](#org9b5b79b)
-    1.  [Will Kurt Count Bayesie](#org4336fbc)
-        1.  [Why Bayesian Stats Needs Monte-Carlo Methods](#org3e030d1)
-    2.  [“One Year of Data Science Blogging — Was it Worth it?”](#orgf4badcf)
-    3.  [Data Science is a Science (Just Not the One You May Think)](#orgc6c302a)
-    4.  [Megan Stodel](#org001ebbd)
-    5.  [Anita Graser](#org294446d)
-    6.  [pete werner - Density plots in ggplot](#orgbc55ec1)
-    7.  [Corey Sparks R blog (demographic modeling - cluster analysis)](#orga56665e)
-    8.  [Quantum jitter](#orgacd4bc3)
-    9.  [Richie Cotton 4D Pie Charts](#org0ae3deb)
-    10. [Martin Johnsson's blog about genetics](#org1bdc56c)
-    11. [Guest blogging R-posts.com](#org8b3401c)
-    12. [Mathew Analytics (e.g. R code review)](#orge66ef31)
-    13. [Statistical modeling, causal inferene, and social science](#org8427afb)
-    14. [R Rendering - Tylermw](#org41b6cfe)
-    15. [Sebastian Kranz](#org08c71d3)
-    16. [18 great blog posts from 2016](#org75d221a)
-    17. [List of top data science blogs 2020 (via Hi! I am Nagdev)](#org29fba13)
-    18. [Joshua Cook - Riddler](#org62d9e85)
-    19. [R-Bloggers](#org0f3c0c7)
-    20. [Radford Neal - COVID-19](#orgd932558)
-    21. [Holker K. von Jouanne-Diedrich](#org50e9ff0)
-    22. [https://physicsgarage.com/](#org009dace)
-    23. [Publishable Stuff / Rasmus Baath](#org5a3d093)
-    24. [Xi'An's OG](#org83ac84b)
-    25. [Radford Neal's blog](#org31b4941)
-    26. [Vicky Boykis](#orgf8b10b2)
-    27. [Markus Lang](#org2ad097a)
-    28. [Aerin Kim](#orgb9f9dd9)
-    29. [Cassie Kozyrkov](#orgab2f2f5)
-    30. [Tim Gowers](#org84ee53e)
-    31. [RStudio Blog](#org2d946f2)
-    32. [RWeekly](#orgfa85ec0)
-16. [Datasets](#org9006e04)
-17. [lessr](#org8a28e46)
-18. [NLP](#org5190298)
-    1.  [State-of-the-art NLP models from R:](#orgac7ef3d)
-    2.  [A Guide to Text Annotation — the Key to Understanding Language](#orgce29a5b)
-    3.  [Datacamp: natural language processing in R](#org4dc87f4)
-19. [Blockchain](#orge9c12bf)
-20. [Lessons](#org4c8f526)
-    1.  [Reinstall missing LaTeX packages with TinyTex](#org4546c62)
-21. [Interesting applications](#org4e1e6cd)
-    1.  [Nobel-prize winners for Biden](#org8ecf41d)
-    2.  [Officer R package - manipulate Word and PPT documents](#org9580b58)
-    3.  [Have R Look After Your Stocks!](#orgce6b96b)
-    4.  [Analysing campaign contributions (2018-2020)](#org6c56a9c)
-    5.  [R for Health Data Science (book)](#org298b1bf)
-    6.  [Movie recommender system (DS portfolio) with Tableau (Medium blog post)](#orgbcbb29d)
-    7.  [Hegel vs Nietzsche NLP](#orge52ae81)
-    8.  [Star Wars Fandom Survey](#org1a51ebf)
-    9.  [Genomic data science (coursera)](#org6da316d)
-    10. [Introduction to survival analysis (customer churn/retention)](#org6a32ee5)
-    11. [Tidy Tuesday live screencast: Analyzing European energy in R](#org2149b6e)
-    12. [Sharing pictures from holidays in the Canadian Rockies (with R)](#orga739db1)
-    13. [The Goldilocks Principle - investing in stocks](#org8639c94)
-    14. [Customer Churn – Logistic Regression with R (2017)](#org6566140)
-    15. [Twitter text analysis: The Most Popular Towards Data Science Article Topics on Twitter](#orgb5b6d5f)
-    16. [Labor force growth by decade (plot)](#org7f682c8)
-    17. [Storytelling with Data and ggplot: Visualising the Receding Ice Sheets](#orgd42c348)
-    18. [Earthquake early warning system](#orgc50814b):node:red:ibm:
-    19. [International Space Station](#org8e2802a)
-    20. [COVID-19](#orgb8f4ad4)
-        1.  [Does the chart support the text? (COVID-19 and economic data)](#orga1847ec)
-        2.  [Risk of catching a fatal case of COVID-19 is like having a bath (Sept 2020)](#org2ee58a4)
-        3.  [Twitter discussion example (June 2020)](#org2e2703e)
-        4.  [Micromort = one-in-a-million chance of death risk unit](#org79151ae)
-        5.  [Track COVID-19 Data Yourself with R](#org0cd6126)
-        6.  [How to Think Like an Epidemiologist (NYT, 4 Aug 2020)](#orgc9e62d0)
-        7.  [covid19italy v0.3.0 is now on CRAN](#org47e1288)
-        8.  [This Chart Predicts Which Colleges Will Survive the Coronavirus](#org4403476)
-        9.  [You’re Not Measuring COVID-19 Correctly](#org48d3e91)
-        10. [[[http://r-posts.com/hands-on-how-to-build-an-interactive-map-in-r-shiny-an-example-for-the-covid-19-dashboard/][Hands-on: How to build an interactive map in R-Shiny: An example](#orgb64830b)
-        11. [Data Mining COVID-19 Epidemics with Orange](#org4cf4104)
-    21. [Credit Risk Modelling using Machine Learning using R](#org4829da6)
-    22. [How to create a timeline of your CV in R?](#orgc133b6d)
-    23. [Crime by the numbers (R for criminologists)](#orga90d639)
-    24. [Qualitative Data Science: Using RQDA to analyse interviews](#orga180c5e)
-    25. [Discourse Network Analysis: Undertaking Literature Reviews in R](#org33a329e)
-    26. [Movement data in GIS](#orge76c280)
-    27. [Complex societies precede moralizing gods throughout world history](#org5387790)
-    28. [Brownian motion](#orgab7f4ea)
-        1.  [Simulating Brownian Motion in R](#org80fc558)
-    29. [The rise of the Netflix hit](#orgbb0ed24)
-    30. [Google teaches ML to journalists](#org7e1bfaa)
-    31. [Guide to Classification on Imbalanced Datasets](#org92d9860)
-    32. [Automatically create draw.io diagrams from CSV files](#org3b0662e)
-    33. [How to Build a Video Game in R Shiny with CSS, JavaScript, and R6 Classes](#orgba6d9e8)
-    34. [Pacific Island Hopping using R and the iGraph package](#orge777a82)
-    35. [Website building: Export WordPress to Hugo Markdown or Org Mode with R](#org5394d51)
-    36. [A Complete Introduction to Apache Airflow (automating workflows)](#org6be111c)
-    37. [RTutor: Quantifying Social Spillovers in Movie Ticket Sales](#org84a4186)
-    38. [Build a Chatbot with R](#org3cc94d5)
-    39. [Dataquest data science projects](#org1500b6c)
-    40. [Experiences Building a Production Shiny App for Mobile](#org2343e5f)
-    41. [17 classification algorithms using R](#org87e3fa8)
-    42. [Comet - ds and ml wrapper](#org3c6cb2e)
-    43. [ISING Model (Quanta Mag)](#org4201057)
-    44. [Social network analysis with igraph (tutorial)](#org43d57e9)
-    45. [Riddles](#orgf383342)
-    46. [Games](#org9019f56)
+1.  [RMarkdown / R Notebook / learnr / RTutor / OER](#org94d4a17)
+    1.  [Image clipper into RStudio (add-in)](#orgb95691f)
+    2.  [Getting started with R and RStudio (Dataquest tutorial)](#org1f19f3e)
+    3.  [Replacing PowerPoint with R](#org54cc03d)
+    4.  ["Dashboards are dead" see also https://count.co](#orgfac334a)
+    5.  [Interactive R tutorials with learnr (youtube)](#org04d8ce8)
+    6.  [Tips and tricks in RStudio and R Markdown](#org248a641)
+    7.  [Jupyter Notebooks](#orga6693fb)
+    8.  [Literate Programming](#org30d5b0e)
+        1.  [Org-mode litprog in Emacs (2018) - long youtube video](#org4f76c87)
+        2.  [Configuring Emacs with Org mode and literate programming](#orgf0f40a8)
+        3.  [Interview with Donald Knuth (1993) - LitProg, CWEB](#orge3b5e8d)
+        4.  [Stanford page on LitProg](#org87f86b7)
+        5.  [LitProg article by Knuth 1984](#orgac5652e)
+        6.  [The CWEB System of Structured Documentation (1993-2001)](#orgbde9873)
+        7.  [LitProg - Propaganda and Tools (Christopher Lee 1994)](#orgf3af4f4)
+    9.  [DS in education](#org662f7dd)
+        1.  [Open-Source Authorship of Data Science in Education Using R,](#orgbc69083)
+    10. [R Markdown](#org1ce05eb)
+        1.  [Converting LaTeX to Bookdown (accessible lecture notes)](#org38f7b5b)
+        2.  [How R Markdown changed my life (video 23 min)](#orgd0e662d)
+        3.  [Meta RMarkdown - Taxonomy and Use cases](#org09f9076)
+        4.  [Useful YAML options for generating HTML reports in R](#org4c23cc5)
+        5.  [R Markdown Crash course (bookdown)](#org6e8bed8)
+        6.  [Book: Practical R for Mass Communication and Journalism](#org93885e0)
+        7.  [Course: Datacamp course R Markdown](#org3484d95):datacamp:
+        8.  [RTutor](#org047ad29)
+        9.  [Interactive Tutorials for R](#orgc1185f0):R:learnr:
+        10. [Markdown + XMInd (Blog)](#orgb617864)
+        11. [How I teach R Markdown 29.5.2020](#orgb4870ff)
+        12. [Making slides with xaringan 16.1.2019](#org34475be)
+        13. [R Markdown Tutorial (Video 2018, 8 min)](#org346e30c)
+        14. [Advantages of Using R Notebooks For Data Analysis Instead of Jupyter Notebooks (6.6.17)](#orgbd79a16)
+        15. [Markdown Tutorial](#org7f6d2be)
+        16. [Pimp my RMD: a few tips for R Markdown by Yan Holtz - 10 December 2018](#orgd9ffb5b)
+        17. [Bookdown - R Markup](#org27cb596)
+        18. [R Markdown from R Studio](#orgf795b3d)
+    11. [learnr](#org352b42c)
+        1.  [Teaching in learnr](#org3b53ea3)
+        2.  [Publishing learnr Tutorials on shinyapps.io](#orge767efa)
+2.  [Emacs / ESS](#org8ad64c5)
+3.  [Teaching - other courses and ideas](#org95dda6e)
+    1.  [STAT 220 labs Amelia McNamara](#orgf22ec7b)
+    2.  [A fresh look at introductory data science (paper 2020)](#orge4347b7)
+    3.  [Data science in a box (tidyverse, learnr)](#org2d291ce)
+    4.  [DS112 tutorials (net apps, learnR and GitHub exercises)](#org269089c)
+        1.  [R Basics](#org9e27c4e)
+        2.  [ggplot() and dplyr tutorial](#orgc832d1b)
+    5.  [Teaching Statistics with R](#org5945548)
+    6.  [Future of Statistical Programming](#org4bd1ceb)
+    7.  [Bridging the Gap Between Tools for Learning and for Doing Statistics](#org3f4308f)
+    8.  [Codementor](#org8a052d7)
+    9.  [Online course: Adventures in R](#org2a3ada0)
+    10. [Proposal for an educational data science course](#org3534b23)
+    11. [R Studio Cloud Primers](#org71fd0f7)
+    12. [How I Taught Scientific Blogging with R Markdown, Online](#org08632d7)
+    13. [RStudio Instructor Certification Exams](#org7af5096)
+    14. [Market analysis course (interactive, free, and with a lot of R)](#org3f0cd86)
+    15. [R for Bio Data Science (DTU Wiki)](#org6f05890)
+    16. [Data science for biologists (playlist youtube)](#org69bfdd9)
+    17. [A novice’s guide to learning to code with CS50](#orgffedbf1)
+    18. [Introduction to SQL (Coursera)](#org741c31e)
+    19. [Syllabus](#org56d83b9)
+    20. [Mismatch Between Academic and Real-world Data Science Projects](#org7c87bcf)
+    21. [UC Berkeley Connector Courses](#org8690bff)
+    22. [John DeNero | YouTube |  Intro Foundations of Data Science Intro | Online Book](#org28bc5eb)
+    23. [Computational and inferential thinking | Online book](#orgcbc6ff2)
+    24. [Data 8 - The foundations of data science (UC Berkeley) | Site: data8.org | Spring 2020 syllabus](#org5e79245)
+    25. [Harvard edX Program](#org43074a2)
+    26. [Heidi Seibold | video 55 min |  presentation](#org67d7c92)
+    27. [The Johns Hopkins Data Science Lab](#org1dbdff4)
+4.  [Data wrangling](#orgd949daf)
+    1.  [Cleaning messy data with tidyverse](#orgcdd8a95)
+    2.  [Data Cleaning and Exploratory Analysis in Python and R](#orgf4a4340)
+    3.  [Beyond Ordinary PCA: Nonlinear Principal Component Analysis](#org6241550):medium:
+5.  [R](#org574e0e4)
+    1.  [R vs Python](#org51ad484)
+        1.  [Choosing Python or R for Data Analysis? An Infographic](#orga70ce8d)
+        2.  [Python vs. R: A Text Mining Approach for analyzing the Research Trends in Scopus Database](#org8ce7fd6)
+        3.  [Trying R for the First Time](#org9510015)
+        4.  [Debunking R and Python Myths: Answering Your Questions](#org13d1b31)
+    2.  [Finding factorials](#orge1146d8)
+    3.  [Packages](#org7f492f8)
+        1.  [Tidytable: tidyverse functions with data.table speed](#org6f04374)
+        2.  [Text mining with R and quanteda](#orgc11a600)
+        3.  [renv - Why Package & Environment Management](#org79d2a47)
+        4.  [R Packages: A Beginner's Guide](#org66cd6b4)
+        5.  [Introduction to the DataRobot R Package](#orgf397a96)
+        6.  [tidyverse](#orgb80c594)
+        7.  [data.table](#orgf4102a3)
+    4.  [Data manipulation in r using data frames - an extensive article of basics](#orge63e0cc)
+    5.  [How to Extract Day from Datetime in R with Examples](#org2b4cbdd)
+    6.  [How to subset a data frame column data in R](#orgb9c6603)
+    7.  [Common R error messages](#orgefffda3)
+    8.  [A Guide to the Pipe in R](#orga1877fc)
+    9.  [Visualize as flow diagrams](#orgc43a187)
+    10. [Demonstrating the central limit theorem in R](#orgf4e1024)
+    11. [R & RStudio - The Interoperability Environment for Data Analytics](#orgcc73dba)
+    12. [First sample sessions (R documentation)](#org785cb32)
+    13. [How R still outperforms Python](#org29e42aa)
+    14. [metR - meteorogical (tidy) data package](#org76fcecd)
+    15. [How to evaluate R Packages](#org959be1b)
+    16. [R Style guides](#org387a6b2)
+        1.  [R code style guide richie cotton](#orga9f9ab4)
+        2.  [R-Style-Guide &#x2013; Towards a Goal of RED Code (Matloff 2019)](#org7d350f3)
+        3.  [R Style guide (jean)](#org130e073)
+        4.  [Google’s R Style Guide](#orgd58aaa2)
+        5.  [Bioconductor (bioinformatics)](#org6a89747)
+    17. [Working with text in R (presentation)](#org017b26e)
+    18. [doubleheadR (surveymonkey data analysis)](#org8326b5a)
+    19. [magrittr - pipeline library](#org6baac6c)
+    20. [Functional Programming in R with purrr](#org939d742)
+    21. [Few things I learned while writing an R package](#orgda02121)
+    22. [Unit Testing in R](#org0935d70)
+    23. [Building a collection of Hello World functions in R](#orgd99cdad)
+    24. [Build a Corporate R Package for Pleasure and Profit by Brad Lindblad, Mar 5, 2019](#org75c9fcc)
+    25. [Doing Maths Symbolically: R as a Computer Algebra System (CAS)](#org2bcbceb)
+    26. [Five Tidyverse Tricks You May Not Know About](#orgc641182)
+    27. [How to write your own R package and publish it on CRAN](#orgcbfbada)
+    28. [Setting up your R environment (webinar w/Richie Cotton)](#org430a11c)
+    29. [R Coding Style Guide](#org19a2eb5)
+    30. [Installing R 4.0 under Ubuntu 18.04](#org159ee29)
+    31. [Text Mining with R (bookdown)](#org39baa35)
+    32. [causaloptim: An Interface to Specify Causal Graphs and Compute Bounds on Causal Effects](#org35d661e)
+    33. [Machine learning using H2O](#org6a95c7c)
+    34. [Learning R With Education Datasets](#org6c6b614)
+    35. [Select first or last rows of a data frame](#orgf910400)
+    36. [Good coding style (Wickham, Advanced R)](#org0dc7447)
+    37. [formatr: Format code automatically (Yhui Yie, 2019)](#org55bb7c9)
+    38. [Performance Optimization in R: Parallel Computing and Rcpp](#org3548930)
+    39. [R Exercises](#org5eb8c84)
+    40. [R Programming 101 (YouTube Playlist Data Professor)](#org57c81a0):R:RStudio:
+    41. [Testing statistical packages in R](#org1e40f41)
+    42. [Ten more random useful things in R you may not know about](#org5682ffd)
+    43. [Onboard Help System: help.start()](#orgf32f230)
+    44. [How to do more with R (playlist)](#org63f451e)
+    45. [The Seven Key Things You Need To Know About dplyr 1.0.0](#org07312e7)
+    46. [A Year in Review of R Programming 2019](#org0d3264c)
+    47. [R Programming Pundits (Telegram channel) - free tutorials](#orgd70ff86)
+    48. [Programming with R (online tutorial)](#org11bfbec)
+    49. [Introduction to R and RStudio (online tutorial)](#orga3c78b3)
+    50. [R for Data Science (book, 2017)](#org668c0ec)
+    51. [Vlog by Philip Guo on the R ecosystem and R for Data Science - 5 Feb 2018](#org68b1a32)
+    52. [Ten Time-Saving R Hacks (27.2.20)](#org8be62b0)
+    53. [Textmining with R (book - 2014)](#orgf4e6340)
+    54. [Geocomputation with R (book - 2018)](#org271134f)
+    55. [Build interactive tutorials with learnr (2020)](#orgbcd8fd5)
+    56. [Example: setting up R, RStudio, tidyverse R package](#org67533f2)
+    57. [R and Jupyter Notebook](#org5fc2e0d)
+    58. [Datacamp blog (30 Nov 2016)](#org4a56181)
+6.  [Visualization](#org9de3fd7)
+    1.  [“What Data Visualisation Experts Wish They Knew When They First Started”](#orgab7e541)
+    2.  [Tutorial: Plotting in R for Python Refugees](#orga834594)
+    3.  [Microsoft Research: Expressive Pixels](#orgfd766b5)
+    4.  [Challenges](#org0e62638)
+        1.  [Does the chart support the text? (COVID-19 and economic data)](#org58807a7)
+    5.  [Most popular on Netflix. Daily Tops for last 60 days](#orgbde3559)
+    6.  [How dynamic is the browser market?](#org67c3687)
+    7.  [Energy consumption in last 140 years](#org8d0caa1)
+    8.  [Gapminder](#org42ec6a0)
+        1.  [How to build Animated Charts like Hans Rosling — doing it all in R](#org7475588)
+        2.  [Exploring the Gapminder Data with R](#org2b1ea87)
+        3.  [Empfehlungen Roland Müller (Rosling pro and con):](#org2bceb74)
+    9.  [ggplot](#orgbce1d5d)
+    10. [Create a line graph with ggplot](#org5a2bdd9)
+        1.  [Dataquest beginner's tutorial ggplot2](#orge0dad5f)
+        2.  [Graphics in R with ggplot2](#orgb1a4267)
+        3.  [ggplot2 easthetics cheat sheet](#org69bcb79)
+        4.  [Storytelling with Data and ggplot: Visualising the Receding Ice Sheets](#org7a64077)
+        5.  [A ggplot2 Tutorial for Beautiful Plotting in R](#orgb78991c)
+        6.  [Tutorial: why data visualization is important (ggplot2)](#orgd2e2af5)
+        7.  [Writing Functions to Automate Repetitive Plotting Tasks in ggplot2](#orgf972d34)
+        8.  [a ggplot2 grammar guide](#org0007a16)
+        9.  [Top 50 ggplot2 Visualizations - The Master List (with full R code)](#orge772133)
+        10. [Storytelling with Data and ggplot: Visualising the Receding Ice Sheets](#orgf16a849)
+    11. [Abstractions - Physarum model visualizations](#orgdda8cfe)
+    12. [You’re Plotting the Wrong Things](#org27836b2)
+    13. [Analytics is not storytelling (Kozyrkov](#org58488fa)
+    14. [You Can Design a Good Chart with R](#org1273066)
+    15. [The Goldilocks Principle - investing in stocks (beautiful graphs)](#org209637d)
+    16. [Embed Interactive Plots in Your Slides with Plotly](#org8d5b07f)
+    17. [PowerPoint is evil (E Tufte, 9 Jan 1983)](#org65ea338)
+    18. [Cheesecake Diagrams: Pie Charts with a Different Flavour](#orge5d7dba)
+    19. [Demo: Create beautiful charts with Datawrapper](#orgba6a06b)
+    20. [Making tables with the gt package](#org85595e8)
+    21. [A Comprehensive Guide to the Grammar of Graphics for Effective Visualization of Multi-dimensional Data](#orgaade36b)
+    22. [Package for colorblind plots](#org48e0f5c)
+    23. [Guide to gt tables (Richard Iannone)](#orgd8988af)
+    24. [Visualization examples](#orgd2d313f)
+        1.  [Making Interactive Maps in R with Less Than 15 Lines of Code](#org426da14)
+        2.  [Sqrt(2) puzzle animation](#org8e52178)
+        3.  [Power socket types Europe (Twitter account gesperrt!)](#orgabdf569)
+        4.  [Size of Africa](#org16ed321)
+    25. [fabricerin package to draw on shinyapp documents (?)](#org0f585ff)
+    26. [The ultimate EDA visualization in R (raincloud plots)](#orga935547)
+    27. [SpaceX Satellites Ruin Perfectly Good View of Comet NEOWISE](#org8315f99)
+    28. [Re-engineer graphs to extract the data (WebPlotDigitizer)](#orge2d0174)
+    29. [COVID-19 cases in India drop every Sunday - how to explain?](#org395e686)
+    30. [Animated charts: visualizing “changes” in R](#org9a0be9c)
+    31. [Making Interactive Maps of Public Data in R by Ryan Rosenberg](#orgd0020b5)
+    32. [ggtext - formating text in graphs](#orga42ace7)
+    33. [A Layered Grammar of Graphics](#org479b410)
+    34. [My top 5 visualization tools for data science](#org15185d2)
+    35. [Visualization good/bad examples](#orgc48322d)
+    36. [How to Visualize Data with R](#orgb8bd896)
+    37. [Hadley Wickham: Managing many models with R (2016)](#orgeed7da7):modeling:R:wickham:video:
+    38. [Past project examples (Andrew Heiss)](#org66ae10e)
+    39. [R Visualizations David Gerbing 2020](#org8d226c7)
+    40. [Online course in data visualization with R (May 2020) - Georgia State U / Dr Andrew Heiss](#org017c683)
+    41. [Free book: Data Visualization with R (Rob Kabacoff, 2018)](#org8f90610)
+    42. [Free book: Data Visualization - A practical introduction](#org79e0146)
+    43. [Free book: Fundamentals of Data Visualization by Claus O Wilke](#orgce47c73)
+    44. [Easy Ways to Make Your Charts Look More Professional 28 May 2020](#org6951aeb)
+    45. [Stacked Bar Graphs, Why and How 28 May 2020](#org71b2619)
+    46. [Effective Visualizations for Credible, Data-Driven Decision Making (16.4.20)](#org0710943)
+    47. [Visualisation example: Data Privacy in the Age of Big Data](#org1f96969)
+    48. [Practical Implications of Sharing Data: A Primer on Data Privacy,](#orgda24fad)
+7.  [Git/Github](#org2a372bb)
+    1.  [Happy Git and GitHub for the useR (bookdown)](#org32309ec)
+    2.  [Git Emacs integration](#org352bbfb)
+    3.  [How to upload your R code on GitHub: example with an R script on MacOS](#orgbd8993c)
+    4.  [The State of the Octoverse](#org81dedf3)
+    5.  [Building a blog using github and jekyll](#org8f5cdb6)
+    6.  [Using GitHub Actions for MLOps & Data Science](#orge2ce188)
+    7.  [BIRKENKRAHE @github](#org9aa83dc)
+    8.  [Git Your SQL Together (with a Query Library)](#orgb06853a)
+    9.  [Using GitHub Classroom to teach statistics (paper 2019)](#org0fe11f8)
+    10. [How to use Git and Github with R (15 min video)](#orged9c84b)
+    11. [How to upload your R code on GitHub: example with an R script on MacOS (24.5.20)](#orga4f8c1b)
+    12. [Why You Should Blog with Hugo?An Introduction to the 'Blog with Hugo'](#org66077b3)
+8.  [Mixed Links](#org76d38f8)
+9.  [Math](#org1a27d36)
+    1.  [ML](#org29cf12c)
+        1.  [Math Companion to The Art of Machine Learning](#org3cfc9fb):matloff:pdf:
+    2.  [Stats](#org2608ddb)
+        1.  [Why Bayesian Stats Needs Monte-Carlo Methods](#org5f1b87a)
+        2.  [Introduction to Probability (2nd 3d) PDF](#org2ce7950)
+        3.  [A trick question for data science buffs](#org930876e)
+        4.  [Descriptive vs Inferential Statistics in One Picture](#org7a072ba)
+        5.  [What the Null Hypothesis Really Means— According to a Statistics Professor](#org9cebd13)
+        6.  [P-values Explained By Data Scientist](#orgec40990)
+        7.  [How most statistical tests are linear models (with cheat sheet)](#org9ca6443)
+        8.  [What is p-value short for? (Kozyrkov)](#orgad18c38)
+        9.  [The Magic of The Bell Curve (turn Python script into R)](#orgf2c572c)
+        10. [Monte Carlo Simulation in R (see also Matloff 2020)](#orgaeb4662)
+        11. [Outliers detection in R](#orgbd5e650)
+        12. [Stop using p=0.05](#org86db9da)
+        13. [Essentially random isn't the same as actually random](#org504ce63)
+    3.  [General maths](#org44414d2)
+        1.  [The Directed Edge Reinforced Random Walk: The Ant Mill Phenomenon](#org20f6e02)
+        2.  [Understanding Mathematical Symbols with Code](#org96d2123)
+        3.  [A computational approach to the Prisoner’s Dilemma](#orga449019)
+        4.  [What is Graph Theory, and why should you care?](#orgca1ccce)
+        5.  [Matrices are Graphs (12 Aug 2020)](#org2bdbe1e)
+        6.  [The Fastest Way to Compute the Fibonacci Sequence](#orgff14a7b)
+        7.  [The Collatz Conjecture](#org788999a)
+        8.  [The Riemann Hypothesis, explained](#org5390b0e)
+        9.  [What is the determinant?](#org293483c)
+        10. [A Tribute to Leonard Euler (youtube)](#orgd4f9ab9)
+        11. [Philosophy of Mathematics (Stanford Encyclopedia of Philosophy)](#org0559b32)
+        12. [Introduction to Group Theory (see also book by Charles Pinter, kindle)](#org62ad097)
+        13. [Six Difficult Ways of Becoming a Millionaire by Francesco Di Lallo](#org09acc69)
+        14. [The algebra and machine representation of statistical models (PhD)](#orgfe897fb)
+        15. [Mathematics for machine learning (book)](#orgfe6a44a)
+        16. [Statistics with R specialization @Coursera](#org82c5f30)
+        17. [Business statistics and analysis specialization @Coursera](#org6576e61)
+        18. [Statistics and probability in data science using Python](#orgc73b83f)
+        19. [Linear algebra: foundations to frontiers @edX](#org8b862e7)
+        20. [Mathematics for machine learning: linear algebra @Coursera](#org4d80d52)
+        21. [Pre-university calculus @edX](#org992c75c)
+        22. [Calculus I @KhanAcademy](#orgc0cd25c)
+        23. [Mathematics for machine learning: multivariable calculus  \* Discrete Mathematics <code>[0/8]</code>](#org63e8dec)
+        24. [Introduction to discrete mathematics for computer science specialization @Coursera](#org8df5071)
+        25. [Introduction to mathematical thinking @Coursera](#org7c73c23)
+        26. [Master discrete mathematics: sets, math logic, and more @Udemy](#orgc372a52)
+        27. [Optimization methods in business analytics @edX](#org8ab5d82)
+        28. [Discrete optimization @Coursera](#org4be709b)
+        29. [Deterministic optimization @edX](#org9f8dc66)
+10. [NN](#orgf5daf82)
+    1.  [The Neural Network, A Visual Introduction | Visualizing Deep Learning](#org0d1a1f2)
+    2.  [RobustFill: Neural Program Learning under Noisy I/O (2017)](#org7374d31)
+    3.  [Building a neural net from scratch using R (part 1, part 2)](#org74588e1)
+    4.  [The Beginner’s Glossary of Neural Network Terms](#org6d09712)
+    5.  [Every Machine Learning Algorithm Can Be Represented as a Neural Network](#orgc7594e0)
+    6.  [NN and ML vs Stats (culture wars)](#org57c789f)
+    7.  [BrainOS — The Most Brain-Like AI](#org57ca170)
+    8.  [Understanding How Neural Networks Think](#org1121d35)
+    9.  [Can you remove 99% of a neural network without losing accuracy?](#org0a2ea24)
+    10. [Symbolic Mathematics Finally Yields to Neural Networks](#org8aa5d5f)
+    11. [Explainable AI: Neural Networks (IBM)](#org6e16e88)
+    12. [Why are neural networks so powerful?](#org6e5a76e)
+    13. [22 articles about NN Jan 2019g](#orgaa61633)
+11. [Careers](#org13fd8f2)
+    1.  [Podcast "A career in data science"](#org2f584a9)
+    2.  [How You Should Change Your Data Science Education](#orga0e122f)
+    3.  [Professional Machine Learning Engineer (Google)](#org24e853d)
+    4.  [50 Questions to Test True Data Science Knowledge](#orgdc42b69)
+    5.  [Data Science questions](#orgcfc8624)
+    6.  [Data Scientist’s 2020 Toolbox: A List of Tools to Increase Your Productivity](#orgcbc9579)
+    7.  [Some Important Data Science Tools that aren’t Python, R, SQL or Math](#org87b7257)
+    8.  [The Essential Skills Most Data Science Courses Won’t Teach You](#org062d05f)
+    9.  [Top 9 Data Science Careers of the Future](#org386910d)
+    10. [Data Science’s Most Misunderstood Hero](#org99d04ae)
+    11. [Data Science Concepts Explained to a Five-year-old](#orgacfd646)
+    12. [I Worked Through 500+ Data Science Interview Questionsg](#org366471d)
+    13. [Business Analytics vs Data Analytics in One Picture](#org05ee075)
+    14. [The Role of the Data Scientist](#org81e7098)
+    15. [How a Biologist Became a Data Scientist](#org705c1ab)
+    16. [Data science pioneers (movie, 60 min, 2020)](#org14e18cf)
+    17. [Curiosity-Driven Data Science (27 Nov 2018)](#org46a5847)
+    18. [66 job interview questions for data scientists (13.2.2013)](#org9372af7)
+    19. [Data science workflow: Overview and Challenge (Philip Guo 10/2013)](#org863a0bd)
+    20. [Twelve Tips for Data-Driven Research (Philip Guo, Nov 2015)](#org22d6d32)
+    21. [Data Scientist: The Sexiest Job of the 21st Century (HBR 10/2012)](#org116a437)
+    22. [What Data Scientists Really Do, According to 35 Data Scientists (HBR 15.8.2018)](#orgcfd4944)
+    23. [Discover data science - How to become a data scientist (programs)](#org6223fdb)
+    24. [Data Scientist: The Dirtiest Job of the 21st Century (20.2.20)](#orge692286)
+    25. [How I went from zero coding skills to data scientist in 6 months (2020)](#org49ac20d)
+    26. [How I Would Learn Data Science (If I Had to Start Over) (2020)](#orgd9766cb)
+    27. [How To Learn Data Science If You’re Broke (2018)](#org82b7684)
+    28. [If I had to start learning Data Science again, how would I do it? (2020)](#org5b10328)
+    29. [Yes, You Can Become a Data Scientist Online. Here’s How. (19.5.20)](#org3e542c6)
+12. [RStudio](#orgff2181d)
+    1.  [RStudio addins, or how to make your coding life easier](#org1cef9a8)
+    2.  [Do, Share, Teach, and Learn Data Science with RStudio Cloud, Lou](#orgd9b448e)
+    3.  [A Dashboard of Shiny Apps by Andy Merlino 2020/07/17](#org98f7aac)
+    4.  [keyboard shortcuts and tips and tricks](#org940db76)
+    5.  [Using version control with RStudio](#orgd6bba33)
+    6.  [Interactive code with Shiny - Example](#orga77848e)
+    7.  [Xaringan presentations](#org8768079)
+    8.  [Connections window / database connections in RStudio](#org2bb217b)
+    9.  [RStudio Primers (cloud) created using learnr (github)](#org080caf9)
+    10. [RStudio Blog](#org57446c8)
+13. [AI/ML](#org6290833)
+14. [SQL/(R)SQLite](#org1d9e81e)
+    1.  [Machine learning example with SQL only](#org125c1eb)
+    2.  [Data Lakes vs. Data Warehouses](#org5e654e1)
+    3.  [Apache Spark, JDBC, sparklyr](#orgd4ce9b8)
+    4.  [R and ODBC – Pulling Data From A SQL Database](#orge330154)
+    5.  [4 SQL Tips for Data Scientists and Data Engineers](#org3d74d98)
+    6.  [SQL equivalents in R](#org24a97d4)
+    7.  [Building Complex SQL Queries with R](#org2859ffc)
+    8.  [Ten SQL Concepts You Should Know for Data Science Interviews](#org943b17d)
+    9.  [Linear Regression with SQL (whitepaper) & R Notebook](#org26d8e86)
+    10. [Using SQL in RStudio (29.4.20)](#org944a4de)
+    11. [Appropriate uses for SQLite](#orgb5783fb)
+    12. [Relational Algebra (tutorialspoint)](#org9c9a414)
+    13. [RSQLite](#org22b5e8a):rsqlite:
+        1.  [access in RStudio with the connections pane](#org56f42ec)
+        2.  [Read Data from an SQLite Database (video 8 min)](#org5a4d7c5)
+        3.  [RSQLite = SQLite in R](#orgf5c1e5d)
+        4.  [Beginners Guide to SQLite (in R)](#org65cbc79)
+    14. [JSON (JavaScript Object Notation) Files](#org81c7752)
+        1.  [RJSON package](#org043476c)
+        2.  [Tutorial: Working with Large Data Sets using Pandas and JSON in Python](#org80fb544)
+    15. [SQL Joins Grafik](#org1b20fcd)
+    16. [SQL Data Types (Mode)](#orgfee3419)
+    17. [Crunchbase - data dashboard solution](#orged32c8f)
+    18. [SQL for Data Scientists, in Under 6 Minutes](#org1eb8050)
+    19. [SQL Case Study: Investigating a Drop in User Engagement](#orgdc00fad)
+    20. [SQL Case Study: Investigating a Drop in User Engagement (21 May 2020)](#org8c48060)
+15. [Blogs worth reading](#orgdf9f141)
+    1.  [Will Kurt Count Bayesie](#orga24c2a2)
+        1.  [Why Bayesian Stats Needs Monte-Carlo Methods](#orgd7e4240)
+    2.  [“One Year of Data Science Blogging — Was it Worth it?”](#orgc861681)
+    3.  [Data Science is a Science (Just Not the One You May Think)](#orgefaced9)
+    4.  [Megan Stodel](#org7b27f39)
+    5.  [Anita Graser](#org00e5bd1)
+    6.  [pete werner - Density plots in ggplot](#org78dcace)
+    7.  [Corey Sparks R blog (demographic modeling - cluster analysis)](#org69598f3)
+    8.  [Quantum jitter](#org27de15d)
+    9.  [Richie Cotton 4D Pie Charts](#orgcf72d7c)
+    10. [Martin Johnsson's blog about genetics](#orgc248fba)
+    11. [Guest blogging R-posts.com](#org3f306b1)
+    12. [Mathew Analytics (e.g. R code review)](#org1aa124a)
+    13. [Statistical modeling, causal inferene, and social science](#org8e9265d)
+    14. [R Rendering - Tylermw](#org9149a4d)
+    15. [Sebastian Kranz](#org1cca031)
+    16. [18 great blog posts from 2016](#org7694f62)
+    17. [List of top data science blogs 2020 (via Hi! I am Nagdev)](#org7301ca5)
+    18. [Joshua Cook - Riddler](#orgb5e38fb)
+    19. [R-Bloggers](#orgd39623d)
+    20. [Radford Neal - COVID-19](#org1b024eb)
+    21. [Holker K. von Jouanne-Diedrich](#org63404e6)
+    22. [https://physicsgarage.com/](#orgb0a5190)
+    23. [Publishable Stuff / Rasmus Baath](#org47b19f4)
+    24. [Xi'An's OG](#orgb3f213d)
+    25. [Radford Neal's blog](#org531b4da)
+    26. [Vicky Boykis](#org97bfcb2)
+    27. [Markus Lang](#org2050cfc)
+    28. [Aerin Kim](#orgb93180a)
+    29. [Cassie Kozyrkov](#org6651779)
+    30. [Tim Gowers](#orgb3bc085)
+    31. [RStudio Blog](#org9033dfa)
+    32. [RWeekly](#org37b958f)
+16. [Datasets](#org8db77cc)
+17. [lessr](#orgd7d5b3f)
+18. [NLP](#orgff8e1f2)
+    1.  [State-of-the-art NLP models from R:](#org491a3b8)
+    2.  [A Guide to Text Annotation — the Key to Understanding Language](#orgc91b2d7)
+    3.  [Datacamp: natural language processing in R](#orgc71bfb8)
+19. [Blockchain](#org8e8c3bd)
+20. [Lessons](#org774828e)
+    1.  [Reinstall missing LaTeX packages with TinyTex](#org634cbcc)
+21. [Interesting applications](#orgc0e05fe)
+    1.  [100 Time Series Data Mining Questions (with answers!) part 1-3](#orgb9fa910)
+    2.  [Nobel-prize winners for Biden](#orgafaf500)
+    3.  [Officer R package - manipulate Word and PPT documents](#org529eba2)
+    4.  [Have R Look After Your Stocks!](#org6a97a93)
+    5.  [Analysing campaign contributions (2018-2020)](#orgbe2112d)
+    6.  [R for Health Data Science (book)](#org468c316)
+    7.  [Movie recommender system (DS portfolio) with Tableau (Medium blog post)](#orgb3bead1)
+    8.  [Hegel vs Nietzsche NLP](#orgd5b10be)
+    9.  [Star Wars Fandom Survey](#org46e0fcf)
+    10. [Genomic data science (coursera)](#org577b405)
+    11. [Introduction to survival analysis (customer churn/retention)](#org3708434)
+    12. [Tidy Tuesday live screencast: Analyzing European energy in R](#org3d0afd6)
+    13. [Sharing pictures from holidays in the Canadian Rockies (with R)](#org7bb24d8)
+    14. [The Goldilocks Principle - investing in stocks](#org1c978ec)
+    15. [Customer Churn – Logistic Regression with R (2017)](#org15739ca)
+    16. [Twitter text analysis: The Most Popular Towards Data Science Article Topics on Twitter](#orga2978d7)
+    17. [Labor force growth by decade (plot)](#org9fc8fbf)
+    18. [Storytelling with Data and ggplot: Visualising the Receding Ice Sheets](#org366ef3a)
+    19. [Earthquake early warning system](#org3f925a2):node:red:ibm:
+    20. [International Space Station](#org6f59ace)
+    21. [COVID-19](#orgee92fb4)
+        1.  [Severity Score Derivation](#orgbc51370)
+        2.  [Does the chart support the text? (COVID-19 and economic data)](#orgf009fca)
+        3.  [Risk of catching a fatal case of COVID-19 is like having a bath (Sept 2020)](#org4a843c7)
+        4.  [Twitter discussion example (June 2020)](#org2d64ce5)
+        5.  [Micromort = one-in-a-million chance of death risk unit](#orgdc6ccad)
+        6.  [Track COVID-19 Data Yourself with R](#orgc3c2db4)
+        7.  [How to Think Like an Epidemiologist (NYT, 4 Aug 2020)](#org89ee27f)
+        8.  [covid19italy v0.3.0 is now on CRAN](#org4c7091b)
+        9.  [This Chart Predicts Which Colleges Will Survive the Coronavirus](#org0c29e8f)
+        10. [You’re Not Measuring COVID-19 Correctly](#org61409c9)
+        11. [[[http://r-posts.com/hands-on-how-to-build-an-interactive-map-in-r-shiny-an-example-for-the-covid-19-dashboard/][Hands-on: How to build an interactive map in R-Shiny: An example](#orgbb7b1e7)
+        12. [Data Mining COVID-19 Epidemics with Orange](#orga592a9e)
+    22. [Credit Risk Modelling using Machine Learning using R](#org97da7cf)
+    23. [How to create a timeline of your CV in R?](#orge5c7142)
+    24. [Crime by the numbers (R for criminologists)](#org1e85176)
+    25. [Qualitative Data Science: Using RQDA to analyse interviews](#orgba7903c)
+    26. [Discourse Network Analysis: Undertaking Literature Reviews in R](#org7a24a2c)
+    27. [Movement data in GIS](#orgd71c5cc)
+    28. [Complex societies precede moralizing gods throughout world history](#org6a9d2dd)
+    29. [Brownian motion](#orgc0ec7a6)
+        1.  [Simulating Brownian Motion in R](#orgd037cd7)
+    30. [The rise of the Netflix hit](#org23585bc)
+    31. [Google teaches ML to journalists](#org9160c8c)
+    32. [Guide to Classification on Imbalanced Datasets](#org358d384)
+    33. [Automatically create draw.io diagrams from CSV files](#org3be1261)
+    34. [How to Build a Video Game in R Shiny with CSS, JavaScript, and R6 Classes](#org0a705bd)
+    35. [Pacific Island Hopping using R and the iGraph package](#org94a1d08)
+    36. [Website building: Export WordPress to Hugo Markdown or Org Mode with R](#org5316f9e)
+    37. [A Complete Introduction to Apache Airflow (automating workflows)](#org72aa717)
+    38. [RTutor: Quantifying Social Spillovers in Movie Ticket Sales](#orge6aec3a)
+    39. [Build a Chatbot with R](#org2f75647)
+    40. [Dataquest data science projects](#org6b31f87)
+    41. [Experiences Building a Production Shiny App for Mobile](#org4328f7a)
+    42. [17 classification algorithms using R](#org68a8a60)
+    43. [Comet - ds and ml wrapper](#org33d6280)
+    44. [ISING Model (Quanta Mag)](#org73047e9)
+    45. [Social network analysis with igraph (tutorial)](#org40ee19a)
+    46. [Riddles](#org44c244b)
+    47. [Games](#org7994b19)
 
 ---
 
 
-<a id="org652b18b"></a>
+<a id="org94d4a17"></a>
 
 # RMarkdown / R Notebook / learnr / RTutor / OER
 
 
-<a id="orgcf0a1dc"></a>
+<a id="orgb95691f"></a>
 
 ## [Image clipper into RStudio (add-in)](https://github.com/Toniiiio/imageclipr)
 
 
-<a id="org9f6860f"></a>
+<a id="org1f19f3e"></a>
 
 ## [Getting started with R and RStudio (Dataquest tutorial)](https://www.dataquest.io/blog/tutorial-getting-started-with-r-and-rstudio/)
 
 
-<a id="org718bab4"></a>
+<a id="org54cc03d"></a>
 
 ## [Replacing PowerPoint with R](https://towardsdatascience.com/replacing-powerpoint-with-r-b96661928ed4)
 
 
-<a id="org8ee571a"></a>
+<a id="orgfac334a"></a>
 
 ## ["Dashboards are dead"](https://towardsdatascience.com/dashboards-are-dead-b9f12eeb2ad2) see also <https://count.co>
 
 
-<a id="org212d7fb"></a>
+<a id="org04d8ce8"></a>
 
 ## [Interactive R tutorials with learnr (youtube)](https://youtu.be/gwu63_WO7O8)
 
 
-<a id="org752d256"></a>
+<a id="org248a641"></a>
 
 ## [Tips and tricks in RStudio and R Markdown](https://towardsdatascience.com/tips-and-tricks-in-rstudio-and-r-markdown-7a464508b0c)
 
@@ -504,7 +508,7 @@ Or how to write R code faster and in a more efficient way, by
 Antoine Soetewey
 
 
-<a id="org464003a"></a>
+<a id="orga6693fb"></a>
 
 ## Jupyter Notebooks
 
@@ -513,103 +517,103 @@ Antoine Soetewey
 2.  [Datacamp Blog Jupyter and R](https://www.datacamp.com/community/blog/jupyter-notebook-r)
 
 
-<a id="org220bb78"></a>
+<a id="org30d5b0e"></a>
 
 ## Literate Programming
 
 
-<a id="orgc747348"></a>
+<a id="org4f76c87"></a>
 
 ### [Org-mode litprog in Emacs (2018) - long youtube video](https://youtu.be/GK3fij-D1G8)
 
 
-<a id="org523ba1e"></a>
+<a id="orgf0f40a8"></a>
 
 ### NEXT [Configuring Emacs with Org mode and literate programming](https://blog.thomasheartman.com/posts/configuring-emacs-with-org-mode-and-literate-programming)
 
 Thomas Heartman, April 27, 2020
 
 
-<a id="org45a88a4"></a>
+<a id="orge3b5e8d"></a>
 
 ### [Interview with Donald Knuth (1993)](http://www.clbooks.com/nbb/knuth.html) - LitProg, CWEB
 
 
-<a id="org63828fc"></a>
+<a id="org87f86b7"></a>
 
 ### [Stanford page on LitProg](https://www-cs-faculty.stanford.edu/~knuth/lp.html)
 
 
-<a id="orgac43db6"></a>
+<a id="orgac5652e"></a>
 
 ### [LitProg article by Knuth 1984](file:///home/marcus/Documents/ART/PROGRAMMING/Knuth_LitProg_1984.pdf)
 
 
-<a id="org0d04850"></a>
+<a id="orgbde9873"></a>
 
 ### [The CWEB System of Structured Documentation (1993-2001)](https://www-cs-faculty.stanford.edu/~knuth/cweb.html)
 
 
-<a id="orgcfccf69"></a>
+<a id="orgf3af4f4"></a>
 
 ### [LitProg - Propaganda and Tools (Christopher Lee 1994)](https://web.archive.org/web/20170603045917/http://vasc.ri.cmu.edu:80/old_help/Programming/Literate/literate.html)
 
 
-<a id="org5503f6e"></a>
+<a id="org662f7dd"></a>
 
 ## DS in education
 
 
-<a id="orgd3f2b4d"></a>
+<a id="orgbc69083"></a>
 
 ### [Open-Source Authorship of Data Science in Education Using R](https://rviews.rstudio.com/2020/07/01/open-source-authorship-of-data-science-in-education-using-r/),
 
 2020-07-01, by Joshua Rosenberg /[Netlify](https://app.netlify.com/teams/birkenkrahe/sites)
 
 
-<a id="orgaab2505"></a>
+<a id="org1ce05eb"></a>
 
 ## R Markdown
 
 
-<a id="org064e2d1"></a>
+<a id="org38f7b5b"></a>
 
 ### [Converting LaTeX to Bookdown (accessible lecture notes)](https://julianfaraway.github.io/post/converting-to-accessible-lecture-notes/)
 
 
-<a id="org4c04e37"></a>
+<a id="orgd0e662d"></a>
 
 ### READ [How R Markdown changed my life (video 23 min)](https://rstudio.com/resources/rstudioconf-2020/how-rmarkdown-changed-my-life/)
 
 
-<a id="org80cb143"></a>
+<a id="org09f9076"></a>
 
 ### [Meta RMarkdown - Taxonomy and Use cases](https://themockup.blog/posts/2020-07-25-meta-rmarkdown/)
 
 A meta collection of all things R Markdown.
 
 
-<a id="orgd2ec7c1"></a>
+<a id="org4c23cc5"></a>
 
 ### [Useful YAML options for generating HTML reports in R](https://scienceloft.com/technical/useful-yaml-options-for-generating-html-reports-in-r/)
 
 
-<a id="org62bfaa5"></a>
+<a id="org6e8bed8"></a>
 
 ### [R Markdown Crash course (bookdown)](books.md)
 
 
-<a id="org2b393ee"></a>
+<a id="org93885e0"></a>
 
 ### [Book: Practical R for Mass Communication and Journalism](books.md)
 
 
-<a id="org2b3f5bd"></a>
+<a id="org3484d95"></a>
 
 ### Course: [Datacamp course R Markdown](https://campus.datacamp.com/courses/reporting-with-rmarkdown/getting-started-with-r-markdown)     :datacamp:
 
 
-<a id="orgab3c9be"></a>
+<a id="org047ad29"></a>
 
 ### RTutor
 
@@ -620,52 +624,52 @@ A meta collection of all things R Markdown.
 3.  [Data Science Courses for Economists and Epidemiologists using RTutor](https://skranz.github.io/r/2020/03/25/courses_rtutor.html)
 
 
-<a id="org29740f1"></a>
+<a id="orgc1185f0"></a>
 
 ### [Interactive Tutorials for R](https://rstudio.github.io/learnr/)     :R:learnr:
 
 
-<a id="orgba70f98"></a>
+<a id="orgb617864"></a>
 
 ### [Markdown + XMInd (Blog)](https://www.xmind.net/blog/en/a-markdown-plus-xmind-workflow-for-writing/)
 
 
-<a id="orgb1133ee"></a>
+<a id="orgb4870ff"></a>
 
 ### [How I teach R Markdown](https://alison.rbind.io/post/2020-05-28-how-i-teach-r-markdown/) 29.5.2020
 
 
-<a id="org3fd5def"></a>
+<a id="org34475be"></a>
 
 ### [Making slides with xaringan](https://arm.rbind.io/slides/xaringan.html#1) 16.1.2019
 
 
-<a id="org3e73d2c"></a>
+<a id="org346e30c"></a>
 
 ### [R Markdown Tutorial (Video 2018, 8 min)](https://youtu.be/hODWGzpiCV0)
 
 
-<a id="org6126b2b"></a>
+<a id="orgbd79a16"></a>
 
 ### [Advantages of Using R Notebooks For Data Analysis Instead of Jupyter Notebooks](https://minimaxir.com/2017/06/r-notebooks/) (6.6.17)
 
 
-<a id="orga7446cb"></a>
+<a id="org7f6d2be"></a>
 
 ### [Markdown Tutorial](https://www.markdowntutorial.com/)
 
 
-<a id="org15dc0b9"></a>
+<a id="orgd9ffb5b"></a>
 
 ### [Pimp my RMD: a few tips for R Markdown by Yan Holtz - 10 December 2018](https://holtzy.github.io/Pimp-my-rmd/)
 
 
-<a id="org56e4f0c"></a>
+<a id="org27cb596"></a>
 
 ### [Bookdown - R Markup](https://bookdown.org/)
 
 
-<a id="org259d53c"></a>
+<a id="orgf795b3d"></a>
 
 ### [R Markdown from R Studio](https://rmarkdown.rstudio.com/lesson-1.html)
 
@@ -687,30 +691,30 @@ A meta collection of all things R Markdown.
     RStudio IDE.  One-click publishing to <https://bookdown.org>.
 
 
-<a id="org6e0278a"></a>
+<a id="org352b42c"></a>
 
 ## learnr
 
 
-<a id="org2312bc9"></a>
+<a id="org3b53ea3"></a>
 
 ### [Teaching in learnr](https://education.rstudio.com/blog/2020/05/learnr-for-remote/)
 
 
-<a id="org83b448a"></a>
+<a id="orge767efa"></a>
 
 ### [Publishing learnr Tutorials on shinyapps.io](https://cran.r-project.org/web/packages/learnr/vignettes/shinyapps-publishing.html)
 
 Angela Li, 2020-02-13
 
 
-<a id="orgb5ac908"></a>
+<a id="org8ad64c5"></a>
 
 # Emacs / ESS
 
 -   [Emacs Reading Guide by Mickey Petersen](https://masteringemacs.org/reading-guide)
 -   [Using Emacs video series by Mike Zamansky](https://cestlaz.github.io/stories/emacs/)
--   [Git Emacs integration](#org889e4c8)
+-   [Git Emacs integration](#org352bbfb)
 -   [Emacs 27.1 released (11 Aug 2020)](https://lists.gnu.org/archive/html/emacs-devel/2020-08/msg00237.html)
 -   BEST [R Source Code Blocks in Org Mode](https://orgmode.org/worg/org-contrib/babel/languages/ob-doc-R.html#orgc55114f)
 -   GNU [Emacs news](https://sachachua.com/blog/2020/07/2020-07-27-emacs-news/)
@@ -728,47 +732,47 @@ Angela Li, 2020-02-13
 -   [lintr - static code analysis for R](https://www.r-project.org/nosvn/pandoc/lintr.html)
 
 
-<a id="org3f63c20"></a>
+<a id="org95dda6e"></a>
 
 # Teaching - other courses and ideas
 
 
-<a id="orgd880416"></a>
+<a id="orgf22ec7b"></a>
 
 ## [STAT 220 labs Amelia McNamara](https://github.com/AmeliaMN/STAT220-labs)
 
 
-<a id="orgf031558"></a>
+<a id="orge4347b7"></a>
 
 ## NEXT [A fresh look at introductory data science (paper 2020)](https://www.tandfonline.com/doi/full/10.1080/10691898.2020.1804497)
 
 
-<a id="org82f9df4"></a>
+<a id="org2d291ce"></a>
 
 ## NEXT [Data science in a box](courses.md) (tidyverse, learnr)
 
 
-<a id="org93174cc"></a>
+<a id="org269089c"></a>
 
 ## NEXT DS112 tutorials (net apps, learnR and GitHub exercises)
 
 
-<a id="orgb977e3d"></a>
+<a id="org9e27c4e"></a>
 
 ### [R Basics](https://r-basics.netlify.app/)
 
 
-<a id="orgab8e366"></a>
+<a id="orgc832d1b"></a>
 
 ### [ggplot() and dplyr tutorial](https://ggplot-dplyr-tutorial.netlify.app/)
 
 
-<a id="orgc0ccf78"></a>
+<a id="org5945548"></a>
 
 ## [Teaching Statistics with R](courses.md)
 
 
-<a id="orgcc0e9ea"></a>
+<a id="org4bd1ceb"></a>
 
 ## [Future of Statistical Programming](http://www.amelia.mn/FoSP.html)
 
@@ -779,7 +783,7 @@ realized any time soon, but I'm constantly thinking about the
 pieces that would be necessary to put it together.  
 
 
-<a id="orgee157a1"></a>
+<a id="org3f4308f"></a>
 
 ## [Bridging the Gap Between Tools for Learning and for Doing Statistics](http://www.amelia.mn/dissertation.html)
 
@@ -789,26 +793,26 @@ about, see my page on the future of statistical programming, or
 read my full dissertation
 
 
-<a id="orgdee3dd3"></a>
+<a id="org8a052d7"></a>
 
 ## Codementor
 
 <https://www.codementor.io/@wiktor.stribizew>
 
 
-<a id="org2b267c5"></a>
+<a id="org2a3ada0"></a>
 
 ## Online course: [Adventures in R](courses.md)
 
 
-<a id="orgcfc9305"></a>
+<a id="org3534b23"></a>
 
 ## [Proposal for an educational data science course](https://joshuamrosenberg.com/post/2020/07/22/proposal-for-an-educational-data-science-course-request-for-feedback/)
 
 Joshua Rosenberg, 2020/07/22
 
 
-<a id="orgc9200c6"></a>
+<a id="org71fd0f7"></a>
 
 ## [R Studio Cloud Primers](https://rstudio.cloud/learn/primers)
 
@@ -820,51 +824,51 @@ Joshua Rosenberg, 2020/07/22
 -   [ ] Write functions
 
 
-<a id="org440fd6c"></a>
+<a id="org08632d7"></a>
 
 ## [How I Taught Scientific Blogging with R Markdown, Online](https://masalmon.eu/2020/07/08/rmd-blogging-course/)
 
 
-<a id="org2cc178e"></a>
+<a id="org7af5096"></a>
 
 ## [RStudio Instructor Certification Exams](https://education.rstudio.com/blog/2020/02/instructor-certification-exams/)
 
 -   [slides in Google Drive - great concept maps](https://drive.google.com/drive/folders/13ohFt3D0EJ5PDbMaWTxnHH-hwA7G0IvY)
 
 
-<a id="org1617d22"></a>
+<a id="org3f0cd86"></a>
 
 ## [Market analysis course (interactive, free, and with a lot of R)](https://skranz.github.io/r/2020/06/10/MarketAnalysis.html)
 
 
-<a id="org5ee21f0"></a>
+<a id="org6f05890"></a>
 
 ## [R for Bio Data Science (DTU Wiki)](http://teaching.healthtech.dtu.dk/22100/index.php/22100_-_R_for_Bio_Data_Science)
 
 
-<a id="orga596b15"></a>
+<a id="org69bfdd9"></a>
 
 ## [Data science for biologists (playlist youtube)](https://www.youtube.com/playlist?list=PLMiyQ6EW11_lJT2YKm7kz_Uaa7M0LbBkP&fs=1&modestbranding=1&rel=0&showinfo=0)
 
 
-<a id="orga0844db"></a>
+<a id="orgffedbf1"></a>
 
 ## [A novice’s guide to learning to code with CS50](https://blog.usejournal.com/a-novices-guide-to-learning-to-code-with-cs50-d55a050fc57c)
 
 by Lucie Heath Nov 12, 2018
 
 
-<a id="org29b5e8f"></a>
+<a id="org741c31e"></a>
 
 ## [Introduction to SQL](https://www.udacity.com/course/learn-sql--nd072?bsft_eid=893e1ab1-a54b-e4e1-ad5f-eb02d86bc3a0&utm_campaign=acq_100_2020-06-09_nd072_launch-3_global&utm_source=blueshift&utm_medium=email&utm_content=acq_100_2020-06-09_nd072_launch-3_global&bsft_clkid=1c4dcafc-f54d-46e9-a0bf-a415149d4f2e&bsft_uid=61400044-dd5a-4331-960e-55b4269aca36&bsft_mid=98c45db4-afd9-4fb5-a98f-0ab28300676d&bsft_ek=2020-06-09T17%3A41%3A40Z&bsft_mime_type=html) (Coursera)
 
 
-<a id="orgf214431"></a>
+<a id="org56d83b9"></a>
 
 ## [Syllabus](file:///home/marcus/Documents/CODE/sql/SQL+Nanodegree+Program+Syllabus.pdf)
 
 
-<a id="orgc8c4286"></a>
+<a id="org7c87bcf"></a>
 
 ## [Mismatch Between Academic and Real-world Data Science Projects](https://medium.com/towards-artificial-intelligence/mismatch-between-academic-and-real-world-data-science-projects-a88171fdadfb)
 
@@ -873,37 +877,37 @@ semester or two long, and should prioritize group projects over
 individual projects
 
 
-<a id="org537f218"></a>
+<a id="org8690bff"></a>
 
 ## [UC Berkeley Connector Courses](https://data.berkeley.edu/education/connectors)
 
 
-<a id="org3523aca"></a>
+<a id="org28bc5eb"></a>
 
 ## John DeNero | [YouTube](https://www.youtube.com/user/papajohnno/videos) |  [Intro Foundations of Data Science Intro](https://youtu.be/MeDPlKI9kV8) | [Online Book](https://composingprograms.com/)
 
 
-<a id="org7b356c8"></a>
+<a id="orgcbc6ff2"></a>
 
 ## Computational and inferential thinking | [Online book](https://www.inferentialthinking.com/chapters/intro)
 
 
-<a id="org5288425"></a>
+<a id="org5e79245"></a>
 
 ## Data 8 - The foundations of data science (UC Berkeley) | [Site: data8.org](https://data-8.github.io) | [Spring 2020 syllabus](http://data8.org/sp20/)
 
 
-<a id="org1f15365"></a>
+<a id="org43074a2"></a>
 
 ## Harvard edX [Program](https://www.edx.org/professional-certificate/harvardx-data-science)
 
 
-<a id="org454bec9"></a>
+<a id="org67d7c92"></a>
 
 ## Heidi Seibold | [video](https://youtu.be/jPQJTVa-GsQ) 55 min |  [presentation](https://docs.google.com/presentation/d/1xQTdd_JRTvv7AVSjeGnBQUezB1a32JQzqRa4Vi_cYeU/edit?usp=sharing)
 
 
-<a id="orgf60f9bb"></a>
+<a id="org1dbdff4"></a>
 
 ## [The Johns Hopkins Data Science Lab](https://jhudatascience.org/)
 
@@ -921,39 +925,44 @@ helping people build data analyses for people.
 -   The Data Scientist's Toolbox |  [Why Automated Videos?](https://www.coursera.org/lecture/data-scientists-tools/why-automated-videos-enUSz) |  [What is data science?](https://www.coursera.org/lecture/data-scientists-tools/what-is-data-science-4FzRK)
 
 
-<a id="org7ac652e"></a>
+<a id="orgd949daf"></a>
 
 # Data wrangling
 
 
-<a id="orgbbc4f98"></a>
+<a id="orgcdd8a95"></a>
 
 ## [Cleaning messy data with tidyverse](https://www.dataquest.io/blog/load-clean-data-r-tidyverse/)
 
 
-<a id="org7f023fe"></a>
+<a id="orgf4a4340"></a>
 
 ## [Data Cleaning and Exploratory Analysis in Python and R](https://towardsdatascience.com/data-cleaning-and-exploratory-analysis-in-python-and-r-608de56124e2)
 
 
-<a id="orge9d8edb"></a>
+<a id="org6241550"></a>
 
 ## [Beyond Ordinary PCA: Nonlinear Principal Component Analysis](https://medium.com/@andre_ye/beyond-ordinary-pca-nonlinear-principal-component-analysis-54a93915a702)     :medium:
 
 Addressing the limitations of linearity by Andre Ye Aug 3 , 2020
 
 
-<a id="orgdbe9514"></a>
+<a id="org574e0e4"></a>
 
 # R
 
 
-<a id="orgf4a1d4d"></a>
+<a id="org51ad484"></a>
 
 ## R vs Python
 
 
-<a id="org39f7e6a"></a>
+<a id="orga70ce8d"></a>
+
+### [Choosing Python or R for Data Analysis? An Infographic](https://www.datacamp.com/community/tutorials/r-or-python-for-data-analysis)
+
+
+<a id="org8ce7fd6"></a>
 
 ### [Python vs. R: A Text Mining Approach for analyzing the Research Trends in Scopus Database](https://arxiv.org/abs/1911.08271)
 
@@ -966,7 +975,7 @@ Addressing the limitations of linearity by Andre Ye Aug 3 , 2020
 > results.
 
 
-<a id="org80c7f73"></a>
+<a id="org9510015"></a>
 
 ### [Trying R for the First Time](https://towardsdatascience.com/ive-tried-r-for-the-first-time-how-bad-was-it-ba344f22e90b)
 
@@ -974,34 +983,39 @@ All-time Pythonista tries out R — comparisons with Python included,
 Dario Radečić, 10.9.20 (Medium)
 
 
-<a id="org2cbac21"></a>
+<a id="org13d1b31"></a>
 
 ### [Debunking R and Python Myths: Answering Your Questions](https://blog.rstudio.com/2020/09/10/dispelling-r-and-python-myths-qanda/)
 
 by Samantha Toet and Carl Howe, 2020-09-10 (RStudio Blog)
 
 
-<a id="orgf5c9411"></a>
+<a id="orge1146d8"></a>
 
 ## [Finding factorials](https://www.educba.com/factorial-in-r/)
 
 
-<a id="orgb1251b0"></a>
+<a id="org7f492f8"></a>
 
 ## Packages
 
 
-<a id="org3614ac3"></a>
+<a id="org6f04374"></a>
 
-## [Text mining with R and quanteda](https://www.mzes.uni-mannheim.de/socialsciencedatalab/article/advancing-text-mining/)
+### [Tidytable: tidyverse functions with data.table speed](https://www.brodrigues.co/blog/2020-09-05-tidytable/)
 
 
-<a id="org3dc1525"></a>
+<a id="orgc11a600"></a>
+
+### [Text mining with R and quanteda](https://www.mzes.uni-mannheim.de/socialsciencedatalab/article/advancing-text-mining/)
+
+
+<a id="org79d2a47"></a>
 
 ### [renv - Why Package & Environment Management](https://blog.rstudio.com/2020/08/20/why-package-environment-management-is-critical-for-serious-data-science/)
 
 
-<a id="orgc68adce"></a>
+<a id="org66cd6b4"></a>
 
 ### NEXT [R Packages: A Beginner's Guide](https://www.datacamp.com/community/tutorials/r-packages-guide)
 
@@ -1009,7 +1023,7 @@ An introduction to R packages based on 11 of the most frequently
 asked user questions.
 
 
-<a id="org974a81f"></a>
+<a id="orgf397a96"></a>
 
 ### [Introduction to the DataRobot R Package](https://cran.r-project.org/web/packages/datarobot/vignettes/IntroductionToDataRobot.html)
 
@@ -1031,7 +1045,7 @@ asked user questions.
 To illustrate how the datarobot package is used, it is applied here to the Boston dataframe from the MASS package, providing simple demonstrations of all of the above steps.
 
 
-<a id="org719d265"></a>
+<a id="orgb80c594"></a>
 
 ### tidyverse
 
@@ -1046,7 +1060,7 @@ To illustrate how the datarobot package is used, it is applied here to the Bosto
     with ggplot2, dplyr, tidyr
 
 
-<a id="org0712d34"></a>
+<a id="orgf4102a3"></a>
 
 ### data.table
 
@@ -1083,36 +1097,36 @@ To illustrate how the datarobot package is used, it is applied here to the Bosto
 9.  [Why I love data.table](https://eliocamp.github.io/codigo-r/en/2019/07/why-i-love-data-table/) (6 July 2019 by Elio Campitelli)
 
 
-<a id="orge8521cd"></a>
+<a id="orge63e0cc"></a>
 
 ## [Data manipulation in r using data frames - an extensive article of basics](https://www.dataenq.com/2020/08/data-manipulation-in-r-using-data-frame.html?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed:+dataenqfeed+(dataENQ)&m=1)
 
 
-<a id="org2cabb8e"></a>
+<a id="org2b4cbdd"></a>
 
 ## [How to Extract Day from Datetime in R with Examples](https://www.marsja.se/how-to-extract-day-from-datetime-in-r-with-examples/?utm_source=rss&utm_medium=rss&utm_campaign=how-to-extract-day-from-datetime-in-r-with-examples)
 
 by Erik Marsja | Aug 21, 2020
 
 
-<a id="org7386903"></a>
+<a id="orgb9c6603"></a>
 
 ## [How to subset a data frame column data in R](https://www.r-bloggers.com/how-to-subset-a-data-frame-column-data-in-r/)
 
 
-<a id="org2de2890"></a>
+<a id="orgefffda3"></a>
 
 ## [Common R error messages](https://www.programmingr.com/r-error-messages/)
 
 
-<a id="org978c13d"></a>
+<a id="orga1877fc"></a>
 
 ## [A Guide to the Pipe in R](https://towardsdatascience.com/an-introduction-to-the-pipe-in-r-823090760d64)
 
 R’s most important operator for data processing, explained. Rory Spanton, Aug 13
 
 
-<a id="orgd9f21cd"></a>
+<a id="orgc43a187"></a>
 
 ## [Visualize as flow diagrams](https://github.com/moodymudskipper/flow)
 
@@ -1120,96 +1134,96 @@ R’s most important operator for data processing, explained. Rory Spanton, Aug 
 debugging
 
 
-<a id="orge5194dd"></a>
+<a id="orgf4e1024"></a>
 
 ## [Demonstrating the central limit theorem in R](http://www.orrymr.com/2020/08/demonstrating-the-central-limit-theorem-in-r/)
 
 
-<a id="orga8d6d01"></a>
+<a id="orgcc73dba"></a>
 
 ## [R & RStudio - The Interoperability Environment for Data Analytics](https://blog.rstudio.com/2020/08/17/r-and-rstudio-the-interoperability-environment-for-data-analytics/)
 
 Curtis Kephart and Lou Bajuk, 2020-08-17
 
 
-<a id="org837032c"></a>
+<a id="org785cb32"></a>
 
 ## [First sample sessions](http://127.0.0.1:30189/doc/manual/R-intro.html#A-sample-session) (R documentation)
 
 
-<a id="orgacfc3dc"></a>
+<a id="org29e42aa"></a>
 
 ## [How R still outperforms Python](https://towardsdatascience.com/ways-r-still-excels-compared-to-python-34835e6071ee)
 
 
-<a id="org48a8f84"></a>
+<a id="org76fcecd"></a>
 
 ## [metR - meteorogical (tidy) data package](https://eliocamp.github.io/metR/)
 
 
-<a id="org5e41c43"></a>
+<a id="org959be1b"></a>
 
 ## [How to evaluate R Packages](https://rfortherestofus.com/2020/07/how-to-evaluate-r-packages/)
 
 
-<a id="orgd368469"></a>
+<a id="org387a6b2"></a>
 
 ## R Style guides
 
 
-<a id="org255c6a2"></a>
+<a id="orga9f9ab4"></a>
 
 ### [R code style guide richie cotton](https://4dpiecharts.com/r-code-style-guide/)
 
 
-<a id="org7508500"></a>
+<a id="org7d350f3"></a>
 
 ### [R-Style-Guide &#x2013; Towards a Goal of RED Code](https://github.com/matloff/R-Style-Guide) (Matloff 2019)
 
 
-<a id="orgea74467"></a>
+<a id="org130e073"></a>
 
 ### [R Style guide](https://jef.works/R-style-guide/) (jean)
 
 
-<a id="org91dee9e"></a>
+<a id="orgd58aaa2"></a>
 
 ### [Google’s R Style Guide](https://google.github.io/styleguide/Rguide.html)
 
 
-<a id="org143581b"></a>
+<a id="org6a89747"></a>
 
 ### [Bioconductor (bioinformatics)](https://master.bioconductor.org/developers/how-to/coding-style/)
 
 
-<a id="org81de2b4"></a>
+<a id="org017b26e"></a>
 
 ## [Working with text in R (presentation)](https://ellakaye.github.io/RLadies-Tbilisi-talk/text_in_R_Tbilisi.html#1)
 
 Ella Kaye, July 4th, 2020, RLadies Tbilisi
 
 
-<a id="orgca7b037"></a>
+<a id="org8326b5a"></a>
 
 ## [doubleheadR (surveymonkey data analysis)](https://www.mattroumaya.com/post/doubleheadr-surveymonkey-column-cleaning-in-r/)
 
 
-<a id="org1c74af7"></a>
+<a id="org6baac6c"></a>
 
 ## [magrittr - pipeline library](https://cran.r-project.org/web/packages/magrittr/vignettes/magrittr.html)
 
 
-<a id="org9a38cc1"></a>
+<a id="org939d742"></a>
 
 ## [Functional Programming in R with purrr](https://towardsdatascience.com/functional-programming-in-r-with-purrr-469e597d0229)
 
 
-<a id="org2c1d94f"></a>
+<a id="orgda02121"></a>
 
 ## [Few things I learned while writing an R package](https://discindo.org/post/few-things-i-learned-while-writing-an-r-package/)
 
 
-<a id="org98ddce4"></a>
+<a id="org0935d70"></a>
 
 ## [Unit Testing in R](https://towardsdatascience.com/unit-testing-in-r-68ab9cc8d211)
 
@@ -1218,22 +1232,22 @@ non-packages. Write lists for creating robust software, save time,
 and have fun! 
 
 
-<a id="org99b05f2"></a>
+<a id="orgd99cdad"></a>
 
 ## [Building a collection of Hello World functions in R](https://r-posts.com/print-hello%E2%80%8B-is-not-enough-a-collection-of-hello-world-functions/)
 
 
-<a id="orgc2cda1a"></a>
+<a id="org75c9fcc"></a>
 
 ## [Build a Corporate R Package for Pleasure and Profit by Brad Lindblad, Mar 5, 2019](https://towardsdatascience.com/build-a-corporate-r-package-for-pleasure-and-profit-78b73ce4ff4b)
 
 
-<a id="org2f9c4c7"></a>
+<a id="org2bcbceb"></a>
 
 ## [Doing Maths Symbolically: R as a Computer Algebra System (CAS)](https://blog.ephorie.de/doing-maths-symbolically-r-as-a-computer-algebra-system-cas)
 
 
-<a id="org8bcb1b4"></a>
+<a id="orgc641182"></a>
 
 ## [Five Tidyverse Tricks You May Not Know About](https://towardsdatascience.com/five-tidyverse-tricks-you-may-not-know-about-c5026d5a19da)
 
@@ -1241,183 +1255,183 @@ These examples show why R is now the go to language for intuitive
 data manipulation, by Keith McNulty
 
 
-<a id="org24b3c3b"></a>
+<a id="orgcbfbada"></a>
 
 ## [How to write your own R package and publish it on CRAN](https://www.mzes.uni-mannheim.de/socialsciencedatalab/article/r-package/)
 
 JULY 16, 2020 [COSIMA MEYER DENNIS HAMMERSCHMIDT]
 
 
-<a id="org626ea75"></a>
+<a id="org430a11c"></a>
 
 ## [Setting up your R environment](https://www.datacamp.com/resources/webinars/setting-up-your-r-environment) (webinar w/Richie Cotton)
 
 
-<a id="org8fc3637"></a>
+<a id="org19a2eb5"></a>
 
 ## [R Coding Style Guide](https://4dpiecharts.com/r-code-style-guide/)
 
 
-<a id="org1804ef9"></a>
+<a id="org159ee29"></a>
 
 ## [Installing R 4.0 under Ubuntu 18.04](https://askubuntu.com/questions/1237102/problem-installing-r-4-0-on-ubuntu-18-04)
 
 
-<a id="org2623b35"></a>
+<a id="org39baa35"></a>
 
 ## [Text Mining with R (bookdown)](books.md)
 
 
-<a id="org7698f5c"></a>
+<a id="org35d661e"></a>
 
 ## [causaloptim: An Interface to Specify Causal Graphs and Compute Bounds on Causal Effects](https://cran.r-project.org/web/packages/causaloptim/index.html)
 
 
-<a id="orgd38caea"></a>
+<a id="org6a95c7c"></a>
 
 ## [Machine learning using H2O](https://venciso.netlify.app/2020/06/ml-h2o/)
 
 
-<a id="orgd5337cb"></a>
+<a id="org6c6b614"></a>
 
 ## [Learning R With Education Datasets](books.md)
 
 
-<a id="org8b9c826"></a>
+<a id="orgf910400"></a>
 
 ## [Select first or last rows of a data frame](https://www.quantargo.com/courses/course-r-introduction/02-data-frames-tibbles/05-select-first-last-rows/recipe/)
 
 
-<a id="org85ce19d"></a>
+<a id="org0dc7447"></a>
 
 ## [Good coding style](http://adv-r.had.co.nz/Style.html) (Wickham, Advanced R)
 
 
-<a id="orge3e8848"></a>
+<a id="org55bb7c9"></a>
 
 ## formatr: [Format code automatically (Yhui Yie, 2019)](https://yihui.org/formatr/)
 
 
-<a id="org6f9c8b5"></a>
+<a id="org3548930"></a>
 
 ## [Performance Optimization in R: Parallel Computing and Rcpp](https://towardsdatascience.com/performance-optimization-in-r-parallel-computing-and-rcpp-6b541cd5ccf6)
 
 A quick introduction to performance optimization in R: the parallel and Rcpp packages.
 
 
-<a id="org0067b8b"></a>
+<a id="org5eb8c84"></a>
 
 ## [R Exercises](books.md)
 
 
-<a id="org0ae1b37"></a>
+<a id="org57c81a0"></a>
 
 ## TODO [R Programming 101](https://www.youtube.com/watch?v=qXrj1wl4Rg0&list=PLtqF5YXg7GLkW9iNgZck2qa0_2iyC7eOZ) (YouTube Playlist Data Professor)     :R:RStudio:
 
 
-<a id="orga9760c2"></a>
+<a id="org1e40f41"></a>
 
 ## [Testing statistical packages in R](http://r-statistics.co/)
 
 
-<a id="org6409775"></a>
+<a id="org5682ffd"></a>
 
 ## [Ten more random useful things in R you may not know about](https://towardsdatascience.com/ten-more-random-useful-things-in-r-you-may-not-know-about-f7c39cac7e6b)
 
 
-<a id="org7de19df"></a>
+<a id="orgf32f230"></a>
 
 ## Onboard Help System: help.start()
 
 
-<a id="org0b874cd"></a>
+<a id="org63f451e"></a>
 
 ## [How to do more with R (playlist)](https://www.youtube.com/watch?v=HnBjiqT5NUg&list=PL7D2RMSmRO9JOvPC1gbA8Mc3azvSfm8Vv)
 
 
-<a id="orgb80b4bd"></a>
+<a id="org07312e7"></a>
 
 ## [The Seven Key Things You Need To Know About dplyr 1.0.0](https://towardsdatascience.com/what-you-need-to-know-about-the-new-dplyr-1-0-0-7eaaaf6d78ac)
 
 
-<a id="org337af13"></a>
+<a id="org0d3264c"></a>
 
 ## [A Year in Review of R Programming 2019](https://medium.com/better-programming/a-year-in-review-of-r-programming-18c26aae6631)
 
 
-<a id="orgcad5d04"></a>
+<a id="orgd70ff86"></a>
 
 ## [R Programming Pundits (Telegram channel)](https://t.me/s/RPundits) - free tutorials
 
 
-<a id="orgd399f06"></a>
+<a id="org11bfbec"></a>
 
 ## [Programming with R (online tutorial)](http://swcarpentry.github.io/r-novice-inflammation/)
 
 
-<a id="org43b0b6b"></a>
+<a id="orga3c78b3"></a>
 
 ## [Introduction to R and RStudio (online tutorial)](http://swcarpentry.github.io/r-novice-gapminder/01-rstudio-intro/)
 
 
-<a id="orgf4db37c"></a>
+<a id="org668c0ec"></a>
 
 ## [R for Data Science (book, 2017)](https://r4ds.had.co.nz/)
 
 
-<a id="org43ca1f7"></a>
+<a id="org68b1a32"></a>
 
 ## [Vlog by Philip Guo](https://youtu.be/XafomPIjS-c) on the R ecosystem and R for Data Science - 5 Feb 2018
 
 
-<a id="orgc857e33"></a>
+<a id="org8be62b0"></a>
 
 ## [Ten Time-Saving R Hacks (27.2.20)](https://towardsdatascience.com/ten-time-saving-r-hacks-b411add26b96)
 
 
-<a id="orge41ecd6"></a>
+<a id="orgf4e6340"></a>
 
 ## [Textmining with R (book - 2014)](https://www.tidytextmining.com/index.html)
 
 
-<a id="orgfdbf317"></a>
+<a id="org271134f"></a>
 
 ## [Geocomputation with R (book - 2018)](https://geocompr.robinlovelace.net/)
 
 
-<a id="orgd36a978"></a>
+<a id="orgbcd8fd5"></a>
 
 ## [Build interactive tutorials with learnr (2020)](https://rstudio.github.io/learnr/)
 
 
-<a id="orgc0e8407"></a>
+<a id="org67533f2"></a>
 
 ## [Example: setting up R, RStudio, tidyverse R package](https://learnr-examples.shinyapps.io/ex-setup-r/#section-welcome)
 
 
-<a id="org63b749d"></a>
+<a id="org5fc2e0d"></a>
 
 ## [R and Jupyter Notebook](https://docs.anaconda.com/anaconda/navigator/tutorials/r-lang/)
 
 
-<a id="org49552a5"></a>
+<a id="org4a56181"></a>
 
 ## [Datacamp blog (30 Nov 2016)](https://www.datacamp.com/community/blog/jupyter-notebook-r)
 
 
-<a id="orgb9b5a0d"></a>
+<a id="org9de3fd7"></a>
 
 # Visualization
 
 
-<a id="orga877416"></a>
+<a id="orgab7e541"></a>
 
 ## “What Data Visualisation Experts Wish They Knew When They First Started”
 
 by Evelina Judeikytė <https://medium.com/nightingale/what-data-visualisation-experts-wish-they-knew-when-they-first-started-e9bd4906d25>
 
 
-<a id="org21c1607"></a>
+<a id="orga834594"></a>
 
 ## [Tutorial: Plotting in R for Python Refugees](https://towardsdatascience.com/tutorial-plotting-in-r-for-python-refugees-15bf4500de5d)
 
@@ -1431,7 +1445,7 @@ by Evelina Judeikytė <https://medium.com/nightingale/what-data-visualisation-ex
 -   Change color palettes
 
 
-<a id="org88f6f08"></a>
+<a id="orgfd766b5"></a>
 
 ## [Microsoft Research: Expressive Pixels](https://www.microsoft.com/en-us/research/blog/expressive-pixels-a-new-visual-communication-platform-to-support-creativity-accessibility-and-innovation/?OCID=msr_blog_EPX_tw)
 
@@ -1439,17 +1453,17 @@ A new visual communication platform to support creativity,
 accessibility, and innovation, Published September 3, 2020 
 
 
-<a id="org3a17a38"></a>
+<a id="org0e62638"></a>
 
 ## Challenges
 
 
-<a id="org4f256de"></a>
+<a id="org58807a7"></a>
 
-### [Does the chart support the text? (COVID-19 and economic data)](#orga1847ec)
+### [Does the chart support the text? (COVID-19 and economic data)](#orgf009fca)
 
 
-<a id="orga2316c4"></a>
+<a id="orgbde3559"></a>
 
 ## PROJECT [Most popular on Netflix. Daily Tops for last 60 days](https://r-posts.com/most-popular-on-netflix-daily-tops-for-last-60-days/)
 
@@ -1469,7 +1483,7 @@ questions:
 trendy.
 
 
-<a id="org13adb32"></a>
+<a id="org67c3687"></a>
 
 ## PROJECT [How dynamic is the browser market?](https://twitter.com/AlecStapp/status/1300541450770407425?s=09)
 
@@ -1483,7 +1497,7 @@ dataset (are Chinese users included?), (3) change of market
 -   Is the pie chart the best way of visualizing these?
 
 
-<a id="orgd16e041"></a>
+<a id="org8d0caa1"></a>
 
 ## PROJECT [Energy consumption in last 140 years](https://www.reddit.com/r/dataisbeautiful/comments/ikqtn4/oc_energy_production_of_the_entire_world_by/)
 
@@ -1491,12 +1505,12 @@ dataset (are Chinese users included?), (3) change of market
 -   Turn this into charts using R!
 
 
-<a id="orgdf1dc0e"></a>
+<a id="org42ec6a0"></a>
 
 ## Gapminder
 
 
-<a id="orgb1f22f0"></a>
+<a id="org7475588"></a>
 
 ### [How to build Animated Charts like Hans Rosling — doing it all in R](https://towardsdatascience.com/how-to-build-animated-charts-like-hans-rosling-doing-it-all-in-r-570efc6ba382)
 
@@ -1505,12 +1519,12 @@ leveraging 2 libraries (gganimate and plot.ly) — UPDATED with new
 gganimate version
 
 
-<a id="org4f03d22"></a>
+<a id="org2b1ea87"></a>
 
 ### [Exploring the Gapminder Data with R](http://rstudio-pubs-static.s3.amazonaws.com/492952_32b0b02296bc452b83639b4f6e07bbfb.html)
 
 
-<a id="org97c57b5"></a>
+<a id="org2bceb74"></a>
 
 ### Empfehlungen Roland Müller (Rosling pro and con):
 
@@ -1533,12 +1547,12 @@ ein Tool um selber die Daten zu analysieren: Gapminder
     -   Exzerpt: [The One-Sided Worldview of Hans Rosling (Quillette)](https://quillette.com/2018/11/16/the-one-sided-worldview-of-hans-rosling/)
 
 
-<a id="org736a2a8"></a>
+<a id="orgbce1d5d"></a>
 
 ## ggplot
 
 
-<a id="orgb5dd85f"></a>
+<a id="org5a2bdd9"></a>
 
 ## [Create a line graph with ggplot](https://www.quantargo.com/courses/course-r-introduction/04-ggplot/04-linegraph/recipe)
 
@@ -1547,12 +1561,12 @@ styling using the color parameter. Specify which coordinates to use
 for each line with the group parameter.
 
 
-<a id="org724a752"></a>
+<a id="orge0dad5f"></a>
 
 ### [Dataquest beginner's tutorial ggplot2](https://www.dataquest.io/blog/data-visualization-in-r-with-ggplot2-a-beginner-tutorial/)
 
 
-<a id="orgca2aef2"></a>
+<a id="orgb1a4267"></a>
 
 ### NEXT [Graphics in R with ggplot2](https://www.statsandr.com/blog/graphics-in-r-with-ggplot2/)
 
@@ -1560,82 +1574,82 @@ Antoine Soetewey 2020-08-21 22 minute read Descriptive statistics
 R Package Visualization
 
 
-<a id="org4a1cc3c"></a>
+<a id="org69bcb79"></a>
 
 ### [ggplot2 easthetics cheat sheet](https://drive.google.com/file/d/1Dvul1p6TYH6gWJzZRwpE0YX1dO0hDF-b/view)
 
 
-<a id="orgdcfe446"></a>
+<a id="org7a64077"></a>
 
 ### [Storytelling with Data and ggplot: Visualising the Receding Ice Sheets](https://lucidmanager.org/data-science/storytelling-with-data/)
 
 
-<a id="org4c2dffb"></a>
+<a id="orgb78991c"></a>
 
 ### [A ggplot2 Tutorial for Beautiful Plotting in R](https://cedricscherer.netlify.app/2019/08/05/a-ggplot2-tutorial-for-beautiful-plotting-in-r/)
 
 Posted by Cédric on Monday, August 5, 2019
 
 
-<a id="orga569548"></a>
+<a id="orgd2e2af5"></a>
 
 ### [Tutorial: why data visualization is important (ggplot2)](https://www.quantargo.com/courses/course-r-introduction/04-ggplot/01-introduction-data-visualization/recipe)
 
 
-<a id="orgb04b82c"></a>
+<a id="orgf972d34"></a>
 
 ### [Writing Functions to Automate Repetitive Plotting Tasks in ggplot2](https://dataenthusiast.ca/?p=1224)
 
 
-<a id="org72e6e3b"></a>
+<a id="org0007a16"></a>
 
 ### [a ggplot2 grammar guide](https://evamaerey.github.io/ggplot2_grammar_guide/about)
 
 by Gina Reynolds, February, 2020
 
 
-<a id="org9502bcb"></a>
+<a id="orge772133"></a>
 
 ### [Top 50 ggplot2 Visualizations - The Master List (with full R code)](http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html)
 
 
-<a id="orgb1a34f1"></a>
+<a id="orgf16a849"></a>
 
-### [Storytelling with Data and ggplot: Visualising the Receding Ice Sheets](#orgd42c348)
+### [Storytelling with Data and ggplot: Visualising the Receding Ice Sheets](#org366ef3a)
 
 
-<a id="orga461eb0"></a>
+<a id="orgdda8cfe"></a>
 
 ## [Abstractions - Physarum model visualizations](https://fronkonstin.com/2020/08/11/abstractions/)
 
 
-<a id="org0154b58"></a>
+<a id="org27836b2"></a>
 
 ## [You’re Plotting the Wrong Things](https://towardsdatascience.com/youre-plotting-the-wrong-things-3914402a3653)
 
 A tip for smarter EDA
 
 
-<a id="org259d954"></a>
+<a id="org58488fa"></a>
 
 ## [Analytics is not storytelling (Kozyrkov](https://towardsdatascience.com/analytics-is-not-storytelling-a1fe61b1ab6c)
 
 On the nature of analytics, part 1 of 2
 
 
-<a id="org83fac2f"></a>
+<a id="org1273066"></a>
 
 ## [You Can Design a Good Chart with R](https://medium.com/nightingale/you-can-design-a-good-chart-with-r-5d00ed7dd18e)
 
 But do R users invest in design? Elijah Meeks, Jul 2, 2018
 
 
-<a id="org7769ea5"></a>
+<a id="org209637d"></a>
 
-## [The Goldilocks Principle - investing in stocks](#org8639c94) (beautiful graphs)
+## [The Goldilocks Principle - investing in stocks](#org1c978ec) (beautiful graphs)
 
 
-<a id="org2d593cd"></a>
+<a id="org8d5b07f"></a>
 
 ## [Embed Interactive Plots in Your Slides with Plotly](https://towardsdatascience.com/embed-interactive-plots-in-your-slides-with-plotly-fde92a5865a)
 
@@ -1643,41 +1657,41 @@ Going beyond PowerPoint with Spectacle Editor, Liana Mehrabyan, Jul
 28-2020
 
 
-<a id="org9210b45"></a>
+<a id="org65ea338"></a>
 
 ## [PowerPoint is evil (E Tufte, 9 Jan 1983)](https://www.wired.com/2003/09/ppt2/)
 
 
-<a id="org7a489c4"></a>
+<a id="orge5d7dba"></a>
 
 ## [Cheesecake Diagrams: Pie Charts with a Different Flavour](https://lucidmanager.org/data-science/cheesecake-diagram/)
 
 Peter Prevos, 5 August 2020 
 
 
-<a id="org405b319"></a>
+<a id="orgba6a06b"></a>
 
 ## Demo: [Create beautiful charts with Datawrapper](https://www.datawrapper.de/charts/)
 
 
-<a id="orgdbd5917"></a>
+<a id="org85595e8"></a>
 
 ## [Making tables with the gt package](https://gt.rstudio.com/index.html)
 
 
-<a id="orgc8e5b58"></a>
+<a id="orgaade36b"></a>
 
 ## [A Comprehensive Guide to the Grammar of Graphics for Effective Visualization of Multi-dimensional Data](https://towardsdatascience.com/a-comprehensive-guide-to-the-grammar-of-graphics-for-effective-visualization-of-multi-dimensional-1f92b4ed4149)
 
 by D Sarkar (12 Sept 2018)  
 
 
-<a id="org7ffd2d6"></a>
+<a id="org48e0f5c"></a>
 
 ## [Package for colorblind plots](https://github.com/clauswilke/colorblindr)
 
 
-<a id="org973c6c2"></a>
+<a id="orgd8988af"></a>
 
 ## [Guide to gt tables](https://gt.rstudio.com/index.html) (Richard Iannone)
 
@@ -1688,40 +1702,40 @@ parts. These include the table header, the stub, the column labels
 and spanner column labels, the table body, and the table footer."
 
 
-<a id="org58aa385"></a>
+<a id="orgd2d313f"></a>
 
 ## Visualization examples
 
 
-<a id="org013a728"></a>
+<a id="org426da14"></a>
 
 ### [Making Interactive Maps in R with Less Than 15 Lines of Code](https://towardsdatascience.com/making-interactive-maps-in-r-with-less-than-15-lines-of-code-bfd81f587e12)
 
 Brandon Walker, Nov 29, 2019
 
 
-<a id="org698d496"></a>
+<a id="org8e52178"></a>
 
 ### Sqrt(2) puzzle animation
 
 [Tweet and Gif](https://twitter.com/i/status/1288648508837330944)
 
 
-<a id="org931835a"></a>
+<a id="orgabdf569"></a>
 
 ### [Power socket types Europe](https://twitter.com/lnterestingMaps/status/1288352301082542080/photo/1) (Twitter account gesperrt!)
 
 ![img](/home/marcus/Images/vis_power.jpeg)
 
 
-<a id="orgad1fa4f"></a>
+<a id="org16ed321"></a>
 
 ### [Size of Africa](https://twitter.com/lnterestingMaps/status/1288352043195756549/photo/1)
 
 ![img](/home/marcus/Images/vis_africa.jpeg)
 
 
-<a id="org28c5790"></a>
+<a id="org0f585ff"></a>
 
 ## fabricerin package to draw on shinyapp documents (?)
 
@@ -1729,7 +1743,7 @@ Brandon Walker, Nov 29, 2019
 -   <https://github.com/josedv82/sportsDraweR>
 
 
-<a id="orgba93099"></a>
+<a id="orga935547"></a>
 
 ## [The ultimate EDA visualization in R](https://towardsdatascience.com/the-ultimate-eda-visualization-in-r-e6aff6afe5c1) (raincloud plots)
 
@@ -1737,17 +1751,17 @@ Clear obstacles in creating a rain cloud plot, David Zhao, Sep 3,
 2019
 
 
-<a id="orgb22d698"></a>
+<a id="org8315f99"></a>
 
 ## [SpaceX Satellites Ruin Perfectly Good View of Comet NEOWISE](https://earther.gizmodo.com/spacex-satellites-ruin-perfectly-good-view-of-comet-neo-1844483615)
 
 
-<a id="orgf93ce32"></a>
+<a id="orge2d0174"></a>
 
 ## [Re-engineer graphs to extract the data (WebPlotDigitizer)](https://automeris.io/WebPlotDigitizer/)
 
 
-<a id="org7dd98f7"></a>
+<a id="org395e686"></a>
 
 ## [COVID-19 cases in India drop every Sunday - how to explain?](https://twitter.com/susam/status/1276751738842648577?s=20)
 
@@ -1758,118 +1772,118 @@ can be attributed to the less number of labs and lab technicians
 working on Sundays." (Susam Pal)
 
 
-<a id="org51757df"></a>
+<a id="org9a0be9c"></a>
 
 ## [Animated charts: visualizing “changes” in R](https://towardsdatascience.com/animated-charts-visualizing-changes-in-r-fee659fbabe5)
 
 by Shing-Yun Chiang
 
 
-<a id="orgb7d00a7"></a>
+<a id="orgd0020b5"></a>
 
 ## [Making Interactive Maps of Public Data in R by Ryan Rosenberg](https://civisanalytics.github.io/interactive-map-tutorial/)
 
 
-<a id="org8fd60ff"></a>
+<a id="orga42ace7"></a>
 
 ## [ggtext - formating text in graphs](https://data-and-the-world.onrender.com/posts/ggtext-formatting-example/)
 
 
-<a id="org738a11b"></a>
+<a id="org479b410"></a>
 
 ## [A Layered Grammar of Graphics](http://vita.had.co.nz/papers/layered-grammar.pdf)
 
 
-<a id="org71353d3"></a>
+<a id="org15185d2"></a>
 
 ## [My top 5 visualization tools for data science](https://towardsdatascience.com/my-top-5-visualization-tools-for-data-science-45a4968ae695)
 
 And how to select the right tool for your audience, by Zeming Yu
 
 
-<a id="org92429bf"></a>
+<a id="orgc48322d"></a>
 
 ## [Visualization good/bad examples](wiwi.md)
 
 
-<a id="orgd02a4c6"></a>
+<a id="orgb8bd896"></a>
 
 ## [How to Visualize Data with R](courses.md)
 
 
-<a id="orgf4cb517"></a>
+<a id="orgeed7da7"></a>
 
 ## [Hadley Wickham: Managing many models with R](https://youtu.be/rz3_FDVt9eg) (2016)     :modeling:R:wickham:video:
 
 
-<a id="orgc6944ad"></a>
+<a id="org66ae10e"></a>
 
 ## [Past project examples (Andrew Heiss)](https://datavizm20.classes.andrewheiss.com/assignment/final-project/#past-examples)
 
 
-<a id="org91bcb6f"></a>
+<a id="org8d226c7"></a>
 
 ## [R Visualizations David Gerbing 2020](books.md)
 
 
-<a id="org7d37daa"></a>
+<a id="org017c683"></a>
 
 ## [Online course in data visualization with R (May 2020)](https://datavizm20.classes.andrewheiss.com/content/) - Georgia State U / Dr Andrew Heiss
 
 
-<a id="org6478606"></a>
+<a id="org8f90610"></a>
 
 ## Free book: [Data Visualization with R (Rob Kabacoff, 2018)](books.md)
 
 
-<a id="org1383c68"></a>
+<a id="org79e0146"></a>
 
 ## Free book: [Data Visualization - A practical introduction](books.md)
 
 
-<a id="org3f64725"></a>
+<a id="orgce47c73"></a>
 
 ## Free book: [Fundamentals of Data Visualization by Claus O Wilke](books.md)
 
 
-<a id="org2ea7e5b"></a>
+<a id="org6951aeb"></a>
 
 ## [Easy Ways to Make Your Charts Look More Professional 28 May 2020](https://medium.com/swlh/easy-ways-to-make-your-charts-look-more-professional-9b081655eae7)
 
 
-<a id="org590c3f3"></a>
+<a id="org71b2619"></a>
 
 ## [Stacked Bar Graphs, Why and How](https://towardsdatascience.com/stacked-bar-graphs-why-how-f1b68a7454b7) 28 May 2020
 
 
-<a id="org560c524"></a>
+<a id="org0710943"></a>
 
 ## [Effective Visualizations for Credible, Data-Driven Decision Making (16.4.20)](https://blog.rstudio.com/2020/04/16/effective-visualizations-for-credible-data-driven-decision-making/)
 
 
-<a id="org62588f3"></a>
+<a id="org1f96969"></a>
 
 ## Visualisation example: [Data Privacy in the Age of Big Data](https://towardsdatascience.com/data-privacy-in-the-age-of-big-data-c28405e15508)
 
 
-<a id="orgc8808b2"></a>
+<a id="orgda24fad"></a>
 
 ## Practical Implications of Sharing Data: A Primer on Data Privacy,
 
 Anonymization, and De-Identification ([paper, 2015](https://www.researchgate.net/publication/318866074_Practical_Implications_of_Sharing_Data_A_Primer_on_Data_Privacy_Anonymization_and_De-Identification))
 
 
-<a id="orgd708dbb"></a>
+<a id="org2a372bb"></a>
 
 # Git/Github
 
 
-<a id="org4c4985a"></a>
+<a id="org32309ec"></a>
 
 ## [Happy Git and GitHub for the useR (bookdown)](books.md)
 
 
-<a id="org889e4c8"></a>
+<a id="org352bbfb"></a>
 
 ## [Git Emacs integration](https://linuxhint.com/emacs_git_integration/)
 
@@ -1879,61 +1893,61 @@ Anonymization, and De-Identification ([paper, 2015](https://www.researchgate.net
 -   [Using Emacs magit with a forge (like GitHub)](https://cestlaz.github.io/post/using-emacs-62-magit-forge/) - [video](https://youtu.be/wgI8r3Nx_BI)
 
 
-<a id="org6a516e7"></a>
+<a id="orgbd8993c"></a>
 
 ## [How to upload your R code on GitHub: example with an R script on MacOS](https://www.statsandr.com/blog/how-to-upload-r-code-on-github-example-with-an-r-script-on-mac-os/)
 
 Antoine Soetewey 2020-05-24
 
 
-<a id="org94a28aa"></a>
+<a id="org81dedf3"></a>
 
 ## [The State of the Octoverse](https://octoverse.github.com/)
 
 
-<a id="org1f1c08d"></a>
+<a id="org8f5cdb6"></a>
 
 ## [Building a blog using github and jekyll](https://www.smashingmagazine.com/2014/08/build-blog-jekyll-github-pages/)
 
 
-<a id="orgfa4ae89"></a>
+<a id="orge2ce188"></a>
 
 ## [Using GitHub Actions for MLOps & Data Science](https://github.blog/2020-06-17-using-github-actions-for-mlops-data-science/)
 
 
-<a id="org5f1c33e"></a>
+<a id="org9aa83dc"></a>
 
 ## [BIRKENKRAHE @github](https://birkenkrahe.github.io/)
 
 
-<a id="org6e9005c"></a>
+<a id="orgb06853a"></a>
 
 ## [Git Your SQL Together (with a Query Library)](https://caitlinhudon.com/2018/11/28/git-sql-together/)
 
 November 28, 2018 by caitlinhudon	
 
 
-<a id="orgbae58c2"></a>
+<a id="org0fe11f8"></a>
 
 ## READ [Using GitHub Classroom to teach statistics](https://amstat.tandfonline.com/doi/full/10.1080/10691898.2019.1617089#aHR0cHM6Ly9hbXN0YXQudGFuZGZvbmxpbmUuY29tL2RvaS9wZGYvMTAuMTA4MC8xMDY5MTg5OC4yMDE5LjE2MTcwODk/bmVlZEFjY2Vzcz10cnVlQEBAMA==) (paper 2019)
 
 
-<a id="org15f86aa"></a>
+<a id="orged9c84b"></a>
 
 ## [How to use Git and Github with R (15 min video)](https://youtu.be/kL6L2MNqPHg)
 
 
-<a id="orgb6cb583"></a>
+<a id="orga4f8c1b"></a>
 
 ## [How to upload your R code on GitHub: example with an R script on MacOS](https://www.statsandr.com/blog/how-to-upload-r-code-on-github-example-with-an-r-script-on-mac-os/) (24.5.20)
 
 
-<a id="org3df4fe5"></a>
+<a id="org66077b3"></a>
 
 ## [Why You Should Blog with Hugo?](https://www.pakstech.com/blog/introduction-to-hugo/)An Introduction to the 'Blog with Hugo'
 
 
-<a id="orgb837083"></a>
+<a id="org76d38f8"></a>
 
 # Mixed Links
 
@@ -2048,39 +2062,39 @@ CLOSED: <span class="timestamp-wrapper"><span class="timestamp">[2020-05-17 So 1
 -   [The false positive paradox - When a single statistic is not telling the complete story](https://towardsdatascience.com/the-false-positive-paradox-f86448a524bc)
 
 
-<a id="orgf241096"></a>
+<a id="org1a27d36"></a>
 
 # Math
 
 
-<a id="org6711686"></a>
+<a id="org29cf12c"></a>
 
 ## ML
 
 
-<a id="org1de3085"></a>
+<a id="org3cfc9fb"></a>
 
 ### NEXT Math Companion to The Art of Machine Learning     :matloff:pdf:
 
 <file:///home/marcus/Documents/BKS/MathCompanion.pdf>
 
 
-<a id="orgc362fe9"></a>
+<a id="org2608ddb"></a>
 
 ## Stats
 
 
-<a id="orgf6cbc1d"></a>
+<a id="org5f1b87a"></a>
 
-### [Why Bayesian Stats Needs Monte-Carlo Methods](#org3e030d1)
+### [Why Bayesian Stats Needs Monte-Carlo Methods](#orgd7e4240)
 
 
-<a id="org9fde625"></a>
+<a id="org2ce7950"></a>
 
 ### [Introduction to Probability (2nd 3d) PDF](books.md)
 
 
-<a id="org0afcb3a"></a>
+<a id="org930876e"></a>
 
 ### [A trick question for data science buffs](https://towardsdatascience.com/a-trick-question-for-data-science-buffs-f44e21866a75)
 
@@ -2088,45 +2102,45 @@ Try your hand at a multiple choice statistical reasoning puzzle!, by
 Cassie Kozyrkov, May 4, 2020
 
 
-<a id="org98fa9f9"></a>
+<a id="org7a072ba"></a>
 
 ### [Descriptive vs Inferential Statistics in One Picture](https://www.datasciencecentral.com/profiles/blogs/descriptive-vs-inferential-statistics-in-one-picture)
 
 ![img](/home/marcus/Images/descriptive_vs_inferential_statistics.png)
 
 
-<a id="orgedaabcf"></a>
+<a id="org9cebd13"></a>
 
 ### [What the Null Hypothesis Really Means— According to a Statistics Professor](https://towardsdatascience.com/what-the-null-hypothesis-really-means-according-to-a-statistics-professor-1dae099ad8f)
 
 A simple explanation for statistics most confusing concept, Taylor Rodgers, Jul 29
 
 
-<a id="org6b5d8e6"></a>
+<a id="orgec40990"></a>
 
 ### [P-values Explained By Data Scientist](https://towardsdatascience.com/p-values-explained-by-data-scientist-f40a746cfc8)
 
 Admond Lee, Jul 13, 2019
 
 
-<a id="org81bfc84"></a>
+<a id="org9ca6443"></a>
 
 ### [How most statistical tests are linear models (with cheat sheet)](https://paulvanderlaken.com/2020/08/25/how-most-statistical-tests-are-linear-models/)
 
 
-<a id="org3738ffa"></a>
+<a id="orgad18c38"></a>
 
 ### [What is p-value short for? (Kozyrkov)](https://towardsdatascience.com/what-is-p-value-short-for-no-seriously-c548200660a)
 
 Renaming that pesky little number and relearning how to use it
 
 
-<a id="org21f2c0c"></a>
+<a id="orgf2c572c"></a>
 
 ### PROJECT The Magic of The Bell Curve (turn Python script into R)
 
 
-<a id="org9e68f95"></a>
+<a id="orgaeb4662"></a>
 
 ### [Monte Carlo Simulation in R](https://www.programmingr.com/monte-carlo-simulation-in-r/) (see also Matloff 2020)
 
@@ -2136,36 +2150,36 @@ Monte Carlo simulation in R allows you to step past the details of
 the probability mathematics and examine the potential outcomes.
 
 
-<a id="org6f836ff"></a>
+<a id="orgbd5e650"></a>
 
 ### [Outliers detection in R](https://www.statsandr.com/blog/outliers-detection-in-r/)
 
 Antoine Soetewey 2020-08-11
 
 
-<a id="org60213e1"></a>
+<a id="org86db9da"></a>
 
 ### [Stop using p=0.05](https://towardsdatascience.com/stop-using-p-0-05-4a059e622c75)
 
 Stop using arbitrary statistical significance cut-offs, Robert Greener, Aug 6
 
 
-<a id="org5ff2a11"></a>
+<a id="org504ce63"></a>
 
 ### [Essentially random isn't the same as actually random](http://freerangestats.info/blog/2020/08/09/country-regression)
 
 
-<a id="org62ce388"></a>
+<a id="org44414d2"></a>
 
 ## General maths
 
 
-<a id="org1211afc"></a>
+<a id="org20f6e02"></a>
 
 ### [The Directed Edge Reinforced Random Walk: The Ant Mill Phenomenon](https://arxiv.org/abs/1911.07295)
 
 
-<a id="org4099f39"></a>
+<a id="org96d2123"></a>
 
 ### PROJECT Understanding Mathematical Symbols with Code
 
@@ -2173,7 +2187,7 @@ Summations, factorials, matrices and more are simple when we look
 at them with our favorite languages
 
 
-<a id="orgd571d52"></a>
+<a id="orga449019"></a>
 
 ### [A computational approach to the Prisoner’s Dilemma](https://towardsdatascience.com/a-computational-approach-to-the-prisoners-dilemma-837a799cedf0)
 
@@ -2181,165 +2195,165 @@ What is the best decision to make in this crime-infused “sticky
 situation?” By Abhinav Raghunathan, Sep 4, 2020
 
 
-<a id="org5b20e5d"></a>
+<a id="orgca1ccce"></a>
 
 ### [What is Graph Theory, and why should you care?](https://towardsdatascience.com/what-is-graph-theory-and-why-should-you-care-28d6a715a5c2)
 
 From graph theory to path optimization, Vegard Flovik, Aug 12 2020
 
 
-<a id="org1e30f26"></a>
+<a id="org2bdbe1e"></a>
 
 ### [Matrices are Graphs](https://towardsdatascience.com/matrices-are-graphs-c9034f79cfd8) (12 Aug 2020)
 
 How to reason about matrices by looking at graphs, Tivadar Danka
 
 
-<a id="orgeec74dc"></a>
+<a id="orgff14a7b"></a>
 
 ### [The Fastest Way to Compute the Fibonacci Sequence](https://medium.com/cantors-paradise/fastest-fibonacci-9273e2a1805d)
 
 Derived from a modification of the Binet formula
 
 
-<a id="org3527fd0"></a>
+<a id="org788999a"></a>
 
 ### [The Collatz Conjecture](https://medium.com/cantors-paradise/the-collatz-conjecture-some-shocking-results-from-180-000-iterations-7fea130d0377)
 
 
-<a id="orgf4d57cd"></a>
+<a id="org5390b0e"></a>
 
 ### [The Riemann Hypothesis, explained](https://medium.com/cantors-paradise/the-riemann-hypothesis-explained-fa01c1f75d3f)
 
 by Jørgen Veisdal, Aug 21, 2016
 
 
-<a id="org4cdcfc3"></a>
+<a id="org293483c"></a>
 
 ### [What is the determinant?](https://towardsdatascience.com/what-even-is-the-determinant-1180f036cec0)
 
 
-<a id="org454f8b1"></a>
+<a id="orgd4f9ab9"></a>
 
 ### [A Tribute to Leonard Euler (youtube)](https://youtu.be/fEWj93XjON0)
 
 
-<a id="org5c7bc0a"></a>
+<a id="org0559b32"></a>
 
 ### [Philosophy of Mathematics (Stanford Encyclopedia of Philosophy)](https://plato.stanford.edu/entries/philosophy-mathematics/)
 
 
-<a id="orgd0a42ab"></a>
+<a id="org62ad097"></a>
 
 ### [Introduction to Group Theory](https://medium.com/cantors-paradise/an-invitation-to-group-theory-c81e21ab739a) (see also book by Charles Pinter, kindle)
 
 
-<a id="org0a6003c"></a>
+<a id="org09acc69"></a>
 
 ### [Six Difficult Ways of Becoming a Millionaire by Francesco Di Lallo](https://medium.com/cantors-paradise/the-math-hardest-problems-fcc2be474330)
 
 
-<a id="orgf3ea01e"></a>
+<a id="orgfe897fb"></a>
 
 ### [The algebra and machine representation of statistical models (PhD)](https://arxiv.org/abs/2006.08945)
 
 
-<a id="org8441ca5"></a>
+<a id="orgfe6a44a"></a>
 
 ### [Mathematics for machine learning (book)](books.md)
 
 
-<a id="org223698d"></a>
+<a id="org82c5f30"></a>
 
 ### [Statistics with R specialization @Coursera](https://www.coursera.org/specializations/statistics)
 
 
-<a id="org9ba831f"></a>
+<a id="org6576e61"></a>
 
 ### [Business statistics and analysis specialization @Coursera](https://www.coursera.org/specializations/business-statistics-analysis)
 
 
-<a id="org451ab90"></a>
+<a id="orgc73b83f"></a>
 
 ### [Statistics and probability in data science using Python](https://courses.edx.org/courses/course-v1:UCSanDiegoX+DSE210x+3T2017/course/)
 
 
-<a id="org3ac5e23"></a>
+<a id="org8b862e7"></a>
 
 ### [Linear algebra: foundations to frontiers @edX](https://courses.edx.org/courses/course-v1:UTAustinX+UT.5.05x+2T2017/course/)
 
 
-<a id="org2d641dd"></a>
+<a id="org4d80d52"></a>
 
 ### [Mathematics for machine learning: linear algebra @Coursera](https://www.coursera.org/learn/linear-algebra-machine-learning)
 
 
-<a id="org5bc7a81"></a>
+<a id="org992c75c"></a>
 
 ### [Pre-university calculus @edX](https://www.edx.org/course/pre-university-calculus)
 
 
-<a id="org770c20f"></a>
+<a id="orgc0cd25c"></a>
 
 ### [Calculus I @KhanAcademy](https://www.khanacademy.org/math/calculus-1)
 
 
-<a id="orga7e7152"></a>
+<a id="org63e8dec"></a>
 
 ### [Mathematics for machine learning: multivariable calculus](https://www.coursera.org/learn/multivariate-calculus-machine-learning)  \* Discrete Mathematics <code>[0/8]</code>
 
 
-<a id="orga4377e4"></a>
+<a id="org8df5071"></a>
 
 ### [Introduction to discrete mathematics for computer science specialization @Coursera](https://www.coursera.org/specializations/discrete-mathematics)
 
 
-<a id="orgc4eac4c"></a>
+<a id="org7c73c23"></a>
 
 ### [Introduction to mathematical thinking @Coursera](https://www.coursera.org/learn/mathematical-thinking)
 
 
-<a id="org37abfd8"></a>
+<a id="orgc372a52"></a>
 
 ### [Master discrete mathematics: sets, math logic, and more @Udemy](https://www.udemy.com/master-discrete-mathematics/)
 
 
-<a id="org65909b7"></a>
+<a id="org8ab5d82"></a>
 
 ### [Optimization methods in business analytics @edX](https://courses.edx.org/courses/course-v1:MITx+15.053x+3T2016/course/)
 
 
-<a id="org17dca3d"></a>
+<a id="org4be709b"></a>
 
 ### [Discrete optimization @Coursera](https://www.coursera.org/learn/discrete-optimization)
 
 
-<a id="org9cc2e83"></a>
+<a id="org9f8dc66"></a>
 
 ### [Deterministic optimization @edX](https://www.edx.org/course/deterministic-optimization-0)
 
 
-<a id="org29d0b88"></a>
+<a id="orgf5daf82"></a>
 
 # NN
 
 
-<a id="orgb354af4"></a>
+<a id="org0d1a1f2"></a>
 
 ## [The Neural Network, A Visual Introduction | Visualizing Deep Learning](https://youtu.be/UOvPeC8WOt8)
 
 
-<a id="org2360f96"></a>
+<a id="org7374d31"></a>
 
 ## [RobustFill: Neural Program Learning under Noisy I/O (2017)](https://arxiv.org/pdf/1703.07469.pdf)
 
 
-<a id="org10610fb"></a>
+<a id="org74588e1"></a>
 
 ## Building a neural net from scratch using R ([part 1](https://rviews.rstudio.com/2020/07/20/shallow-neural-net-from-scratch-using-r-part-1/), [part 2](https://rviews.rstudio.com/2020/07/24/building-a-neural-net-from-scratch-using-r-part-2/))
 
 
-<a id="org1029d67"></a>
+<a id="org6d09712"></a>
 
 ## [The Beginner’s Glossary of Neural Network Terms](https://towardsdatascience.com/the-beginners-glossary-of-neural-network-terms-a9617354078)
 
@@ -2347,12 +2361,12 @@ Deep learning jargon is daunting and time consuming. Here are some
 of the most important terms and their meanings.
 
 
-<a id="org4f5a255"></a>
+<a id="orgc7594e0"></a>
 
 ## [Every Machine Learning Algorithm Can Be Represented as a Neural Network](https://towardsdatascience.com/every-machine-learning-algorithm-can-be-represented-as-a-neural-network-82dcdfb627e3)
 
 
-<a id="org0f9a504"></a>
+<a id="org57c789f"></a>
 
 ## NN and ML vs Stats (culture wars)
 
@@ -2365,7 +2379,7 @@ Journal of the Royal Statistical Society. Series D (The
 Statistician) Vol. 26, No. 2 (Jun., 1977), pp. 81-107
 
 
-<a id="org5294cb7"></a>
+<a id="org57ca170"></a>
 
 ## [BrainOS — The Most Brain-Like AI](https://towardsdatascience.com/brainos-the-most-brain-like-ai-61b334c7658b)
 
@@ -2373,7 +2387,7 @@ Applying neuroscience for more efficient, smarter AI. Frederik
 Bussler, Jul 21, 2020, see also <https://www.apteo.co/> (AutoML)
 
 
-<a id="org202183a"></a>
+<a id="org1121d35"></a>
 
 ## [Understanding How Neural Networks Think](https://medium.com/ai-in-plain-english/understanding-how-neural-networks-think-ca7d9c1f079)
 
@@ -2381,53 +2395,53 @@ A couple of years ago, Google published one of the most seminal papers
 in machine learning interpretability. By Jesus Rodriguez
 
 
-<a id="org8c802f8"></a>
+<a id="org0a2ea24"></a>
 
 ## [Can you remove 99% of a neural network without losing accuracy?](https://towardsdatascience.com/can-you-remove-99-of-a-neural-network-without-losing-accuracy-915b1fab873b)
 
 An introduction to weight pruning by Tivadar Danka
 
 
-<a id="org752b16f"></a>
+<a id="org8aa5d5f"></a>
 
 ## [Symbolic Mathematics Finally Yields to Neural Networks](https://www.quantamagazine.org/symbolic-mathematics-finally-yields-to-neural-networks-20200520/?utm_medium=email&utm_source=topic+optin&utm_campaign=awareness&utm_content=20200608+ai+nl&mkt_tok=eyJpIjoiTUdOa1pHSTNPR0kyTURjeCIsInQiOiJxOWtwZGtvd2ZOWE5kR2ljSWt6UTZmMkcxaWVRUnkxRGNCRjlrbmZKSHNmNnhoaHRuYUdwQWZ2XC9lMTNMcU01TnpXVEF4bTVrWFhRSGJkQzcwT2ZzT0R1eTVUaWp5Q1pXMVwvOVpNeG5SaTVOWDZ3SVhpY2E5alFWR20zbzB1QVRsIn0%3D)
 
 
-<a id="orgf683c95"></a>
+<a id="org6e16e88"></a>
 
 ## [Explainable AI: Neural Networks (IBM)](https://community.ibm.com/community/user/datascience/blogs/austin-eovito1/2020/05/18/explainable-ai-neural-nets)
 
 
-<a id="org24b959c"></a>
+<a id="org6e5a76e"></a>
 
 ## [Why are neural networks so powerful?](https://towardsdatascience.com/why-are-neural-networks-so-powerful-bc308906696c)
 
 The universal approximation theorem
 
 
-<a id="org9c6a640"></a>
+<a id="orgaa61633"></a>
 
 ## [22 articles about NN](https://www.datasciencecentral.com/profiles/blogs/22-great-articles-about-neural-networks) Jan 2019g
 
 
-<a id="orgb114699"></a>
+<a id="org13fd8f2"></a>
 
 # Careers
 
 
-<a id="org90a57e4"></a>
+<a id="org2f584a9"></a>
 
 ## [Podcast "A career in data science"](https://anchor.fm/datascicareer/episodes/Chapter-1-What-is-Data-Science-ei1t10/a-a2u715p)
 
 
-<a id="orgfe915be"></a>
+<a id="orga0e122f"></a>
 
 ## [How You Should Change Your Data Science Education](https://towardsdatascience.com/how-you-should-change-your-data-science-education-710d01f36ebd)
 
 Focusing on engineering skills, Brandon Walker, Aug 5, 2020
 
 
-<a id="org9cc9a82"></a>
+<a id="org24e853d"></a>
 
 ## [Professional Machine Learning Engineer (Google)](https://cloud.google.com/certification/machine-learning-engineer)
 
@@ -2440,17 +2454,17 @@ and needs familiarity with application development, infrastructure
 management, data engineering, and security.
 
 
-<a id="org3f1321f"></a>
+<a id="orgdc42b69"></a>
 
 ## [50 Questions to Test True Data Science Knowledge](https://www.datasciencecentral.com/profiles/blogs/25-questions-to-detect-fake-data-scientists)
 
 
-<a id="org72354a4"></a>
+<a id="orgcfc8624"></a>
 
 ## [Data Science questions](https://www.datasciencecentral.com/page/search?q=interview+questions)
 
 
-<a id="org91a0d1e"></a>
+<a id="orgcbc9579"></a>
 
 ## [Data Scientist’s 2020 Toolbox: A List of Tools to Increase Your Productivity](https://towardsdatascience.com/data-science-101-a-list-of-tools-to-increase-your-productivity-134f57b01922)
 
@@ -2459,7 +2473,7 @@ the right tools makes the journey adorable. Roberto Sannazzaro Dec
 29, 2019
 
 
-<a id="org4607253"></a>
+<a id="org87b7257"></a>
 
 ## Some Important Data Science Tools that aren’t Python, R, SQL or Math
 
@@ -2485,7 +2499,7 @@ might want to be familiar with, by Kyle Gallatin, Nov 1, 2018
 -   [ ] 
 
 
-<a id="org9b8de19"></a>
+<a id="org062d05f"></a>
 
 ## DONE [The Essential Skills Most Data Science Courses Won’t Teach You](https://towardsdatascience.com/the-essential-skills-most-data-science-courses-wont-teach-you-5ceb0c4d17ce)
 
@@ -2498,7 +2512,7 @@ might want to be familiar with, by Kyle Gallatin, Nov 1, 2018
 -   Business acumen / domain knowledge
 
 
-<a id="orgeeecc35"></a>
+<a id="org386910d"></a>
 
 ## [Top 9 Data Science Careers of the Future](https://towardsdatascience.com/top-10-data-science-applications-of-the-future-bd6cf7553eca)
 
@@ -2506,7 +2520,7 @@ Data Science applications you might not have explored before.
 By Rashi Desai, 16 Jul 2020
 
 
-<a id="org0ec69cd"></a>
+<a id="org99d04ae"></a>
 
 ## [Data Science’s Most Misunderstood Hero](https://towardsdatascience.com/data-sciences-most-misunderstood-hero-2705da366f40)
 
@@ -2514,28 +2528,28 @@ Why treating analytics like a second-class citizen will hurt you, by
 Cassie Kozyrkov, Oct 19, 2019
 
 
-<a id="org28f9d91"></a>
+<a id="orgacfd646"></a>
 
 ## [Data Science Concepts Explained to a Five-year-old](https://towardsdatascience.com/data-science-concepts-explained-to-a-five-year-old-ad440c7b3cbd)
 
 Describing Technical Concepts Simply in Interviews by Megan Dibble
 
 
-<a id="orgc2f0d1e"></a>
+<a id="org366471d"></a>
 
 ## [I Worked Through 500+ Data Science Interview Questions](https://towardsdatascience.com/i-worked-through-500-data-science-interview-questions-51e2e4dead9d)g
 
 Here’s what I learned along the way by Megan Dibble
 
 
-<a id="orgd4782aa"></a>
+<a id="org05ee075"></a>
 
 ## [Business Analytics vs Data Analytics in One Picture](https://www.datasciencecentral.com/profiles/blogs/business-analytics-vs-data-analytics)
 
 <https://storage.ning.com/topology/rest/1.0/file/get/3825607260?profile=original>
 
 
-<a id="orgd3c06ac"></a>
+<a id="org81e7098"></a>
 
 ## [The Role of the Data Scientist](https://blog.rstudio.com/2020/05/27/role-of-the-data-scientist/)
 
@@ -2543,120 +2557,120 @@ Carl Howe, Sean Lopp
 2020-05-27
 
 
-<a id="org2266f94"></a>
+<a id="org705c1ab"></a>
 
 ## [How a Biologist Became a Data Scientist](https://towardsdatascience.com/how-a-biologist-became-a-data-scientist-c52ec0060b8c)
 
 How I Transitioned from a Non-Technical Background into Data Science
 
 
-<a id="orgf5a79e3"></a>
+<a id="org14e18cf"></a>
 
 ## [Data science pioneers (movie, 60 min, 2020)](https://www.datascience.movie/on-demand/)
 
 
-<a id="org336012f"></a>
+<a id="org46a5847"></a>
 
 ## [Curiosity-Driven Data Science](https://hbr.org/2018/11/curiosity-driven-data-science) (27 Nov 2018)
 
 
-<a id="org7670028"></a>
+<a id="org9372af7"></a>
 
 ## [66 job interview questions for data scientists (13.2.2013)](https://www.datasciencecentral.com/profiles/blogs/66-job-interview-questions-for-data-scientists)
 
 
-<a id="org2be1957"></a>
+<a id="org863a0bd"></a>
 
 ## [Data science workflow: Overview and Challenge](https://cacm.acm.org/blogs/blog-cacm/169199-data-science-workflow-overview-and-challenges/fulltext) (Philip Guo 10/2013)
 
 -   [Data science workflow diagram](file:///home/marcus/Images/data_science_workflow_guo.jpg)
 
 
-<a id="orgea95c83"></a>
+<a id="org22d6d32"></a>
 
 ## [Twelve Tips for Data-Driven Research](http://pgbovine.net/tips-for-data-driven-research.htm) (Philip Guo, Nov 2015)
 
 
-<a id="orge87a962"></a>
+<a id="org116a437"></a>
 
 ## NEXT [Data Scientist: The Sexiest Job of the 21st Century (HBR 10/2012)](https://hbr.org/2012/10/data-scientist-the-sexiest-job-of-the-21st-century)
 
 
-<a id="org40c53a0"></a>
+<a id="orgcfd4944"></a>
 
 ## NEXT [What Data Scientists Really Do, According to 35 Data Scientists (HBR 15.8.2018)](https://hbr.org/2018/08/what-data-scientists-really-do-according-to-35-data-scientists?referral=03758&cm_vc=rr_item_page.top_right)
 
 
-<a id="org422f889"></a>
+<a id="org6223fdb"></a>
 
 ## DONE [Discover data science](https://www.discoverdatascience.org/) - [How to become a data scientist (programs)](https://www.discoverdatascience.org/career-information/data-scientist/)
 
 
-<a id="orgeebe8f0"></a>
+<a id="orge692286"></a>
 
 ## [Data Scientist: The Dirtiest Job of the 21st Century (20.2.20)](https://towardsdatascience.com/data-scientist-the-dirtiest-job-of-the-21st-century-7f0c8215e845)
 
 
-<a id="org0d9a4ab"></a>
+<a id="org49ac20d"></a>
 
 ## [How I went from zero coding skills to data scientist in 6 months](https://towardsdatascience.com/how-i-went-from-zero-coding-skills-to-data-scientist-in-6-months-c2207b65f2f3) (2020)
 
 
-<a id="org3b4a289"></a>
+<a id="orgd9766cb"></a>
 
 ## [How I Would Learn Data Science (If I Had to Start Over)](https://youtu.be/4OZip0cgOho) (2020)
 
 
-<a id="org85dabbc"></a>
+<a id="org82b7684"></a>
 
 ## [How To Learn Data Science If You’re Broke](https://towardsdatascience.com/how-to-learn-data-science-if-youre-broke-7ecc408b53c7) (2018)
 
 
-<a id="org12dc34f"></a>
+<a id="org5b10328"></a>
 
 ## [If I had to start learning Data Science again, how would I do it?](https://towardsdatascience.com/if-i-had-to-start-learning-data-science-again-how-would-i-do-it-78a72b80fd93) (2020)
 
 
-<a id="orga48e816"></a>
+<a id="org3e542c6"></a>
 
 ## [Yes, You Can Become a Data Scientist Online. Here’s How. (19.5.20)](https://towardsdatascience.com/yes-you-can-become-a-data-scientist-online-heres-how-dc73c7faae0f)
 
 
-<a id="orgea5f804"></a>
+<a id="orgff2181d"></a>
 
 # RStudio
 
 
-<a id="org7497305"></a>
+<a id="org1cef9a8"></a>
 
 ## [RStudio addins, or how to make your coding life easier](https://towardsdatascience.com/rstudio-addins-or-how-to-make-your-coding-life-easier-6b627c7b2240)
 
 Antoine Soetewey, Jan 26-2020 
 
 
-<a id="orge8e1a01"></a>
+<a id="orgd9b448e"></a>
 
 ## [Do, Share, Teach, and Learn Data Science with RStudio Cloud, Lou](https://blog.rstudio.com/2020/08/05/rstudio-cloud-announcement/)
 
 Bajuk, 2020-08-05
 
 
-<a id="org9f27efe"></a>
+<a id="org98f7aac"></a>
 
 ## [A Dashboard of Shiny Apps by Andy Merlino 2020/07/17](https://www.tychobra.com/posts/2020-07-17-a-dashboard-of-polished-shiny-apps/)
 
 
-<a id="org0d04bc6"></a>
+<a id="org940db76"></a>
 
 ## [keyboard shortcuts](https://www.dataquest.io/blog/rstudio-tips-tricks-shortcuts/) and [tips and tricks](https://www.dataquest.io/blog/rstudio-tips-tricks-shortcuts/)
 
 
-<a id="org24f3c4c"></a>
+<a id="orgd6bba33"></a>
 
 ## [Using version control with RStudio](https://support.rstudio.com/hc/en-us/articles/200532077][Using version control with RStudio]])
 
 
-<a id="orgba7e8f4"></a>
+<a id="orga77848e"></a>
 
 ## [Interactive code with Shiny - Example](https://datavizm20.classes.andrewheiss.com/lesson/)
 
@@ -2665,17 +2679,17 @@ Bajuk, 2020-08-05
 -   [RStudio Shiny tutorial (with 2 hr video)](https://shiny.rstudio.com/tutorial/)
 
 
-<a id="org218d7ce"></a>
+<a id="org8768079"></a>
 
 ## [Xaringan presentations](https://bookdown.org/yihui/rmarkdown/xaringan.html)
 
 
-<a id="org72a43f6"></a>
+<a id="org2bb217b"></a>
 
 ## [Connections window / database connections in RStudio](https://blog.rstudio.com/2017/08/16/rstudio-preview-connections/)
 
 
-<a id="org42d8514"></a>
+<a id="org080caf9"></a>
 
 ## [RStudio Primers (cloud)](https://rstudio.cloud/learn/primers) created using [learnr](https://rstudio.github.io/learnr/) (github)
 
@@ -2690,12 +2704,12 @@ Bajuk, 2020-08-05
 -   [ ] Organize your work
 
 
-<a id="org90f9286"></a>
+<a id="org57446c8"></a>
 
 ## [RStudio Blog](https://blog.rstudio.com/)
 
 
-<a id="org1c9c2d4"></a>
+<a id="org6290833"></a>
 
 # AI/ML
 
@@ -2731,12 +2745,12 @@ When tuned up, old algorithms can match the abilities of their successors
 -   [The computers of nature - Cellular automata and the emergence of computation in natural systems](https://towardsdatascience.com/the-computers-of-nature-2f1019f9a1b8)
 
 
-<a id="org408a2dd"></a>
+<a id="org1d9e81e"></a>
 
 # SQL/(R)SQLite
 
 
-<a id="org64f4981"></a>
+<a id="org125c1eb"></a>
 
 ## [Machine learning example with SQL only](https://www.betterdatascience.com/machine-learning-with-sql%E2%80%8A-%E2%80%8Aits-easier-than-you-think/)
 
@@ -2747,7 +2761,7 @@ limited, or the company you work for treats SQL as the only option for
 predictive analytics? In-database machine learning is the answer.
 
 
-<a id="org0968b2b"></a>
+<a id="org5e654e1"></a>
 
 ## [Data Lakes vs. Data Warehouses](https://www.datacamp.com/community/blog/data-lakes-vs-data-warehouses)
 
@@ -2755,7 +2769,7 @@ Understand the differences between the two most popular options for
 storing big data.
 
 
-<a id="orgd84cf36"></a>
+<a id="orgd4ce9b8"></a>
 
 ## [Apache Spark, JDBC, sparklyr](https://jozef.io/r925-spark-jdbc-loading-data/)
 
@@ -2763,67 +2777,67 @@ A guide to retrieval and processing of data from relational
 database systems using Apache Spark and JDBC with R and sparklyr
 
 
-<a id="org1492a20"></a>
+<a id="orge330154"></a>
 
 ## [R and ODBC – Pulling Data From A SQL Database](https://www.programmingr.com/examples/r-and-odbc-pulling-data-from-a-sql-database/)
 
 
-<a id="org581e3d5"></a>
+<a id="org3d74d98"></a>
 
 ## [4 SQL Tips for Data Scientists and Data Engineers](https://medium.com/better-programming/4-sql-tips-for-data-scientist-and-data-engineers-56c41487752f)
 
 
-<a id="orgb60281b"></a>
+<a id="org24a97d4"></a>
 
 ## [SQL equivalents in R](https://medium.com/predict/sql-equivalents-in-r-d1a4dfc27ab4)
 
 
-<a id="org33836f9"></a>
+<a id="org2859ffc"></a>
 
 ## [Building Complex SQL Queries with R](https://daranzolin.github.io/2020-07-24-building-sql-queries/)
 
 
-<a id="org7053b2e"></a>
+<a id="org943b17d"></a>
 
 ## [Ten SQL Concepts You Should Know for Data Science Interviews](https://towardsdatascience.com/ten-sql-concepts-you-should-know-for-data-science-interviews-7acf3e428185)
 
 
-<a id="orge78e134"></a>
+<a id="org26d8e86"></a>
 
 ## [Linear Regression with SQL (whitepaper) & R Notebook](https://mode.com/linear-regression-guide/)
 
 
-<a id="orgac91265"></a>
+<a id="org944a4de"></a>
 
 ## [Using SQL in RStudio (29.4.20)](https://irene.rbind.io/post/using-sql-in-rstudio/)
 
 
-<a id="orga5776fd"></a>
+<a id="orgb5783fb"></a>
 
 ## [Appropriate uses for SQLite](https://sqlite.org/whentouse.html)
 
 
-<a id="orga4d1753"></a>
+<a id="org9c9a414"></a>
 
 ## [Relational Algebra (tutorialspoint)](https://www.tutorialspoint.com/dbms/relational_algebra.htm)
 
 
-<a id="orgf6b45cd"></a>
+<a id="org22b5e8a"></a>
 
 ## RSQLite     :rsqlite:
 
 
-<a id="org36d7d57"></a>
+<a id="org56f42ec"></a>
 
 ### [access in RStudio with the connections pane](https://db.rstudio.com/rstudio/connections/)
 
 
-<a id="org1d5b82b"></a>
+<a id="org5a4d7c5"></a>
 
 ### [Read Data from an SQLite Database (video 8 min)](https://www.udemy.com/tutorial/data-science-datamining-natural-language-processing-in-r/read-data-from-a-database/)
 
 
-<a id="org5558f7c"></a>
+<a id="orgf5c1e5d"></a>
 
 ### TODO [RSQLite = SQLite in R](https://www.datacamp.com/community/tutorials/sqlite-in-r)
 
@@ -2831,7 +2845,7 @@ In this tutorial, you will learn about using SQLite, an extremely
 light-weight relational database management system (RDBMS) in R.
 
 
-<a id="org0933e9e"></a>
+<a id="org65cbc79"></a>
 
 ### TODO [Beginners Guide to SQLite (in R)](https://www.datacamp.com/community/tutorials/beginners-guide-to-sqlite)
 
@@ -2840,234 +2854,234 @@ example of their practical applications using the command line
 interface.
 
 
-<a id="orgae567b2"></a>
+<a id="org81c7752"></a>
 
 ## JSON (JavaScript Object Notation) Files
 
 
-<a id="orgf9572c4"></a>
+<a id="org043476c"></a>
 
 ### [RJSON package](https://www.tutorialspoint.com/r/r_json_files.htm)
 
 
-<a id="orgfb4c16b"></a>
+<a id="org80fb544"></a>
 
 ### [Tutorial: Working with Large Data Sets using Pandas and JSON in Python](https://www.dataquest.io/blog/python-json-tutorial/)
 
 
-<a id="org3893c0d"></a>
+<a id="org1b20fcd"></a>
 
 ## SQL Joins Grafik
 
 [Figure](file:///home/marcus/Images/SQL_joins.png)
 
 
-<a id="orgf257abf"></a>
+<a id="orgfee3419"></a>
 
 ## TODO [SQL Data Types (Mode)](https://mode.com/sql-tutorial/sql-data-types/)
 
 
-<a id="org893692a"></a>
+<a id="orged32c8f"></a>
 
 ## [Crunchbase - data dashboard solution](https://www.crunchbase.com/home)
 
 
-<a id="org6e0cfb2"></a>
+<a id="org1eb8050"></a>
 
 ## [SQL for Data Scientists, in Under 6 Minutes](https://medium.com/analytics-vidhya/sql-for-data-scientists-in-6-minutes-or-less-6e11a377751f)
 
 An Essential Skill for Any Data Science Résumé
 
 
-<a id="orgd8e04ac"></a>
+<a id="orgdc00fad"></a>
 
 ## [SQL Case Study: Investigating a Drop in User Engagement](https://towardsdatascience.com/sql-case-study-investigating-a-drop-in-user-engagement-510b27d0cbcc)
 
 A Real-Life Data Analyst Case Study
 
 
-<a id="org9bec9b9"></a>
+<a id="org8c48060"></a>
 
 ## [SQL Case Study: Investigating a Drop in User Engagement](https://towardsdatascience.com/sql-case-study-investigating-a-drop-in-user-engagement-510b27d0cbcc) (21 May 2020)
 
 
-<a id="org9b5b79b"></a>
+<a id="orgdf9f141"></a>
 
 # Blogs worth reading
 
 
-<a id="org4336fbc"></a>
+<a id="orga24c2a2"></a>
 
 ## [Will Kurt Count Bayesie](https://www.countbayesie.com/)
 
 
-<a id="org3e030d1"></a>
+<a id="orgd7e4240"></a>
 
 ### [Why Bayesian Stats Needs Monte-Carlo Methods](https://www.countbayesie.com/blog/2020/8/16/why-bayesian-stats-need-monte-carlo-methods)
 
 AUGUST 16, 2020   
 
 
-<a id="orgf4badcf"></a>
+<a id="orgc861681"></a>
 
 ## “One Year of Data Science Blogging — Was it Worth it?”
 
 by Dario Radečić <https://towardsdatascience.com/one-year-of-data-science-blogging-was-it-worth-it-6022d38b9a02>
 
 
-<a id="orgc6c302a"></a>
+<a id="orgefaced9"></a>
 
 ## [Data Science is a Science (Just Not the One You May Think)](https://win-vector.com/2020/09/10/data-science-is-a-science-just-not-the-one-you-may-think/)
 
 
-<a id="org001ebbd"></a>
+<a id="org7b27f39"></a>
 
 ## [Megan Stodel](https://www.meganstodel.com/)
 
 
-<a id="org294446d"></a>
+<a id="org00e5bd1"></a>
 
 ## [Anita Graser](https://anitagraser.com/)
 
 
-<a id="orgbc55ec1"></a>
+<a id="org78dcace"></a>
 
 ## pete werner - [Density plots in ggplot](https://petewerner.blogspot.com/2012/12/density-plot-with-ggplot.html)
 
 
-<a id="orga56665e"></a>
+<a id="org69598f3"></a>
 
 ## [Corey Sparks R blog (demographic modeling - cluster analysis)](https://coreysparks.github.io/blog/demographic-modeling-cluster-analysis/)
 
 
-<a id="orgacd4bc3"></a>
+<a id="org27de15d"></a>
 
 ## [Quantum jitter](https://www.quantumjitter.com/#projects)
 
 
-<a id="org0ae3deb"></a>
+<a id="orgcf72d7c"></a>
 
 ## [Richie Cotton 4D Pie Charts](https://4dpiecharts.com/)
 
 
-<a id="org1bdc56c"></a>
+<a id="orgc248fba"></a>
 
 ## [Martin Johnsson's blog about genetics](https://onunicornsandgenes.blog/2020/07/12/twin-lambs-with-different-fathers/)
 
 
-<a id="org8b3401c"></a>
+<a id="org3f306b1"></a>
 
 ## [Guest blogging R-posts.com](https://r-posts.com/)
 
 
-<a id="orge66ef31"></a>
+<a id="org1aa124a"></a>
 
 ## [Mathew Analytics (e.g. R code review)](https://mathewanalytics.com/blog/)
 
 
-<a id="org8427afb"></a>
+<a id="org8e9265d"></a>
 
 ## Statistical modeling, causal inferene, and social science
 
 [E.g. Drunk-under-the-lamppost testing](https://statmodeling.stat.columbia.edu/2020/07/07/drunk-under-the-lamppost-testing/)
 
 
-<a id="org41b6cfe"></a>
+<a id="org9149a4d"></a>
 
 ## [R Rendering - Tylermw](https://www.tylermw.com/)
 
 
-<a id="org08c71d3"></a>
+<a id="org1cca031"></a>
 
 ## [Sebastian Kranz](https://skranz.github.io//r/2020/07/01/PuzzlingRegressionAnatomy.html?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+skranz_R+%28Economics+and+R+%28R+Posts%29%29)
 
 
-<a id="org75d221a"></a>
+<a id="org7694f62"></a>
 
 ## [18 great blog posts from 2016](https://www.datasciencecentral.com/profiles/blogs/18-great-blogs-posted-in-the-last-12-months-1)
 
 
-<a id="org29fba13"></a>
+<a id="org7301ca5"></a>
 
 ## [List of top data science blogs 2020](https://www.iamnagdev.com/?p=701) (via Hi! I am Nagdev)
 
 
-<a id="org62d9e85"></a>
+<a id="orgb5e38fb"></a>
 
 ## [Joshua Cook - Riddler](https://joshuacook.netlify.app/post/riddler-just-keep-turning/)
 
 
-<a id="org0f3c0c7"></a>
+<a id="orgd39623d"></a>
 
 ## [R-Bloggers](https://www.r-bloggers.com/)
 
 
-<a id="orgd932558"></a>
+<a id="org1b024eb"></a>
 
 ## [Radford Neal](https://radfordneal.wordpress.com/2020/05/27/critique-of-projecting-the-transmission-dynamics-of-sars-cov-2-through-the-postpandemic-period-part-1-reproducing-the-results/) - COVID-19
 
 
-<a id="org50e9ff0"></a>
+<a id="org63404e6"></a>
 
 ## [Holker K. von Jouanne-Diedrich](https://blog.ephorie.de/)
 
 
-<a id="org009dace"></a>
+<a id="orgb0a5190"></a>
 
 ## <https://physicsgarage.com/>
 
 
-<a id="org5a3d093"></a>
+<a id="org47b19f4"></a>
 
 ## [Publishable Stuff / Rasmus Baath](http://www.sumsar.net/)
 
 
-<a id="org83ac84b"></a>
+<a id="orgb3f213d"></a>
 
 ## [Xi'An's OG](https://xianblog.wordpress.com/)
 
 
-<a id="org31b4941"></a>
+<a id="org531b4da"></a>
 
 ## [Radford Neal's blog](https://radfordneal.wordpress.com/)
 
 
-<a id="orgf8b10b2"></a>
+<a id="org97bfcb2"></a>
 
 ## [Vicky Boykis](https://veekaybee.github.io/)
 
 
-<a id="org2ad097a"></a>
+<a id="org2050cfc"></a>
 
 ## [Markus Lang](https://www.markuslang.org/blog/)
 
 
-<a id="orgb9f9dd9"></a>
+<a id="orgb93180a"></a>
 
 ## [Aerin Kim](https://towardsdatascience.com/@aerinykim)
 
 
-<a id="orgab2f2f5"></a>
+<a id="org6651779"></a>
 
 ## [Cassie Kozyrkov](https://medium.com/@kozyrkov)
 
 
-<a id="org84ee53e"></a>
+<a id="orgb3bc085"></a>
 
 ## [Tim Gowers](https://gowers.wordpress.com/)
 
 
-<a id="org2d946f2"></a>
+<a id="org9033dfa"></a>
 
 ## [RStudio Blog](https://blog.rstudio.com/)
 
 
-<a id="orgfa85ec0"></a>
+<a id="org37b958f"></a>
 
 ## [RWeekly](https://rweekly.org/about#AboutUs)
 
 
-<a id="org9006e04"></a>
+<a id="org8db77cc"></a>
 
 # Datasets
 
@@ -3103,7 +3117,7 @@ Hint: Using a Kaggle data set might not be sufficient.
 -   [Learning R on iris (2016)](https://www.rpubs.com/moeransm/intro-iris)
 
 
-<a id="org8a28e46"></a>
+<a id="orgd7d5b3f"></a>
 
 # lessr
 
@@ -3111,12 +3125,12 @@ Hint: Using a Kaggle data set might not be sufficient.
 -   <http://lessrstats.com>
 
 
-<a id="org5190298"></a>
+<a id="orgff8e1f2"></a>
 
 # NLP
 
 
-<a id="orgac7ef3d"></a>
+<a id="org491a3b8"></a>
 
 ## [State-of-the-art NLP models from R](https://blogs.rstudio.com/ai/posts/2020-07-30-state-of-the-art-nlp-models-from-r/):
 
@@ -3128,19 +3142,19 @@ benefit from these models as well. By Turgut Abdullayev, QSS
 Analytics, July 30, 2020
 
 
-<a id="orgce29a5b"></a>
+<a id="orgc91b2d7"></a>
 
 ## [A Guide to Text Annotation — the Key to Understanding Language](https://medium.com/@andre_ye/a-guide-to-text-annotation-the-key-to-understanding-language-e221a69ee90e)
 
 Named Entity Recognition, Sentiment Analysis, and More, Andre Ye, Jun 10
 
 
-<a id="org4dc87f4"></a>
+<a id="orgc71bfb8"></a>
 
 ## [Datacamp: natural language processing in R](courses.md)
 
 
-<a id="orge9c12bf"></a>
+<a id="org8e8c3bd"></a>
 
 # Blockchain
 
@@ -3152,12 +3166,12 @@ blockchain looks like and some of the core concepts behind it!
 -   [Brilliant - Cryptocurrencies](https://brilliant.org/practice/fable-cryptonia/?chapter=introduction-53)
 
 
-<a id="org4c8f526"></a>
+<a id="org774828e"></a>
 
 # Lessons
 
 
-<a id="org4546c62"></a>
+<a id="org634cbcc"></a>
 
 ## Reinstall missing LaTeX packages with TinyTex
 
@@ -3165,12 +3179,21 @@ blockchain looks like and some of the core concepts behind it!
     tinytex::parse_install("introduction.log")
 
 
-<a id="org4e1e6cd"></a>
+<a id="orgc0e05fe"></a>
 
 # Interesting applications
 
 
-<a id="org8ecf41d"></a>
+<a id="orgb9fa910"></a>
+
+## 100 Time Series Data Mining Questions (with answers!) part 1-3
+
+-   [part 1](https://franzbischoff.rbind.io/posts/100-time-series-part-1/) - 1 Sept 2020
+-   [part2](https://franzbischoff.rbind.io/posts/100-time-series-part-2/) 2 - 8 Sept 2020
+-   [part 3](https://franzbischoff.rbind.io/posts/100-time-series-part-3/) - 13 Sept 2020
+
+
+<a id="orgafaf500"></a>
 
 ## PROJECT Nobel-prize winners for Biden
 
@@ -3181,7 +3204,7 @@ blockchain looks like and some of the core concepts behind it!
     about comparison with other disciplines?
 
 
-<a id="org9580b58"></a>
+<a id="org529eba2"></a>
 
 ## [Officer R package - manipulate Word and PPT documents](https://github.com/davidgohel/officer)
 
@@ -3192,7 +3215,7 @@ provided; contents, styles and properties of the original document
 will then be available.
 
 
-<a id="orgce6b96b"></a>
+<a id="org6a97a93"></a>
 
 ## [Have R Look After Your Stocks!](https://curious-joe.net/post/have-r-look-after-your-stock/)
 
@@ -3200,64 +3223,64 @@ Use R to check stock prices for you and notify you. Posted by
 Arafath Hossain on Saturday, August 29, 2020
 
 
-<a id="org6c56a9c"></a>
+<a id="orgbe2112d"></a>
 
 ## [Analysing campaign contributions (2018-2020)](https://troyhernandez.com/2020/08/26/1000-little-fiefdoms-a-social-network-analysis-of-illinois-politics/)
 
 
-<a id="org298b1bf"></a>
+<a id="org468c316"></a>
 
 ## [R for Health Data Science](books.md) (book)
 
 
-<a id="orgbcbb29d"></a>
+<a id="orgb3bead1"></a>
 
 ## [Movie recommender system (DS portfolio) with Tableau](https://towardsdatascience.com/a-complete-data-science-portfolio-project-ebbced35ea84) (Medium blog post)
 
 
-<a id="orge52ae81"></a>
+<a id="orgd5b10be"></a>
 
 ## [Hegel vs Nietzsche NLP](http://man.herm3tica.tv/hegel-vs-nietzsche-nlp/)
 
 
-<a id="org1a51ebf"></a>
+<a id="org46e0fcf"></a>
 
 ## [Star Wars Fandom Survey](https://www.markhw.com/blog/sw-survey-pt1)
 
 
-<a id="org6da316d"></a>
+<a id="org577b405"></a>
 
 ## [Genomic data science (coursera)](courses.md)
 
 
-<a id="org6a32ee5"></a>
+<a id="org3708434"></a>
 
 ## [Introduction to survival analysis](https://towardsdatascience.com/introduction-to-survival-analysis-6f7e19c31d96) (customer churn/retention)
 
 
-<a id="org2149b6e"></a>
+<a id="org3d0afd6"></a>
 
 ## [Tidy Tuesday live screencast: Analyzing European energy in R](https://youtu.be/Rcmu5e-9FSc)
 
 
-<a id="orga739db1"></a>
+<a id="org7bb24d8"></a>
 
 ## [Sharing pictures from holidays in the Canadian Rockies (with R)](https://freakonometrics.hypotheses.org/61212)
 
 09/08/2020 Arthur Charpentier
 
 
-<a id="org8639c94"></a>
+<a id="org1c978ec"></a>
 
 ## [The Goldilocks Principle - investing in stocks](https://www.quantumjitter.com/project/goldilocks/)
 
 
-<a id="org6566140"></a>
+<a id="org15739ca"></a>
 
 ## [Customer Churn – Logistic Regression with R](https://www.datasciencecentral.com/profiles/blogs/customer-churn-logistic-regression-with-r) (2017)
 
 
-<a id="orgb5b6d5f"></a>
+<a id="orga2978d7"></a>
 
 ## [Twitter text analysis: The Most Popular Towards Data Science Article Topics on Twitter](https://towardsdatascience.com/the-most-popular-towards-data-science-article-topics-on-twitter-2ecc512dd041)
 
@@ -3265,17 +3288,17 @@ An Intro to Text Analytics that can Increase Your Article Popularity,
 Brandon Walker, Aug 7-2020
 
 
-<a id="org7f682c8"></a>
+<a id="org9fc8fbf"></a>
 
 ## [Labor force growth by decade (plot)](https://franklinparker.com/2020/08/16/labor-force-growth-by-decade-r-code/)
 
 
-<a id="orgd42c348"></a>
+<a id="org366ef3a"></a>
 
-## [Storytelling with Data and ggplot: Visualising the Receding Ice Sheets](#orgdcfe446)
+## [Storytelling with Data and ggplot: Visualising the Receding Ice Sheets](#org7a64077)
 
 
-<a id="orgc50814b"></a>
+<a id="org3f925a2"></a>
 
 ## Earthquake early warning system     :node:red:ibm:
 
@@ -3283,7 +3306,7 @@ Build an Earthquake Early Warning (EEW) system and visualize historical seismic 
 Build Node-RED dashboards using live OpenEEW sensor data ([tutorial](https://developer.ibm.com/tutorials/build-an-openeew-earthquake-early-warning-node-red-dashboard/))
 
 
-<a id="org8e2802a"></a>
+<a id="org6f59ace"></a>
 
 ## International Space Station
 
@@ -3291,12 +3314,21 @@ Build Node-RED dashboards using live OpenEEW sensor data ([tutorial](https://dev
 -   <https://www.raspberrypi.org/blog/international-space-station-tracker-the-magpi-96/>
 
 
-<a id="orgb8f4ad4"></a>
+<a id="orgee92fb4"></a>
 
 ## COVID-19
 
 
-<a id="orga1847ec"></a>
+<a id="orgbc51370"></a>
+
+### [Severity Score Derivation](https://towardsdatascience.com/severity-score-derivation-c5e63f9ae046)
+
+Explanation of steps involved, thought process, and research
+behind the COVID-19 Severity score to compare between States and
+Counties Matthew Littman Sep 13, 2020
+
+
+<a id="orgf009fca"></a>
 
 ### [Does the chart support the text?](https://ourworldindata.org/covid-health-economy) (COVID-19 and economic data)
 
@@ -3310,7 +3342,7 @@ number of the countries aren't even named, including, I notice
 Sweden."
 
 
-<a id="org2ee58a4"></a>
+<a id="org4a843c7"></a>
 
 ### [Risk of catching a fatal case of COVID-19 is like having a bath (Sept 2020)](https://twitter.com/TimHarford/status/1301417268308586497?s=09)
 
@@ -3324,7 +3356,7 @@ in 2 million per day, perhaps a bit lower.
     ![img](/home/marcus/Images/UK_deaths.jpg) (2010) - ([PDF](file:///home/marcus/Images/UK_deaths.pdf))
 
 
-<a id="org2e2703e"></a>
+<a id="org2d64ce5"></a>
 
 ### [Twitter discussion example (June 2020)](https://twitter.com/nataliexdean/status/1275431825364725762)
 
@@ -3333,14 +3365,14 @@ some areas? I see three possible explanations, not all good. A
 thread on how to distinguish between them.
 
 
-<a id="org79151ae"></a>
+<a id="orgdc6ccad"></a>
 
 ### [Micromort = one-in-a-million chance of death risk unit](https://theconversation.com/whats-most-likely-to-kill-you-measuring-how-deadly-our-daily-activities-are-72505)
 
 <https://pbs.twimg.com/media/EbMzBhmXQAEh5XX?format=png&name=900x900>
 
 
-<a id="org0cd6126"></a>
+<a id="orgc3c2db4"></a>
 
 ### [Track COVID-19 Data Yourself with R](https://towardsdatascience.com/track-covid-19-data-yourself-with-r-eb3e641cd4b3)
 
@@ -3348,12 +3380,12 @@ Learn how to monitor daily coronavirus stats and trends using R,
 both in your country and globally.  Chris Ross Aug 10
 
 
-<a id="orgc9e62d0"></a>
+<a id="org89ee27f"></a>
 
 ### [How to Think Like an Epidemiologist (NYT, 4 Aug 2020)](https://www.nytimes.com/2020/08/04/science/coronavirus-bayes-statistics-math.html)
 
 
-<a id="org47e1288"></a>
+<a id="org4c7091b"></a>
 
 ### [covid19italy v0.3.0 is now on CRAN](https://ramikrispin.github.io/2020/07/covid19italy-v0-3-0-is-now-on-cran/)
 
@@ -3365,7 +3397,7 @@ function enables you to get the most recent data available on the
 Github version (updated on a daily basis).
 
 
-<a id="org4403476"></a>
+<a id="org0c29e8f"></a>
 
 ### [This Chart Predicts Which Colleges Will Survive the Coronavirus](https://marker.medium.com/this-chart-predicts-which-colleges-will-survive-the-coronavirus-8aa3a4f4c9e6)
 
@@ -3373,62 +3405,62 @@ Universities are an expensive operation with a relatively inflexible
 cost structure, and it’s forcing many schools to make poor choices
 
 
-<a id="org48d3e91"></a>
+<a id="org61409c9"></a>
 
 ### [You’re Not Measuring COVID-19 Correctly](https://medium.com/swlh/youre-not-measuring-covid-19-correctly-80398c251a1)
 
 The Metric Problem, Andre Ye, Jul 19
 
 
-<a id="orgb64830b"></a>
+<a id="orgbb7b1e7"></a>
 
 ### [[<http://r-posts.com/hands-on-how-to-build-an-interactive-map-in-r-shiny-an-example-for-the-covid-19-dashboard/>][Hands-on: How to build an interactive map in R-Shiny: An example
 
 for the COVID-19 Dashboard]]
 
 
-<a id="org4cf4104"></a>
+<a id="orga592a9e"></a>
 
 ### [Data Mining COVID-19 Epidemics with Orange](https://orange.biolab.si/blog/2020/2020-04-02-covid-19-basic/)
 
 
-<a id="org4829da6"></a>
+<a id="org97da7cf"></a>
 
 ## [Credit Risk Modelling using Machine Learning using R](https://datascienceplus.com/credit-risk-modelling-using-machine-learning-a-gentle-introduction/)
 
 Published on August 2, 2020
 
 
-<a id="orgc133b6d"></a>
+<a id="orge5c7142"></a>
 
 ## [How to create a timeline of your CV in R?](https://www.statsandr.com/blog/how-to-create-a-timeline-of-your-cv-in-r/)
 
 Antoine Soetewey 2020-01-26 
 
 
-<a id="orga90d639"></a>
+<a id="org1e85176"></a>
 
 ## [Crime by the numbers (R for criminologists)](books.md)
 
 
-<a id="orga180c5e"></a>
+<a id="orgba7903c"></a>
 
 ## [Qualitative Data Science: Using RQDA to analyse interviews](https://lucidmanager.org/data-science/qualitative-data-science//)
 
 
-<a id="org33a329e"></a>
+<a id="org7a24a2c"></a>
 
 ## [Discourse Network Analysis: Undertaking Literature Reviews in R](https://lucidmanager.org/data-science/discourse-network-analysis-literature-review/)
 
 
-<a id="orge76c280"></a>
+<a id="orgd71c5cc"></a>
 
 ## Movement data in GIS
 
 <https://anitagraser.com/movement-data-in-gis/>
 
 
-<a id="org5387790"></a>
+<a id="org6a9d2dd"></a>
 
 ## [Complex societies precede moralizing gods throughout world history](https://getpocket.com/explore/item/big-gods-came-after-the-rise-of-civilisations-not-before-finds-study-using-huge-historical-database?utm_source=pocket-newtab)
 
@@ -3438,7 +3470,7 @@ us quite recently, according to a study that analyzed 414 societies
 from 30 world regions. ([paper](https://www.nature.com/articles/s41586-019-1043-4.epdf?author_access_token=ziGhOukLjNhglzp5OQS7zNRgN0jAjWel9jnR3ZoTv0NQWry6dYOGQyA-bXzKgwmdXZYf33tBHVXgtelJ8x_2ZXq913jlDnDq_3acJoAlImUSHS6l-mh4t0NQq1Iotn3BW3_CPTAV35352sfHH1dRaA==), nature 2019)
 
 
-<a id="orgab7f4ea"></a>
+<a id="orgc0ec7a6"></a>
 
 ## PROJECT Brownian motion
 
@@ -3447,17 +3479,17 @@ motion, the most famous stochastic process used in a wide range of
 applications, using simple Python code.
 
 
-<a id="org80fc558"></a>
+<a id="orgd037cd7"></a>
 
 ### [Simulating Brownian Motion in R](http://phytools.org/eqg/Exercise_4.1/)
 
 
-<a id="orgbb0ed24"></a>
+<a id="org23585bc"></a>
 
 ## [The rise of the Netflix hit](https://www.vulture.com/2020/07/the-rise-of-the-netflix-hit.html?utm_source=pocket-newtab)
 
 
-<a id="org7e1bfaa"></a>
+<a id="org9160c8c"></a>
 
 ## PROJECT Google teaches ML to journalists
 
@@ -3465,7 +3497,7 @@ applications, using simple Python code.
 -   [ ] [Google ML/journalism training curriculum](file:///home/marcus/OneDrive/2021_Sommer/ML101/google_ml_training.pdf)
 
 
-<a id="org92d9860"></a>
+<a id="org358d384"></a>
 
 ## [Guide to Classification on Imbalanced Datasets](https://towardsdatascience.com/guide-to-classification-on-imbalanced-datasets-d6653aa5fa23)
 
@@ -3473,43 +3505,43 @@ A tutorial for understanding and correcting class imbalances,
 Matthew Stewart, PhD Researcher, Jul 20, 2020
 
 
-<a id="org3b0662e"></a>
+<a id="org3be1261"></a>
 
 ## [Automatically create draw.io diagrams from CSV files](https://drawio-app.com/automatically-create-draw-io-diagrams-from-csv-files/)
 
 By Kymberly Fergusson|April 3rd, 2018
 
 
-<a id="orgba6d9e8"></a>
+<a id="org0a705bd"></a>
 
 ## [How to Build a Video Game in R Shiny with CSS, JavaScript, and R6 Classes](https://appsilon.com/is-it-possible-to-build-a-video-game-in-r-shiny/)
 
 
-<a id="orge777a82"></a>
+<a id="org94a1d08"></a>
 
 ## [Pacific Island Hopping using R and the iGraph package](https://lucidmanager.org/data-science/pacific-island-hopping/)
 
 by Peter Prevos | 31 August 2017
 
 
-<a id="org5394d51"></a>
+<a id="org5316f9e"></a>
 
 ## [Website building: Export WordPress to Hugo Markdown or Org Mode with R](https://lucidmanager.org/data-science/export-wordpress-to-hugo/)
 
 by Peter Prevos | 18 July 2020
 
 
-<a id="org6be111c"></a>
+<a id="org72aa717"></a>
 
 ## [A Complete Introduction to Apache Airflow (automating workflows)](https://towardsdatascience.com/a-complete-introduction-to-apache-airflow-b7e238a33df)
 
 
-<a id="org84a4186"></a>
+<a id="orge6aec3a"></a>
 
 ## [RTutor: Quantifying Social Spillovers in Movie Ticket Sales](https://www.r-bloggers.com/rtutor-quantifying-social-spillovers-in-movie-ticket-sales/)
 
 
-<a id="org3cc94d5"></a>
+<a id="org2f75647"></a>
 
 ## [Build a Chatbot with R](https://ebeneditos.github.io/telegram.bot/)
 
@@ -3517,12 +3549,12 @@ An introduction to the Telegram Bot API and the telegram.bot
 package
 
 
-<a id="org1500b6c"></a>
+<a id="org6b31f87"></a>
 
 ## [Dataquest data science projects](https://www.dataquest.io/data-science-projects/)
 
 
-<a id="org2343e5f"></a>
+<a id="org4328f7a"></a>
 
 ## [Experiences Building a Production Shiny App for Mobile](https://www.tychobra.com/posts/2020-07-07-production-shiny-mobile/)
 
@@ -3532,17 +3564,17 @@ by Andy Merlino, 2020/07/07
     -   [student notebook for session](https://colab.research.google.com/github/datacamp/Brand-Analysis-using-Social-Media-Data-in-R-Live-Training/blob/master/notebooks/brand_analysis_session_notebook.ipynb)
 
 
-<a id="org87e3fa8"></a>
+<a id="org68a8a60"></a>
 
 ## [17 classification algorithms using R](https://github.com/surajvv12/17_Classification)
 
 
-<a id="org3c6cb2e"></a>
+<a id="org33d6280"></a>
 
 ## [Comet - ds and ml wrapper](https://www.comet.ml/site/data-scientists/)
 
 
-<a id="org4201057"></a>
+<a id="org73047e9"></a>
 
 ## [ISING Model (Quanta Mag)](https://www.quantamagazine.org/the-cartoon-picture-of-magnets-that-has-transformed-science-20200624/)
 
@@ -3555,12 +3587,12 @@ by Andy Merlino, 2020/07/07
     the hierarchical Ising opinion model](http://psychosystems.org/the-polarization-within-and-across-individuals-the-hierarchical-ising-opinion-model/) (7 May 2020)
 
 
-<a id="org43d57e9"></a>
+<a id="org40ee19a"></a>
 
 ## Social network analysis with igraph ([tutorial](https://youtu.be/0xsM0MbRPGE))
 
 
-<a id="orgf383342"></a>
+<a id="org44c244b"></a>
 
 ## Riddles
 
@@ -3571,7 +3603,7 @@ by Andy Merlino, 2020/07/07
 My solution to this Riddler using R
 
 
-<a id="org9019f56"></a>
+<a id="org7994b19"></a>
 
 ## Games
 

@@ -1,15 +1,15 @@
 
 # Table of Contents
 
-1.  [Download the ZIP file](#org164bdb1)
-2.  [Unpack the ZIP file](#org0670eb3)
-3.  [Open the HTML file](#org9bd676a)
-4.  [Read the PDF file](#orgb610419)
-5.  [Trouble?](#org309d47a)
-6.  [Copyright](#org9d43379)
+1.  [Download the ZIP file](#org03bfd46)
+2.  [Unpack the ZIP file](#org4e680b1)
+3.  [Open the HTML file](#org90c628d)
+4.  [Read the PDF file](#orgea5b7a9)
+5.  [Trouble?](#orgda13c5b)
+6.  [Copyright](#orgdd2e579)
 
 
-<a id="org164bdb1"></a>
+<a id="org03bfd46"></a>
 
 # Download the ZIP file
 
@@ -18,14 +18,14 @@ Find the `Code` menu on this page, open the menu and click on
 as a ZIP file to your computer.
 
 
-<a id="org0670eb3"></a>
+<a id="org4e680b1"></a>
 
 # Unpack the ZIP file
 
 Either unpack the ZIP file - e.g. `1_oveRview.zip` using your
 explorer application (where you access your files), or type
 
-    unzip oveRview.zip
+    unzip 1_oveRview.zip 
 
 The unpacking should generate a folder named `1_oveRview`. Enter
 the folder. Inside you find three files to look at and another folder:
@@ -75,7 +75,7 @@ There's nothing to do for you with the `.org` file or with the `img`
 folder unless you want to change it.
 
 
-<a id="org9bd676a"></a>
+<a id="org90c628d"></a>
 
 # Open the HTML file
 
@@ -89,7 +89,7 @@ toggle between two modes: either view the entire file on one page,
 or view one section per page.
 
 
-<a id="orgb610419"></a>
+<a id="orgea5b7a9"></a>
 
 # Read the PDF file
 
@@ -97,14 +97,14 @@ Open the PDF file `oveRview.pdf` and print and/or read it. The PDF
 has active links embedded in the text.
 
 
-<a id="org309d47a"></a>
+<a id="orgda13c5b"></a>
 
 # Trouble?
 
 If you encounter any trouble, contact me at `birkenkrahe@hwr-berlin.de`.
 
 
-<a id="org9d43379"></a>
+<a id="orgdd2e579"></a>
 
 # Copyright
 

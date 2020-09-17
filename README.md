@@ -1,15 +1,28 @@
 
 # Table of Contents
 
-1.  [Download the ZIP file](#org03bfd46)
-2.  [Unpack the ZIP file](#org4e680b1)
-3.  [Open the HTML file](#org90c628d)
-4.  [Read the PDF file](#orgea5b7a9)
-5.  [Trouble?](#orgda13c5b)
-6.  [Copyright](#orgdd2e579)
+1.  [What is this?](#orgd401c5f)
+2.  [Download the ZIP file](#org0d44de8)
+3.  [Unpack the ZIP file](#org8ab5139)
+4.  [Open the HTML file](#org3f5ce26)
+5.  [Read the PDF file](#orgc947d88)
+6.  [Trouble?](#org26c79b8)
+7.  [Copyright](#orgaef0509)
+
+---
 
 
-<a id="org03bfd46"></a>
+<a id="orgd401c5f"></a>
+
+# What is this?
+
+This repo contains the finished lecture material for the course
+"Introduction to data science" at HWR Berlin, first taught in
+winter 2020. The lectures are numbered. Each ZIP file contains the
+Emacs Org-Mode source file and the processed HTML and PDF files.
+
+
+<a id="org0d44de8"></a>
 
 # Download the ZIP file
 
@@ -18,7 +31,7 @@ Find the `Code` menu on this page, open the menu and click on
 as a ZIP file to your computer.
 
 
-<a id="org4e680b1"></a>
+<a id="org8ab5139"></a>
 
 # Unpack the ZIP file
 
@@ -75,7 +88,7 @@ There's nothing to do for you with the `.org` file or with the `img`
 folder unless you want to change it.
 
 
-<a id="org90c628d"></a>
+<a id="org3f5ce26"></a>
 
 # Open the HTML file
 
@@ -89,7 +102,7 @@ toggle between two modes: either view the entire file on one page,
 or view one section per page.
 
 
-<a id="orgea5b7a9"></a>
+<a id="orgc947d88"></a>
 
 # Read the PDF file
 
@@ -97,14 +110,14 @@ Open the PDF file `oveRview.pdf` and print and/or read it. The PDF
 has active links embedded in the text.
 
 
-<a id="orgda13c5b"></a>
+<a id="org26c79b8"></a>
 
 # Trouble?
 
 If you encounter any trouble, contact me at `birkenkrahe@hwr-berlin.de`.
 
 
-<a id="orgdd2e579"></a>
+<a id="orgaef0509"></a>
 
 # Copyright
 

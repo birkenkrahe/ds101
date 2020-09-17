@@ -1,35 +1,33 @@
-# ds101 - introduction to data science
-
-Course materials for an introductory data science course in the extracurricular program of the Berlin School of Economics and Law, winter 2020. See `description.pdf` for an overview.
 
 # Table of Contents
 
-1.  [Download the ZIP file](#org5a76f21)
-2.  [Unpack the ZIP file](#orgc6d9f1b)
-3.  [Open the HTML file](#org543f6d1)
-4.  [Read the PDF file](#org9f9b384)
-5.  [Trouble?](#orgf2bf90d)
-6.  [Copyright](#org138dd8b)
+1.  [Download the ZIP file](#org164bdb1)
+2.  [Unpack the ZIP file](#org0670eb3)
+3.  [Open the HTML file](#org9bd676a)
+4.  [Read the PDF file](#orgb610419)
+5.  [Trouble?](#org309d47a)
+6.  [Copyright](#org9d43379)
 
 
-<a id="org5a76f21"></a>
+<a id="org164bdb1"></a>
 
 # Download the ZIP file
 
 Find the `Code` menu on this page, open the menu and click on
-`Download ZIP`. This will download the ZIP file to your computer.
+`Download ZIP`. This will download the content of the whole folder
+as a ZIP file to your computer.
 
 
-<a id="orgc6d9f1b"></a>
+<a id="org0670eb3"></a>
 
 # Unpack the ZIP file
 
-Either unpack `ds_intro.zip` using your explorer (where you access
-your files), or type
+Either unpack the ZIP file - e.g. `1_oveRview.zip` using your
+explorer application (where you access your files), or type
 
-    unzip ds_intro.zip
+    unzip oveRview.zip
 
-The unpacking should generate a folder named `1_introduction`. Enter
+The unpacking should generate a folder named `1_oveRview`. Enter
 the folder. Inside you find three files to look at and another folder:
 
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
@@ -49,19 +47,19 @@ the folder. Inside you find three files to look at and another folder:
 
 <tbody>
 <tr>
-<td class="org-left">`introduction.html`</td>
+<td class="org-left">`oveRview.html`</td>
 <td class="org-left">HTML file for active viewing in a browser</td>
 </tr>
 
 
 <tr>
-<td class="org-left">`introduction.pdf`</td>
+<td class="org-left">`oveRview.pdf`</td>
 <td class="org-left">PDF file for reading/printing(without links)</td>
 </tr>
 
 
 <tr>
-<td class="org-left">`introduction.org`</td>
+<td class="org-left">`oveRview.org`</td>
 <td class="org-left">Emacs Org-mode file</td>
 </tr>
 
@@ -77,35 +75,36 @@ There's nothing to do for you with the `.org` file or with the `img`
 folder unless you want to change it.
 
 
-<a id="org543f6d1"></a>
+<a id="org9bd676a"></a>
 
 # Open the HTML file
 
 Either click on the file in your explorer, which should open a browser window, or type
 
-    [browser] introduction.html
+    [browser] oveRview.html
 
 where `browser` is `firefox` or `google-chrome` or any other
-browser.
+browser. The HTML file is spruced up with Javascript - you can
+toggle between two modes: either view the entire file on one page,
+or view one section per page.
 
 
-<a id="org9f9b384"></a>
+<a id="orgb610419"></a>
 
 # Read the PDF file
 
-Open the PDF file `introduction.pdf` and read it. The PDF does not
-have active links embedded in the text, but it does have all
-images. If you're after the links, go to the HTML file.
+Open the PDF file `oveRview.pdf` and print and/or read it. The PDF
+has active links embedded in the text.
 
 
-<a id="orgf2bf90d"></a>
+<a id="org309d47a"></a>
 
 # Trouble?
 
 If you encounter any trouble, contact me at `birkenkrahe@hwr-berlin.de`.
 
 
-<a id="org138dd8b"></a>
+<a id="org9d43379"></a>
 
 # Copyright
 

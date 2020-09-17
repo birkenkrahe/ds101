@@ -38,15 +38,9 @@ fi
 
 # zipping if PDF and HTML files current and existing
 if !(test -s $lecture.pdf) || !(test -s $lecture.html); then
-
     echo "PDF or HTML file empty or not there"
-
 elif (test $lecture.pdf -ot $lecture.org) || (test $lecture.html -ot $lecture.org); then
-
     echo "PDF or HTML older than org"
-
 else
-
     zip $ziphome/$chapter.zip $lecture.pdf $lecture.html $lecture.org $lectures/$chapter/img/*
-
 fi

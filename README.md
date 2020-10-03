@@ -67,7 +67,7 @@ the folder. Inside you find three files to look at and another folder:
 
 <tr>
 <td class="org-left">`oveRview.pdf`</td>
-<td class="org-left">PDF file for reading/printing(without links)</td>
+<td class="org-left">PDF file for reading/printing</td>
 </tr>
 
 

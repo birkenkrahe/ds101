@@ -1,28 +1,29 @@
 
 # Table of Contents
 
-1.  [What is this?](#orgd401c5f)
-2.  [Download the ZIP file](#org0d44de8)
-3.  [Unpack the ZIP file](#org8ab5139)
-4.  [Open the HTML file](#org3f5ce26)
-5.  [Read the PDF file](#orgc947d88)
-6.  [Trouble?](#org26c79b8)
-7.  [Copyright](#orgaef0509)
+1.  [What is this?](#org1cdad36)
+2.  [Download the ZIP file](#org008c21b)
+3.  [Unpack the ZIP file](#orge9e60ad)
+4.  [Open the HTML file](#orgb4c824e)
+5.  [Read the PDF file](#org62bb102)
+6.  [Trouble?](#org8da8cf4)
+7.  [Copyright](#orgf4f3a8a)
 
 ---
 
 
-<a id="orgd401c5f"></a>
+<a id="org1cdad36"></a>
 
 # What is this?
 
-This repo contains the finished lecture material for the course
-"Introduction to data science" at HWR Berlin, first taught in
-winter 2020. The lectures are numbered. Each ZIP file contains the
-Emacs Org-Mode source file and the processed HTML and PDF files.
+This repo contains the finished lecture material and some extra
+material (bookmarks, scripts) for the course "Introduction to data
+science" at HWR Berlin, first taught in winter 2020. The lectures
+are numbered. Each ZIP file contains the Emacs Org-Mode source file
+and the processed HTML and PDF files.
 
 
-<a id="org0d44de8"></a>
+<a id="org008c21b"></a>
 
 # Download the ZIP file
 
@@ -31,7 +32,7 @@ Find the `Code` menu on this page, open the menu and click on
 as a ZIP file to your computer.
 
 
-<a id="org8ab5139"></a>
+<a id="orge9e60ad"></a>
 
 # Unpack the ZIP file
 
@@ -88,7 +89,7 @@ There's nothing to do for you with the `.org` file or with the `img`
 folder unless you want to change it.
 
 
-<a id="org3f5ce26"></a>
+<a id="orgb4c824e"></a>
 
 # Open the HTML file
 
@@ -102,7 +103,7 @@ toggle between two modes: either view the entire file on one page,
 or view one section per page.
 
 
-<a id="orgc947d88"></a>
+<a id="org62bb102"></a>
 
 # Read the PDF file
 
@@ -110,14 +111,15 @@ Open the PDF file `oveRview.pdf` and print and/or read it. The PDF
 has active links embedded in the text.
 
 
-<a id="org26c79b8"></a>
+<a id="org8da8cf4"></a>
 
 # Trouble?
 
-If you encounter any trouble, contact me at `birkenkrahe@hwr-berlin.de`.
+If you encounter any trouble, contact me at
+`birkenkrahe@hwr-berlin.de`, or [submit an issue](https://github.com/birkenkrahe/ds101/issues). 
 
 
-<a id="orgaef0509"></a>
+<a id="orgf4f3a8a"></a>
 
 # Copyright
 

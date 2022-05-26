@@ -2,10 +2,9 @@
 #+AUTHOR: Marcus Birkenkrahe
 #+DATE: Winter 2020
 #+EMAIL: birkenkrahe@hwr-berlin.de
-#+STARTUP: folded
+#+STARTUP: folded overview hideblocks
 #+OPTIONS: toc:nil
 #+INFOJS_OPT: :view:info
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="./style.css" />
 * WHAT WILL YOU LEARN?[fn:1]
 
   * Quick plots

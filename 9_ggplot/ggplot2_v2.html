@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-01-21 Do 10:59 -->
+<!-- 2022-03-09 Wed 08:50 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>ggplot2</title>
@@ -40,7 +40,7 @@
   }
   pre.src {
     position: relative;
-    overflow: visible;
+    overflow: auto;
     padding-top: 1.2em;
   }
   pre.src:before {
@@ -52,7 +52,7 @@
     padding: 3px;
     border: 1px solid black;
   }
-  pre.src:hover:before { display: inline;}
+  pre.src:hover:before { display: inline; margin-top: 14px;}
   /* Languages per Org manual */
   pre.src-asymptote:before { content: 'Asymptote'; }
   pre.src-awk:before { content: 'Awk'; }
@@ -193,66 +193,14 @@
   .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
-<link rel="stylesheet" type="text/css" href="./style.css" />
 
 <script type="text/javascript" src="https://orgmode.org/org-info.js">
-/**
- *
- * @source: https://orgmode.org/org-info.js
- *
- * @licstart  The following is the entire license notice for the
- *  JavaScript code in https://orgmode.org/org-info.js.
- *
- * Copyright (C) 2012-2020 Free Software Foundation, Inc.
- *
- *
- * The JavaScript code in this tag is free software: you can
- * redistribute it and/or modify it under the terms of the GNU
- * General Public License (GNU GPL) as published by the Free Software
- * Foundation, either version 3 of the License, or (at your option)
- * any later version.  The code is distributed WITHOUT ANY WARRANTY;
- * without even the implied warranty of MERCHANTABILITY or FITNESS
- * FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
- *
- * As additional permission under GNU GPL version 3 section 7, you
- * may distribute non-source (e.g., minimized or compacted) forms of
- * that code without the copy of the GNU GPL normally required by
- * section 4, provided you include this license notice and a URL
- * through which recipients can access the Corresponding Source.
- *
- * @licend  The above is the entire license notice
- * for the JavaScript code in https://orgmode.org/org-info.js.
- *
- */
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+// @license-end
 </script>
 
 <script type="text/javascript">
-
-/*
-@licstart  The following is the entire license notice for the
-JavaScript code in this tag.
-
-Copyright (C) 2012-2020 Free Software Foundation, Inc.
-
-The JavaScript code in this tag is free software: you can
-redistribute it and/or modify it under the terms of the GNU
-General Public License (GNU GPL) as published by the Free Software
-Foundation, either version 3 of the License, or (at your option)
-any later version.  The code is distributed WITHOUT ANY WARRANTY;
-without even the implied warranty of MERCHANTABILITY or FITNESS
-FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
-
-As additional permission under GNU GPL version 3 section 7, you
-may distribute non-source (e.g., minimized or compacted) forms of
-that code without the copy of the GNU GPL normally required by
-section 4, provided you include this license notice and a URL
-through which recipients can access the Corresponding Source.
-
-
-@licend  The above is the entire license notice
-for the JavaScript code in this tag.
-*/
-
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
 <!--/*--><![CDATA[/*><!--*/
 org_html_manager.set("TOC_DEPTH", "3");
 org_html_manager.set("LINK_HOME", "");
@@ -265,52 +213,29 @@ org_html_manager.set("TOC", "0");
 org_html_manager.set("VIEW", "info");
 org_html_manager.setup();  // activate after the parameters are set
 /*]]>*///-->
+// @license-end
 </script>
 <script type="text/javascript">
-/*
-@licstart  The following is the entire license notice for the
-JavaScript code in this tag.
-
-Copyright (C) 2012-2020 Free Software Foundation, Inc.
-
-The JavaScript code in this tag is free software: you can
-redistribute it and/or modify it under the terms of the GNU
-General Public License (GNU GPL) as published by the Free Software
-Foundation, either version 3 of the License, or (at your option)
-any later version.  The code is distributed WITHOUT ANY WARRANTY;
-without even the implied warranty of MERCHANTABILITY or FITNESS
-FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
-
-As additional permission under GNU GPL version 3 section 7, you
-may distribute non-source (e.g., minimized or compacted) forms of
-that code without the copy of the GNU GPL normally required by
-section 4, provided you include this license notice and a URL
-through which recipients can access the Corresponding Source.
-
-
-@licend  The above is the entire license notice
-for the JavaScript code in this tag.
-*/
+// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
 <!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
-/*]]>*///-->
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
 </script>
 </head>
 <body>
@@ -320,52 +245,52 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgd5e2747">1. WHAT WILL YOU LEARN?</a></li>
-<li><a href="#orga854c56">2. GRAPHICS PACKAGES IN R</a>
+<li><a href="#org237bf6c">1. WHAT WILL YOU LEARN?</a></li>
+<li><a href="#org8a0729a">2. GRAPHICS PACKAGES IN R</a>
 <ul>
-<li><a href="#org6e1a081">2.1. Installation</a>
+<li><a href="#orgc462fdb">2.1. Installation</a>
 <ul>
-<li><a href="#orgb08d2e5">2.1.1. Problems students had in Windows 10</a></li>
-<li><a href="#orgf3e39c7">2.1.2. Problems students had in MacOS</a></li>
+<li><a href="#org503758b">2.1.1. Problems students had in Windows 10</a></li>
+<li><a href="#org50bae73">2.1.2. Problems students had in MacOS</a></li>
 </ul>
 </li>
-<li><a href="#org7e3f647">2.2. Beyond the Tidyverse</a></li>
-<li><a href="#org59e79ad">2.3. Tidyness</a></li>
-<li><a href="#orgcf91841">2.4. What are messy data?</a></li>
+<li><a href="#org89b6b00">2.2. Beyond the Tidyverse</a></li>
+<li><a href="#org1d76cdc">2.3. Tidyness</a></li>
+<li><a href="#orgf7060ac">2.4. What are messy data?</a></li>
 </ul>
 </li>
-<li><a href="#org15686bb">3. QUICK PLOTS</a>
+<li><a href="#orgf81b285">3. QUICK PLOTS</a>
 <ul>
-<li><a href="#org32c78c0">3.1. Print coordinate vectors</a></li>
-<li><a href="#org112d112">3.2. Define plot labels</a></li>
-<li><a href="#orgf6cbf70">3.3. Difference to <code>plot</code></a></li>
+<li><a href="#org277877a">3.1. Print coordinate vectors</a></li>
+<li><a href="#org94d2c81">3.2. Define plot labels</a></li>
+<li><a href="#org51917b1">3.3. Difference to <code>plot</code></a></li>
 </ul>
 </li>
-<li><a href="#org38b9361">4. COMPONENTS OF A GRAPH</a></li>
-<li><a href="#org6e0c9c2">5. OBJECTS AND PIPING</a></li>
-<li><a href="#orgafb80bb">6. GEOMETRIES</a></li>
-<li><a href="#org9af0ccd">7. AESTHETIC MAPPINGS</a></li>
-<li><a href="#orgf64011a">8. LAYERS</a></li>
-<li><a href="#org1231abd">9. SIZE IS NOT A MAPPING</a></li>
-<li><a href="#orga2b451e">10. NUDGING IS NOT A MAPPING EITHER</a></li>
-<li><a href="#orgad653b1">11. GLOBAL AESTHETIC MAPPING</a></li>
-<li><a href="#org33c2152">12. LOCAL OVERRIDE</a></li>
-<li><a href="#org76b6315">13. LOG SCALE I</a></li>
-<li><a href="#orgbafd8cb">14. LOG SCALE II</a></li>
-<li><a href="#orgb3f5d9a">15. LABELS AND TITLES</a></li>
-<li><a href="#orge820e1c">16. COLOR I</a></li>
-<li><a href="#orge81298a">17. COLOR II</a></li>
-<li><a href="#org5f75e7f">18. MORE</a></li>
-<li><a href="#org3342d33">19. PUTTING IT ALL TOGETHER</a></li>
-<li><a href="#org0b120eb">20. CHALLENGES</a></li>
-<li><a href="#orgc4a3900">21. REFERENCES</a></li>
-<li><a href="#orgddd1553">22. SUMMARY</a></li>
-<li><a href="#orgdb69192">23. CODE</a></li>
+<li><a href="#org52a8ac1">4. COMPONENTS OF A GRAPH</a></li>
+<li><a href="#org8a493f2">5. OBJECTS AND PIPING</a></li>
+<li><a href="#org6c60e8a">6. GEOMETRIES</a></li>
+<li><a href="#org4f10f9e">7. AESTHETIC MAPPINGS</a></li>
+<li><a href="#orgdc703ae">8. LAYERS</a></li>
+<li><a href="#orge1b85ad">9. SIZE IS NOT A MAPPING</a></li>
+<li><a href="#org1561fcc">10. NUDGING IS NOT A MAPPING EITHER</a></li>
+<li><a href="#org4edfada">11. GLOBAL AESTHETIC MAPPING</a></li>
+<li><a href="#org970f90b">12. LOCAL OVERRIDE</a></li>
+<li><a href="#orgc3053af">13. LOG SCALE I</a></li>
+<li><a href="#org40b0ea9">14. LOG SCALE II</a></li>
+<li><a href="#org760989c">15. LABELS AND TITLES</a></li>
+<li><a href="#orged24da6">16. COLOR I</a></li>
+<li><a href="#orge79ecfc">17. COLOR II</a></li>
+<li><a href="#orgf0b372c">18. MORE</a></li>
+<li><a href="#org04c220f">19. PUTTING IT ALL TOGETHER</a></li>
+<li><a href="#org6fefa85">20. CHALLENGES</a></li>
+<li><a href="#org41f2ec8">21. REFERENCES</a></li>
+<li><a href="#orga7d05d8">22. SUMMARY</a></li>
+<li><a href="#org5d3c161">23. CODE</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgd5e2747" class="outline-2">
-<h2 id="orgd5e2747"><span class="section-number-2">1</span> WHAT WILL YOU LEARN?<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup></h2>
+<div id="outline-container-org237bf6c" class="outline-2">
+<h2 id="org237bf6c"><span class="section-number-2">1</span> WHAT WILL YOU LEARN?<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup></h2>
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
 <li>Quick plots</li>
@@ -381,7 +306,7 @@ for the JavaScript code in this tag.
 </ul>
 
 
-<div id="org7f52c30" class="figure">
+<div id="org893b453" class="figure">
 <p><img src="./img_v2/gun_murders.png" alt="gun_murders.png" width="500px" />
 </p>
 <p><span class="figure-number">Figure 1: </span>US Gun Murders in 2010</p>
@@ -389,12 +314,12 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-orga854c56" class="outline-2">
-<h2 id="orga854c56"><span class="section-number-2">2</span> GRAPHICS PACKAGES IN R</h2>
+<div id="outline-container-org8a0729a" class="outline-2">
+<h2 id="org8a0729a"><span class="section-number-2">2</span> GRAPHICS PACKAGES IN R</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org6e1a081" class="outline-3">
-<h3 id="org6e1a081"><span class="section-number-3">2.1</span> Installation</h3>
+<div id="outline-container-orgc462fdb" class="outline-3">
+<h3 id="orgc462fdb"><span class="section-number-3">2.1</span> Installation</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 In this chapter, we first return to the data used in the chapter on
@@ -404,19 +329,19 @@ In this chapter, we first return to the data used in the chapter on
 
 <p>
 Note that there are yet more graphics packages in R, e.g. <code>grid</code> and
-<code>lattice</code> (<a href="#org776228b">Kumar, 2020</a>)
+<code>lattice</code> (<a href="#orgca494d2">Kumar, 2020</a>)
 </p>
 
 <p>
 To begin, make sure that you have installed <code>ggplot2</code>:
 </p>
-<pre class="example">
+<pre class="example" id="orgf91c6ad">
 R&gt; install.packages("ggplot2")
 R&gt; library(ggplot2)
 </pre>
 </div>
-<div id="outline-container-orgb08d2e5" class="outline-4">
-<h4 id="orgb08d2e5"><span class="section-number-4">2.1.1</span> Problems students had in Windows 10</h4>
+<div id="outline-container-org503758b" class="outline-4">
+<h4 id="org503758b"><span class="section-number-4">2.1.1</span> Problems students had in Windows 10</h4>
 <div class="outline-text-4" id="text-2-1-1">
 <ul class="org-ul">
 <li><p>
@@ -435,16 +360,16 @@ there is no package called 'purrr'
 </ul>
 </div>
 </div>
-<div id="outline-container-orgf3e39c7" class="outline-4">
-<h4 id="orgf3e39c7"><span class="section-number-4">2.1.2</span> Problems students had in MacOS</h4>
+<div id="outline-container-org50bae73" class="outline-4">
+<h4 id="org50bae73"><span class="section-number-4">2.1.2</span> Problems students had in MacOS</h4>
 <div class="outline-text-4" id="text-2-1-2">
 <ul class="org-ul">
 <li><p>
 Default locale problem - see screenshot from the introductory
-lesson (installation) in figure <a href="#orga3f0a20">2</a>.
+lesson (installation) in figure <a href="#orgbe7e11b">2</a>.
 </p>
 
-<div id="orga3f0a20" class="figure">
+<div id="orgbe7e11b" class="figure">
 <p><img src="./img_v2/macos.png" alt="macos.png" width="600px" />
 </p>
 <p><span class="figure-number">Figure 2: </span>MacOS installation problem and solution</p>
@@ -453,11 +378,11 @@ lesson (installation) in figure <a href="#orga3f0a20">2</a>.
 </div>
 </div>
 </div>
-<div id="outline-container-org7e3f647" class="outline-3">
-<h3 id="org7e3f647"><span class="section-number-3">2.2</span> Beyond the Tidyverse</h3>
+<div id="outline-container-org89b6b00" class="outline-3">
+<h3 id="org89b6b00"><span class="section-number-3">2.2</span> Beyond the Tidyverse</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
-This lesson builds on <a href="#org899a1c1">Davies (2016)</a> and <a href="#org4fd4145">Irizarry (2020)</a>. The book by
+This lesson builds on <a href="#org63146ee">Davies (2016)</a> and <a href="#org86f559f">Irizarry (2020)</a>. The book by
 Irizarry is available online for free - the chapter on <code>ggplot2</code>
 assumes knowledge of the Tidyverse package <code>dplyr</code>. This package
 contains several useful functions to manipulate data frames. The way
@@ -476,14 +401,14 @@ already know SQL since it follows the same logic.
 </p>
 </div>
 </div>
-<div id="outline-container-org59e79ad" class="outline-3">
-<h3 id="org59e79ad"><span class="section-number-3">2.3</span> Tidyness</h3>
+<div id="outline-container-org1d76cdc" class="outline-3">
+<h3 id="org1d76cdc"><span class="section-number-3">2.3</span> Tidyness</h3>
 <div class="outline-text-3" id="text-2-3">
 <p>
 A condition for using both <code>ggplot2</code> and <code>dplyr</code> functions is that
 the data are "tidy", which in short means that they are perfectly
-tabular (like data in relational databases) - see <a href="#orgf3e0ee8">Wickham (2014)</a>
-for details, and figure <a href="#org55edd12">3</a> for an illustration:
+tabular (like data in relational databases) - see <a href="#orgf5bbc7e">Wickham (2014)</a>
+for details, and figure <a href="#org48cb252">3</a> for an illustration:
 </p>
 <ol class="org-ol">
 <li>Each variable is a column</li>
@@ -509,15 +434,15 @@ R<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup>.
 </ol>
 
 
-<div id="org55edd12" class="figure">
+<div id="org48cb252" class="figure">
 <p><img src="./img_v2/tidy.png" alt="tidy.png" width="600px" />
 </p>
-<p><span class="figure-number">Figure 3: </span>Tidy data (table). Source: R for Data Science (<a href="#org26982fe">Wickham/Grolemund 2016</a>)</p>
+<p><span class="figure-number">Figure 3: </span>Tidy data (table). Source: R for Data Science (<a href="#org2d64f8d">Wickham/Grolemund 2016</a>)</p>
 </div>
 </div>
 </div>
-<div id="outline-container-orgcf91841" class="outline-3">
-<h3 id="orgcf91841"><span class="section-number-3">2.4</span> What are messy data?</h3>
+<div id="outline-container-orgf7060ac" class="outline-3">
+<h3 id="orgf7060ac"><span class="section-number-3">2.4</span> What are messy data?</h3>
 <div class="outline-text-3" id="text-2-4">
 <p>
 But how would "non-tidy" (aka messy) data look like? Wickham (2014)
@@ -540,73 +465,73 @@ data are used.
 </div>
 </div>
 </div>
-<div id="outline-container-org15686bb" class="outline-2">
-<h2 id="org15686bb"><span class="section-number-2">3</span> QUICK PLOTS</h2>
+<div id="outline-container-orgf81b285" class="outline-2">
+<h2 id="orgf81b285"><span class="section-number-2">3</span> QUICK PLOTS</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-org32c78c0" class="outline-3">
-<h3 id="org32c78c0"><span class="section-number-3">3.1</span> Print coordinate vectors</h3>
+<div id="outline-container-org277877a" class="outline-3">
+<h3 id="org277877a"><span class="section-number-3">3.1</span> Print coordinate vectors</h3>
 <div class="outline-text-3" id="text-3-1">
 <div class="org-src-container">
-<pre class="src src-R"><span style="color: #00cd66;">## </span><span style="color: #00cd66;">load ggplot2 package</span>
-<span style="color: #40e0d0;">library</span>(ggplot2)
+<pre class="src src-R">## load ggplot2 package
+library(ggplot2)
 
-<span style="color: #00cd66;">## </span><span style="color: #00cd66;">define coordinate vectors</span>
-foo <span style="color: #40e0d0;">&lt;-</span> c(1.1,2,3.5,3.9,4.2)
-bar <span style="color: #40e0d0;">&lt;-</span> c(2,2.2,-1.3,0,0.2)
+## define coordinate vectors
+foo &lt;- c(1.1,2,3.5,3.9,4.2)
+bar &lt;- c(2,2.2,-1.3,0,0.2)
 
-<span style="color: #00cd66;">## </span><span style="color: #00cd66;">quick plot foo,bar</span>
+## quick plot foo,bar
 qplot(foo,bar)
 </pre>
 </div>
 
 <p>
-See figure <a href="#org22f17e7">4</a> for the output of this code. Notice the visual
+See figure <a href="#org4d08c2e">4</a> for the output of this code. Notice the visual
 changes to the generic plotting function <code>plot(foo,bar)</code>. But the
 syntax is the same: two vectors of equal length are passed to the
 function and evaluated as two coordinate vectors.
 </p>
 
-<div id="org22f17e7" class="figure">
+<div id="org4d08c2e" class="figure">
 <p><img src="./img_v2/qplot.png" alt="qplot.png" />
 </p>
 </div>
 </div>
 </div>
-<div id="outline-container-org112d112" class="outline-3">
-<h3 id="org112d112"><span class="section-number-3">3.2</span> Define plot labels</h3>
+<div id="outline-container-org94d2c81" class="outline-3">
+<h3 id="org94d2c81"><span class="section-number-3">3.2</span> Define plot labels</h3>
 <div class="outline-text-3" id="text-3-2">
 <p>
 Label definition works in the same way:
 </p>
 <div class="org-src-container">
-<pre class="src src-R"><span style="color: #00cd66;">## </span><span style="color: #00cd66;">load ggplot2 package</span>
-<span style="color: #40e0d0;">library</span>(<span style="color: #bdb76b;">"ggplot2"</span>)
+<pre class="src src-R">## load ggplot2 package
+library("ggplot2")
 
-<span style="color: #00cd66;">## </span><span style="color: #00cd66;">define coordinate vectors</span>
-foo <span style="color: #40e0d0;">&lt;-</span> c(1.1,2,3.5,3.9,4.2)
-bar <span style="color: #40e0d0;">&lt;-</span> c(2,2.2,-1.3,0,0.2)
+## define coordinate vectors
+foo &lt;- c(1.1,2,3.5,3.9,4.2)
+bar &lt;- c(2,2.2,-1.3,0,0.2)
 
-<span style="color: #00cd66;">## </span><span style="color: #00cd66;">quick plot foo,bar with labels</span>
+## quick plot foo,bar with labels
 qplot(foo,bar,
-      main=<span style="color: #bdb76b;">"My lovely plot"</span>,
-      xlab=<span style="color: #bdb76b;">"x axis label"</span>,
-      ylab=<span style="color: #bdb76b;">"location y"</span>)
+      main="My lovely plot",
+      xlab="x axis label",
+      ylab="location y")
 </pre>
 </div>
 
 <p>
-See figure <a href="#orgcd4866b">5</a> for the output of this code.
+See figure <a href="#org6998f54">5</a> for the output of this code.
 </p>
 
-<div id="orgcd4866b" class="figure">
+<div id="org6998f54" class="figure">
 <p><img src="./img_v2/qplot1.png" alt="qplot1.png" />
 </p>
 </div>
 </div>
 </div>
-<div id="outline-container-orgf6cbf70" class="outline-3">
-<h3 id="orgf6cbf70"><span class="section-number-3">3.3</span> Difference to <code>plot</code></h3>
+<div id="outline-container-org51917b1" class="outline-3">
+<h3 id="org51917b1"><span class="section-number-3">3.3</span> Difference to <code>plot</code></h3>
 <div class="outline-text-3" id="text-3-3">
 <p>
 Instead of a step by step process, which is what <code>plot</code> does,
@@ -621,19 +546,19 @@ vectors <code>baz</code> and <code>qux</code> and print them:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-R"><span style="color: #00cd66;">## </span><span style="color: #00cd66;">load ggplot2 package</span>
-<span style="color: #40e0d0;">library</span>(<span style="color: #bdb76b;">"ggplot2"</span>)
+<pre class="src src-R">## load ggplot2 package
+library("ggplot2")
 
-<span style="color: #00cd66;">## </span><span style="color: #00cd66;">define coordinate vectors</span>
-foo <span style="color: #40e0d0;">&lt;-</span> c(1.1,2,3.5,3.9,4.2)
-bar <span style="color: #40e0d0;">&lt;-</span> c(2,2.2,-1.3,0,0.2)
+## define coordinate vectors
+foo &lt;- c(1.1,2,3.5,3.9,4.2)
+bar &lt;- c(2,2.2,-1.3,0,0.2)
 
-<span style="color: #00cd66;">## </span><span style="color: #00cd66;">store and print plot</span>
-baz <span style="color: #40e0d0;">&lt;-</span> plot(foo,bar)
+## store and print plot
+baz &lt;- plot(foo,bar)
 baz
 
-<span style="color: #00cd66;">## </span><span style="color: #00cd66;">store and print qplot</span>
-qux <span style="color: #40e0d0;">&lt;-</span> qplot(foo,bar)
+## store and print qplot
+qux &lt;- qplot(foo,bar)
 qux
 </pre>
 </div>
@@ -648,12 +573,12 @@ base R graphics.
 </div>
 </div>
 </div>
-<div id="outline-container-org38b9361" class="outline-2">
-<h2 id="org38b9361"><span class="section-number-2">4</span> COMPONENTS OF A GRAPH</h2>
+<div id="outline-container-org52a8ac1" class="outline-2">
+<h2 id="org52a8ac1"><span class="section-number-2">4</span> COMPONENTS OF A GRAPH</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 We will construct the graph already shown earlier, in figure
-<a href="#org7f52c30">1</a>. First, we break the graph apart in components:
+<a href="#org893b453">1</a>. First, we break the graph apart in components:
 </p>
 <ul class="org-ul">
 <li><b>Data:</b> the US <code>murders</code> data frame is summarized</li>
@@ -665,8 +590,8 @@ x- and y-axis, color, data labels, region legend, overall style
 </ul>
 </div>
 </div>
-<div id="outline-container-org6e0c9c2" class="outline-2">
-<h2 id="org6e0c9c2"><span class="section-number-2">5</span> OBJECTS AND PIPING</h2>
+<div id="outline-container-org8a493f2" class="outline-2">
+<h2 id="org8a493f2"><span class="section-number-2">5</span> OBJECTS AND PIPING</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 We define a <code>ggplot</code> object using the <code>murders</code> data. You should get
@@ -675,16 +600,16 @@ data using <code>str(murders)</code> and <code>head(murders)</code>.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-R"><span style="color: #00cd66;">## </span><span style="color: #00cd66;">load package and data frame</span>
-<span style="color: #40e0d0;">library</span>(ggplot2)
-<span style="color: #40e0d0;">library</span>(dslabs)
+<pre class="src src-R">## load package and data frame
+library(ggplot2)
+library(dslabs)
 data(murders)
 
-<span style="color: #00cd66;">## </span><span style="color: #00cd66;">define object associated with the data</span>
-p <span style="color: #40e0d0;">&lt;-</span> ggplot(data = murders)
+## define object associated with the data
+p &lt;- ggplot(data = murders)
 class(p)
 
-<span style="color: #00cd66;">## </span><span style="color: #00cd66;">render plot by printing the object</span>
+## render plot by printing the object
 print(p)
 </pre>
 </div>
@@ -694,39 +619,39 @@ An alternative is to pipe the data in as the first argument using
 the <code>dplyr</code> operator <code>%&gt;%</code><sup><a id="fnr.4" class="footref" href="#fn.4">4</a></sup>:
 </p>
 <div class="org-src-container">
-<pre class="src src-R"><span style="color: #00cd66;">## </span><span style="color: #00cd66;">load package and data frame</span>
-<span style="color: #40e0d0;">library</span>(dplyr)
-<span style="color: #40e0d0;">library</span>(ggplot2)
-<span style="color: #40e0d0;">library</span>(dslabs)
+<pre class="src src-R">## load package and data frame
+library(dplyr)
+library(ggplot2)
+library(dslabs)
 data(murders)
-<span style="color: #00cd66;">## </span><span style="color: #00cd66;">pipe the data in as the first argument</span>
-murders <span style="color: #40e0d0;">%&gt;%</span> ggplot()
+## pipe the data in as the first argument
+murders %&gt;% ggplot()
 </pre>
 </div>
 
 <p>
-The output is the same in both cases (see figure <a href="#org3537297">6</a>): since no
+The output is the same in both cases (see figure <a href="#org9a1d5b2">6</a>): since no
 geometry was defined, the output is a blank slate with a pure grey
 style background.
 </p>
 
 
-<div id="org3537297" class="figure">
+<div id="org9a1d5b2" class="figure">
 <p><img src="./img_v2/object1.png" alt="object1.png" />
 </p>
 <p><span class="figure-number">Figure 6: </span><code>ggplot()</code> without geometry</p>
 </div>
 </div>
 </div>
-<div id="outline-container-orgafb80bb" class="outline-2">
-<h2 id="orgafb80bb"><span class="section-number-2">6</span> GEOMETRIES</h2>
+<div id="outline-container-org6c60e8a" class="outline-2">
+<h2 id="org6c60e8a"><span class="section-number-2">6</span> GEOMETRIES</h2>
 <div class="outline-text-2" id="text-6">
 <p>
 <code>ggplot2</code> graphs are created using layers with the <code>+</code> symbol. The
 schematic looks like this:
 </p>
 
-<pre class="example">
+<pre class="example" id="orgf85e288">
 ggplot(data=DATA) +  LAYER 1 + LAYER 2 + ... + LAYER N
 </pre>
 
@@ -737,15 +662,15 @@ that's <code>geom_point</code><sup><a id="fnr.5" class="footref" href="#fn.5">5<
 
 <blockquote>
 <p>
-<a href="#org75d40f0">Challenge:</a> check out the help file for <code>geom_point</code>. Which aesthetic
+<a href="#orgbab6f4d">Challenge:</a> check out the help file for <code>geom_point</code>. Which aesthetic
 mappings are possible, which are necessary?
 </p>
 </blockquote>
 </div>
 </div>
 
-<div id="outline-container-org9af0ccd" class="outline-2">
-<h2 id="org9af0ccd"><span class="section-number-2">7</span> AESTHETIC MAPPINGS</h2>
+<div id="outline-container-org4f10f9e" class="outline-2">
+<h2 id="org4f10f9e"><span class="section-number-2">7</span> AESTHETIC MAPPINGS</h2>
 <div class="outline-text-2" id="text-7">
 <p>
 The <code>aes</code> function is used as the argument of a geometry function:
@@ -753,23 +678,23 @@ note that you can call the vectors <code>murder$population</code> and
 <code>murder$total</code> without the accessor <code>$</code><sup><a id="fnr.6" class="footref" href="#fn.6">6</a></sup>:
 </p>
 <div class="org-src-container">
-<pre class="src src-R"><span style="color: #40e0d0;">library</span>(dslabs)
-<span style="color: #40e0d0;">library</span>(ggplot2)
+<pre class="src src-R">library(dslabs)
+library(ggplot2)
 data(murders)
 
-<span style="color: #00cd66;">## </span><span style="color: #00cd66;">plot total murders vs population</span>
+## plot total murders vs population
 ggplot(data=murders) +
   geom_point(
     aes(x = population/10^6,
-        y = total))
+	y = total))
 </pre>
 </div>
 
 <p>
-For the output, see figure <a href="#org2b91af1">7</a>.
+For the output, see figure <a href="#orgcfd72c1">7</a>.
 </p>
 
-<div id="org2b91af1" class="figure">
+<div id="orgcfd72c1" class="figure">
 <p><img src="./img_v2/aes.png" alt="aes.png" />
 </p>
 <p><span class="figure-number">Figure 7: </span>aesthetic mapping with <code>x</code> and <code>y</code> values only</p>
@@ -777,42 +702,42 @@ For the output, see figure <a href="#org2b91af1">7</a>.
 </div>
 </div>
 
-<div id="outline-container-orgf64011a" class="outline-2">
-<h2 id="orgf64011a"><span class="section-number-2">8</span> LAYERS</h2>
+<div id="outline-container-orgdc703ae" class="outline-2">
+<h2 id="orgdc703ae"><span class="section-number-2">8</span> LAYERS</h2>
 <div class="outline-text-2" id="text-8">
 <p>
 We add labels to identify each point with its US state
 (<code>murders$abb</code>) using the <code>geom_text</code> geometry. To emphasize the
 layer concept, we stick to the object notation (instead of the
-piping), see figure <a href="#org7a9d649">8</a> for the output:
+piping), see figure <a href="#org45c3188">8</a> for the output:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-R"><span style="color: #40e0d0;">library</span>(dslabs)
-<span style="color: #40e0d0;">library</span>(ggplot2)
+<pre class="src src-R">library(dslabs)
+library(ggplot2)
 data(murders)
 
-<span style="color: #00cd66;">## </span><span style="color: #00cd66;">define ggplot object, x and y vectors</span>
-p <span style="color: #40e0d0;">&lt;-</span> ggplot(data = murders)
+## define ggplot object, x and y vectors
+p &lt;- ggplot(data = murders)
 
-<span style="color: #00cd66;">## </span><span style="color: #00cd66;">add text label layer to the scatterplot and render</span>
+## add text label layer to the scatterplot and render
 p + geom_point(
       aes(x = population/10^6,
-          y = total)) +
+	  y = total)) +
   geom_text(aes(x = population/10^6,
-                y = total,
-                label=abb))
+		y = total,
+		label=abb))
 </pre>
 </div>
 
 <blockquote>
 <p>
-<a href="#org5a10837">Challenge:</a> try calling <code>label=abb</code> outside of the <code>aes</code> function!
+<a href="#org6682f9e">Challenge:</a> try calling <code>label=abb</code> outside of the <code>aes</code> function!
 </p>
 </blockquote>
 
 
-<div id="org7a9d649" class="figure">
+<div id="org45c3188" class="figure">
 <p><img src="./img_v2/text.png" alt="text.png" />
 </p>
 <p><span class="figure-number">Figure 8: </span>Labeling aesthetic mappings using <code>label=abb</code> inside <code>aes</code></p>
@@ -820,8 +745,8 @@ p + geom_point(
 </div>
 </div>
 
-<div id="outline-container-org1231abd" class="outline-2">
-<h2 id="org1231abd"><span class="section-number-2">9</span> SIZE IS NOT A MAPPING</h2>
+<div id="outline-container-orge1b85ad" class="outline-2">
+<h2 id="orge1b85ad"><span class="section-number-2">9</span> SIZE IS NOT A MAPPING</h2>
 <div class="outline-text-2" id="text-9">
 <p>
 We can change aesthetics like the size of the points using the
@@ -829,31 +754,31 @@ We can change aesthetics like the size of the points using the
 because it does not use data from observations!
 </p>
 <div class="org-src-container">
-<pre class="src src-R"><span style="color: #40e0d0;">library</span>(dslabs)
-<span style="color: #40e0d0;">library</span>(ggplot2)
+<pre class="src src-R">library(dslabs)
+library(ggplot2)
 data(murders)
 
-<span style="color: #00cd66;">## </span><span style="color: #00cd66;">define ggplot object, x and y vectors</span>
-p <span style="color: #40e0d0;">&lt;-</span> ggplot(data = murders)
+## define ggplot object, x and y vectors
+p &lt;- ggplot(data = murders)
 
-<span style="color: #00cd66;">## </span><span style="color: #00cd66;">add text label layer to the scatterplot and render</span>
+## add text label layer to the scatterplot and render
 p + geom_point(
       aes(x = population/10^6,
-          y = total),
+	  y = total),
       size = 3) +
   geom_text(
     aes(x = population/10^6,
-        y = total,
-        label=abb))
+	y = total,
+	label=abb))
 </pre>
 </div>
 
 <p>
-This leads to a resizing of the points as shown in figure <a href="#org34141a4">9</a>.
+This leads to a resizing of the points as shown in figure <a href="#org916b84d">9</a>.
 </p>
 
 
-<div id="org34141a4" class="figure">
+<div id="org916b84d" class="figure">
 <p><img src="./img_v2/size.png" alt="size.png" />
 </p>
 <p><span class="figure-number">Figure 9: </span>Resizing points using <code>size</code> inside <code>geom_point</code></p>
@@ -861,37 +786,37 @@ This leads to a resizing of the points as shown in figure <a href="#org34141a4">
 </div>
 </div>
 
-<div id="outline-container-orga2b451e" class="outline-2">
-<h2 id="orga2b451e"><span class="section-number-2">10</span> NUDGING IS NOT A MAPPING EITHER</h2>
+<div id="outline-container-org1561fcc" class="outline-2">
+<h2 id="org1561fcc"><span class="section-number-2">10</span> NUDGING IS NOT A MAPPING EITHER</h2>
 <div class="outline-text-2" id="text-10">
 <div class="org-src-container">
-<pre class="src src-R"><span style="color: #40e0d0;">library</span>(dslabs)
-<span style="color: #40e0d0;">library</span>(ggplot2)
+<pre class="src src-R">library(dslabs)
+library(ggplot2)
 data(murders)
 
-<span style="color: #00cd66;">## </span><span style="color: #00cd66;">define ggplot object, x and y vectors</span>
-p <span style="color: #40e0d0;">&lt;-</span> ggplot(data = murders)
+## define ggplot object, x and y vectors
+p &lt;- ggplot(data = murders)
 
-<span style="color: #00cd66;">## </span><span style="color: #00cd66;">add text label layer to the scatterplot and render</span>
+## add text label layer to the scatterplot and render
 p + geom_point(
       aes(x = population/10^6,
-          y = total),
+	  y = total),
       size = 3) +
   geom_text(
     aes(x = population/10^6,
-        y = total,
-        label=abb),
+	y = total,
+	label=abb),
     nudge_x = 1.5)
 </pre>
 </div>
 
 <p>
 This leads to a nudging of the labels as shown in figure
-<a href="#org2942454">10</a>.
+<a href="#org5e00cbe">10</a>.
 </p>
 
 
-<div id="org2942454" class="figure">
+<div id="org5e00cbe" class="figure">
 <p><img src="./img_v2/nudge.png" alt="nudge.png" />
 </p>
 <p><span class="figure-number">Figure 10: </span>Nudging the labels using <code>nudge_x</code> inside <code>geom_text</code></p>
@@ -899,8 +824,8 @@ This leads to a nudging of the labels as shown in figure
 </div>
 </div>
 
-<div id="outline-container-orgad653b1" class="outline-2">
-<h2 id="orgad653b1"><span class="section-number-2">11</span> GLOBAL AESTHETIC MAPPING</h2>
+<div id="outline-container-org4edfada" class="outline-2">
+<h2 id="org4edfada"><span class="section-number-2">11</span> GLOBAL AESTHETIC MAPPING</h2>
 <div class="outline-text-2" id="text-11">
 <p>
 We want to avoid having to define <code>aes</code> for each geometry. To do
@@ -908,64 +833,64 @@ this, we need to let R know that added layers will default to our
 mapping. We redefine our plot object <code>p</code>. By defining a mapping
 inside <code>ggplot</code>, it now applies globally. We then test this right
 away with our <code>size</code> and <code>nudge_x</code> parameters (see figure
-<a href="#orga544cb5">11</a>):
+<a href="#orgbed08a0">11</a>):
 </p>
 
 <div class="org-src-container">
-<pre class="src src-R"><span style="color: #40e0d0;">library</span>(dslabs)
-<span style="color: #40e0d0;">library</span>(ggplot2)
+<pre class="src src-R">library(dslabs)
+library(ggplot2)
 data(murders)
 
-<span style="color: #00cd66;">## </span><span style="color: #00cd66;">define ggplot object and aesthetic mapping</span>
-p <span style="color: #40e0d0;">&lt;-</span> ggplot(data=murders,
-            aes(population/10^6,
-                total,
-                label=abb))
+## define ggplot object and aesthetic mapping
+p &lt;- ggplot(data=murders,
+	    aes(population/10^6,
+		total,
+		label=abb))
 
-<span style="color: #00cd66;">## </span><span style="color: #00cd66;">add text label layer to the scatterplot and render</span>
+## add text label layer to the scatterplot and render
 p + geom_point(size = 3) +
   geom_text(nudge_x = 1.5)
 </pre>
 </div>
 
 
-<div id="orga544cb5" class="figure">
+<div id="orgbed08a0" class="figure">
 <p><img src="./img_v2/global.png" alt="global.png" />
 </p>
 <p><span class="figure-number">Figure 11: </span>Our plot after applying a global aesthetic mapping</p>
 </div>
 </div>
 </div>
-<div id="outline-container-org33c2152" class="outline-2">
-<h2 id="org33c2152"><span class="section-number-2">12</span> LOCAL OVERRIDE</h2>
+<div id="outline-container-org970f90b" class="outline-2">
+<h2 id="org970f90b"><span class="section-number-2">12</span> LOCAL OVERRIDE</h2>
 <div class="outline-text-2" id="text-12">
 <p>
-Local definitions override global definitions! Figure <a href="#org53f61f8">12</a>
+Local definitions override global definitions! Figure <a href="#orge89a03c">12</a>
 shows an example: the second call to <code>geom_text</code> does not use the
 <code>murders</code> data.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-R"><span style="color: #40e0d0;">library</span>(dslabs)
-<span style="color: #40e0d0;">library</span>(ggplot2)
+<pre class="src src-R">library(dslabs)
+library(ggplot2)
 data(murders)
 
-<span style="color: #00cd66;">## </span><span style="color: #00cd66;">define ggplot object and aesthetic mapping</span>
-p <span style="color: #40e0d0;">&lt;-</span> ggplot(data=murders,
-            aes(population/10^6,
-                total,
-                label=abb))
+## define ggplot object and aesthetic mapping
+p &lt;- ggplot(data=murders,
+	    aes(population/10^6,
+		total,
+		label=abb))
 
-<span style="color: #00cd66;">## </span><span style="color: #00cd66;">add text label layer to the scatterplot and render</span>
+## add text label layer to the scatterplot and render
 p + geom_point(size = 3) +
   geom_text(x = 10,
-            y = 800,
-            label = <span style="color: #bdb76b;">"Hello there!"</span>)
+	    y = 800,
+	    label = "Hello there!")
 </pre>
 </div>
 
 
-<div id="org53f61f8" class="figure">
+<div id="orge89a03c" class="figure">
 <p><img src="./img_v2/local.png" alt="local.png" />
 </p>
 <p><span class="figure-number">Figure 12: </span>Overriding global aesthetic mapping with a local definition</p>
@@ -973,31 +898,31 @@ p + geom_point(size = 3) +
 </div>
 </div>
 
-<div id="outline-container-org76b6315" class="outline-2">
-<h2 id="org76b6315"><span class="section-number-2">13</span> LOG SCALE I</h2>
+<div id="outline-container-orgc3053af" class="outline-2">
+<h2 id="orgc3053af"><span class="section-number-2">13</span> LOG SCALE I</h2>
 <div class="outline-text-2" id="text-13">
 <p>
 Log-scales are not the default. We add them with the
-<code>scale_x_continuous</code> function (see figure <a href="#org53f61f8">12</a>):
+<code>scale_x_continuous</code> function (see figure <a href="#orge89a03c">12</a>):
 </p>
 
 <div class="org-src-container">
-<pre class="src src-R"><span style="color: #40e0d0;">library</span>(dslabs)
-<span style="color: #40e0d0;">library</span>(ggplot2)
+<pre class="src src-R">library(dslabs)
+library(ggplot2)
 data(murders)
 
-<span style="color: #00cd66;">## </span><span style="color: #00cd66;">define ggplot object and aesthetic mapping</span>
-p <span style="color: #40e0d0;">&lt;-</span> ggplot(data=murders,
-            aes(population/10^6,
-                total,
-                label=abb))
+## define ggplot object and aesthetic mapping
+p &lt;- ggplot(data=murders,
+	    aes(population/10^6,
+		total,
+		label=abb))
 
-<span style="color: #00cd66;">## </span><span style="color: #00cd66;">add text label layer to the scatterplot and render</span>
-<span style="color: #00cd66;">## </span><span style="color: #00cd66;">transform x and y vectors to log10 values</span>
+## add text label layer to the scatterplot and render
+## transform x and y vectors to log10 values
 p + geom_point(size = 3) +
   geom_text(nudge_x = 0.05) +
-  scale_x_continuous(trans = <span style="color: #bdb76b;">"log10"</span>) +
-  scale_y_continuous(trans = <span style="color: #bdb76b;">"log10"</span>)
+  scale_x_continuous(trans = "log10") +
+  scale_y_continuous(trans = "log10")
 </pre>
 </div>
 
@@ -1005,33 +930,33 @@ p + geom_point(size = 3) +
 We reduce the <code>nudge_x</code> factor to accomodate the log-scale.
 </p>
 
-<div id="org60d4f66" class="figure">
+<div id="orgb706756" class="figure">
 <p><img src="./img_v2/scale.png" alt="scale.png" />
 </p>
 <p><span class="figure-number">Figure 13: </span>Transforming <code>x</code> and <code>y</code> axes to <code>log10</code> scales</p>
 </div>
 </div>
 </div>
-<div id="outline-container-orgbafd8cb" class="outline-2">
-<h2 id="orgbafd8cb"><span class="section-number-2">14</span> LOG SCALE II</h2>
+<div id="outline-container-org40b0ea9" class="outline-2">
+<h2 id="org40b0ea9"><span class="section-number-2">14</span> LOG SCALE II</h2>
 <div class="outline-text-2" id="text-14">
 <p>
 Logarithmic transformations are so common that there is a
 specialized function for it:
 </p>
 <div class="org-src-container">
-<pre class="src src-R"><span style="color: #40e0d0;">library</span>(dslabs)
-<span style="color: #40e0d0;">library</span>(ggplot2)
+<pre class="src src-R">library(dslabs)
+library(ggplot2)
 data(murders)
 
-<span style="color: #00cd66;">## </span><span style="color: #00cd66;">define ggplot object and aesthetic mapping</span>
-p <span style="color: #40e0d0;">&lt;-</span> ggplot(data=murders,
-            aes(population/10^6,
-                total,
-                label=abb))
+## define ggplot object and aesthetic mapping
+p &lt;- ggplot(data=murders,
+	    aes(population/10^6,
+		total,
+		label=abb))
 
-<span style="color: #00cd66;">## </span><span style="color: #00cd66;">add text label layer to the scatterplot and render</span>
-<span style="color: #00cd66;">## </span><span style="color: #00cd66;">transform x and y vectors to log10 values</span>
+## add text label layer to the scatterplot and render
+## transform x and y vectors to log10 values
 p + geom_point(size = 3) +
   geom_text(nudge_x = 0.05) +
   scale_x_log10() +
@@ -1040,10 +965,10 @@ p + geom_point(size = 3) +
 </div>
 
 <p>
-The output is the same as before, see figure <a href="#org8102440">14</a>.
+The output is the same as before, see figure <a href="#orga3f3eb8">14</a>.
 </p>
 
-<div id="org8102440" class="figure">
+<div id="orga3f3eb8" class="figure">
 <p><img src="./img_v2/scale1.png" alt="scale1.png" />
 </p>
 <p><span class="figure-number">Figure 14: </span>Transforming axes to <code>log10</code> scales using <code>scale_x_log10</code></p>
@@ -1051,40 +976,40 @@ The output is the same as before, see figure <a href="#org8102440">14</a>.
 </div>
 </div>
 
-<div id="outline-container-orgb3f5d9a" class="outline-2">
-<h2 id="orgb3f5d9a"><span class="section-number-2">15</span> LABELS AND TITLES</h2>
+<div id="outline-container-org760989c" class="outline-2">
+<h2 id="org760989c"><span class="section-number-2">15</span> LABELS AND TITLES</h2>
 <div class="outline-text-2" id="text-15">
 <p>
 The functions to change labels and add a title are shown in the next
-code chunk - the the output in <a href="#org6670154">15</a>:
+code chunk - the the output in <a href="#org23ae5e8">15</a>:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-R"><span style="color: #40e0d0;">library</span>(dslabs)
-<span style="color: #40e0d0;">library</span>(ggplot2)
+<pre class="src src-R">library(dslabs)
+library(ggplot2)
 data(murders)
 
-<span style="color: #00cd66;">## </span><span style="color: #00cd66;">define ggplot object and aesthetic mapping</span>
-p <span style="color: #40e0d0;">&lt;-</span> ggplot(data=murders,
-            aes(population/10^6,
-                total,
-                label=abb))
+## define ggplot object and aesthetic mapping
+p &lt;- ggplot(data=murders,
+	    aes(population/10^6,
+		total,
+		label=abb))
 
-<span style="color: #00cd66;">## </span><span style="color: #00cd66;">add text label layer to the scatterplot and render</span>
-<span style="color: #00cd66;">## </span><span style="color: #00cd66;">transform x and y vectors to log10 values</span>
-<span style="color: #00cd66;">## </span><span style="color: #00cd66;">add title and axis labels</span>
+## add text label layer to the scatterplot and render
+## transform x and y vectors to log10 values
+## add title and axis labels
 p + geom_point(size = 3) +
   geom_text(nudge_x = 0.05) +
   scale_x_log10() +
   scale_y_log10() +
-  xlab(<span style="color: #bdb76b;">"Population in millions (log scale)"</span>) +
-  ylab(<span style="color: #bdb76b;">"US Gun Murders in 2010"</span>) +
-  ggtitle(<span style="color: #bdb76b;">"US Gun Murders in 2010"</span>)
+  xlab("Population in millions (log scale)") +
+  ylab("US Gun Murders in 2010") +
+  ggtitle("US Gun Murders in 2010")
 </pre>
 </div>
 
 
-<div id="org6670154" class="figure">
+<div id="org23ae5e8" class="figure">
 <p><img src="./img_v2/label.png" alt="label.png" />
 </p>
 <p><span class="figure-number">Figure 15: </span>Adding labels and a title</p>
@@ -1092,75 +1017,75 @@ p + geom_point(size = 3) +
 </div>
 </div>
 
-<div id="outline-container-orge820e1c" class="outline-2">
-<h2 id="orge820e1c"><span class="section-number-2">16</span> COLOR I</h2>
+<div id="outline-container-orged24da6" class="outline-2">
+<h2 id="orged24da6"><span class="section-number-2">16</span> COLOR I</h2>
 <div class="outline-text-2" id="text-16">
 <p>
 The <code>geom_point</code> function has a <code>color</code> argument. If we add it
 alongside <code>size</code>, all points will appear in that color (figure
-<a href="#org7d47865">16</a>). To demonstrate this, we redefine <code>p</code> by taking out the
+<a href="#org833196d">16</a>). To demonstrate this, we redefine <code>p</code> by taking out the
 <code>geom_point</code> layer.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-R"><span style="color: #40e0d0;">library</span>(dslabs)
-<span style="color: #40e0d0;">library</span>(ggplot2)
+<pre class="src src-R">library(dslabs)
+library(ggplot2)
 data(murders)
 
-<span style="color: #00cd66;">## </span><span style="color: #00cd66;">define ggplot object and aesthetic mapping</span>
-p <span style="color: #40e0d0;">&lt;-</span> ggplot(data=murders,
-            aes(population/10^6,
-                total,
-                label=abb)) +
+## define ggplot object and aesthetic mapping
+p &lt;- ggplot(data=murders,
+	    aes(population/10^6,
+		total,
+		label=abb)) +
   geom_text(nudge_x = 0.05) +
   scale_x_log10() +
   scale_y_log10() +
-  xlab(<span style="color: #bdb76b;">"Population in millions (log scale)"</span>) +
-  ylab(<span style="color: #bdb76b;">"US Gun Murders in 2010"</span>) +
-  ggtitle(<span style="color: #bdb76b;">"US Gun Murders in 2010"</span>)
+  xlab("Population in millions (log scale)") +
+  ylab("US Gun Murders in 2010") +
+  ggtitle("US Gun Murders in 2010")
 
-<span style="color: #00cd66;">## </span><span style="color: #00cd66;">changing color for all points</span>
-p + geom_point(size = 3, color =<span style="color: #bdb76b;">"blue"</span>)
+## changing color for all points
+p + geom_point(size = 3, color ="blue")
 </pre>
 </div>
 
 
-<div id="org7d47865" class="figure">
+<div id="org833196d" class="figure">
 <p><img src="./img_v2/color.png" alt="color.png" />
 </p>
 <p><span class="figure-number">Figure 16: </span>Adding color (all points)</p>
 </div>
 </div>
 </div>
-<div id="outline-container-orge81298a" class="outline-2">
-<h2 id="orge81298a"><span class="section-number-2">17</span> COLOR II</h2>
+<div id="outline-container-orge79ecfc" class="outline-2">
+<h2 id="orge79ecfc"><span class="section-number-2">17</span> COLOR II</h2>
 <div class="outline-text-2" id="text-17">
 <p>
 This is not what we want. Instead, we use <code>aes</code> inside <code>geom_point</code>
 to define an aesthetic mapping (since the color corresponds to data)
 using the factor <code>murders$region</code> so that we get add a third
-dimenstion to the plot - see figure <a href="#org6c1610e">17</a>.
+dimenstion to the plot - see figure <a href="#org5330646">17</a>.
 </p>
 <div class="org-src-container">
-<pre class="src src-R"><span style="color: #40e0d0;">library</span>(dslabs)
-<span style="color: #40e0d0;">library</span>(ggplot2)
+<pre class="src src-R">library(dslabs)
+library(ggplot2)
 data(murders)
 
-<span style="color: #00cd66;">## </span><span style="color: #00cd66;">define ggplot object and aesthetic mapping</span>
-p <span style="color: #40e0d0;">&lt;-</span> ggplot(data=murders,
-            aes(population/10^6,
-                total,
-                label=abb)) +
+## define ggplot object and aesthetic mapping
+p &lt;- ggplot(data=murders,
+	    aes(population/10^6,
+		total,
+		label=abb)) +
   geom_text(nudge_x = 0.05) +
   scale_x_log10() +
   scale_y_log10() +
-  xlab(<span style="color: #bdb76b;">"Population in millions (log scale)"</span>) +
-  ylab(<span style="color: #bdb76b;">"US Gun Murders in 2010"</span>) +
-  ggtitle(<span style="color: #bdb76b;">"US Gun Murders in 2010"</span>)
+  xlab("Population in millions (log scale)") +
+  ylab("US Gun Murders in 2010") +
+  ggtitle("US Gun Murders in 2010")
 
-<span style="color: #00cd66;">## </span><span style="color: #00cd66;">changing color for all points</span>
+## changing color for all points
 p + geom_point(aes(col = region),
-               size = 3)
+	       size = 3)
 </pre>
 </div>
 
@@ -1170,7 +1095,7 @@ the first argument of <code>geom_point</code>. The legend showing the mapping
 of color to region is added automatically<sup><a id="fnr.7" class="footref" href="#fn.7">7</a></sup>.
 </p>
 
-<div id="org6c1610e" class="figure">
+<div id="org5330646" class="figure">
 <p><img src="./img_v2/color1.png" alt="color1.png" />
 </p>
 <p><span class="figure-number">Figure 17: </span>Adding color as aesthetic mapping using <code>murders$region</code></p>
@@ -1178,8 +1103,8 @@ of color to region is added automatically<sup><a id="fnr.7" class="footref" href
 </div>
 </div>
 
-<div id="outline-container-org5f75e7f" class="outline-2">
-<h2 id="org5f75e7f"><span class="section-number-2">18</span> MORE</h2>
+<div id="outline-container-orgf0b372c" class="outline-2">
+<h2 id="orgf0b372c"><span class="section-number-2">18</span> MORE</h2>
 <div class="outline-text-2" id="text-18">
 <p>
 There is a lot more you can do here. E.g. to add a line like with
@@ -1204,7 +1129,7 @@ from RStudio.
 You can change the overall theme with the package <a href="https://mran.microsoft.com/snapshot/2016-12-03/web/packages/ggthemes/vignettes/ggthemes.html"><code>ggthemes</code></a>,
 e.g. to change the style to The Economist magazine style:
 </p>
-<pre class="example">
+<pre class="example" id="orgebe9523">
 library(ggthemes)
 p + theme_economist()
 </pre>
@@ -1220,38 +1145,38 @@ In the next section, we use all of these to make the final plot.
 </div>
 </div>
 
-<div id="outline-container-org3342d33" class="outline-2">
-<h2 id="org3342d33"><span class="section-number-2">19</span> PUTTING IT ALL TOGETHER<sup><a id="fnr.8" class="footref" href="#fn.8">8</a></sup></h2>
+<div id="outline-container-org04c220f" class="outline-2">
+<h2 id="org04c220f"><span class="section-number-2">19</span> PUTTING IT ALL TOGETHER<sup><a id="fnr.8" class="footref" href="#fn.8">8</a></sup></h2>
 <div class="outline-text-2" id="text-19">
 <div class="org-src-container">
-<pre class="src src-R"><span style="color: #00cd66;">## </span><span style="color: #00cd66;">load data libraries</span>
-<span style="color: #40e0d0;">library</span>(dslabs)
+<pre class="src src-R">## load data libraries
+library(dslabs)
 data(murders)
 
-<span style="color: #00cd66;">## </span><span style="color: #00cd66;">load plotting libraries</span>
-<span style="color: #40e0d0;">library</span>(ggplot2)   <span style="color: #00cd66;"># </span><span style="color: #00cd66;">improved plotting</span>
-<span style="color: #40e0d0;">library</span>(ggthemes)  <span style="color: #00cd66;"># </span><span style="color: #00cd66;">improved plot theme</span>
-<span style="color: #40e0d0;">library</span>(ggrepel)   <span style="color: #00cd66;"># </span><span style="color: #00cd66;">improved text labels</span>
+## load plotting libraries
+library(ggplot2)   # improved plotting
+library(ggthemes)  # improved plot theme
+library(ggrepel)   # improved text labels
 
 ggplot(data=murders,
        aes(population/10^6,
-           total,
-           label = abb)) +
+	   total,
+	   label = abb)) +
   geom_point(aes(col=region),
-             size = 3) +
+	     size = 3) +
   geom_text_repel() +
   scale_x_log10() +
   scale_y_log10() +
-  xlab(<span style="color: #bdb76b;">"Population in millions (log scale)"</span>) +
-  ylab(<span style="color: #bdb76b;">"Total number of murders (log scale)"</span>) +
-  ggtitle(<span style="color: #bdb76b;">"US Gun Murders in 2010"</span>) +
-  scale_color_discrete(name = <span style="color: #bdb76b;">"Region"</span>) +
+  xlab("Population in millions (log scale)") +
+  ylab("Total number of murders (log scale)") +
+  ggtitle("US Gun Murders in 2010") +
+  scale_color_discrete(name = "Region") +
   theme_economist()
 </pre>
 </div>
 
 
-<div id="orgd1d95b4" class="figure">
+<div id="orgc4a14f6" class="figure">
 <p><img src="./img_v2/final.png" alt="final.png" />
 </p>
 <p><span class="figure-number">Figure 18: </span>The final plot!</p>
@@ -1259,39 +1184,39 @@ ggplot(data=murders,
 </div>
 </div>
 
-<div id="outline-container-org0b120eb" class="outline-2">
-<h2 id="org0b120eb"><span class="section-number-2">20</span> CHALLENGES</h2>
+<div id="outline-container-org6fefa85" class="outline-2">
+<h2 id="org6fefa85"><span class="section-number-2">20</span> CHALLENGES</h2>
 <div class="outline-text-2" id="text-20">
 <ol class="org-ol">
-<li><a id="org75d40f0"></a> The first few aesthetic mappings that <code>geom_point</code>
+<li><a id="orgbab6f4d"></a> The first few aesthetic mappings that <code>geom_point</code>
 understands, are <code>x</code>, <code>y</code>, and <code>color</code>, with <code>x</code>, <code>y</code> as the
 minimum.</li>
 <li><p>
-<a id="org5a10837"></a> Calling <code>label=abb</code> outside of the <code>aes</code> function leads
+<a id="org6682f9e"></a> Calling <code>label=abb</code> outside of the <code>aes</code> function leads
 to an error: <code>abb</code> is not recognized outside of <code>aes</code> - you have
 to index it as <code>murders$abb</code>, then it would work:
 </p>
 <div class="org-src-container">
-<pre class="src src-R"><span style="color: #40e0d0;">library</span>(dslabs)
-<span style="color: #40e0d0;">library</span>(ggplot2)
+<pre class="src src-R">library(dslabs)
+library(ggplot2)
 data(murders)
 
-<span style="color: #00cd66;">## </span><span style="color: #00cd66;">define ggplot object, x and y vectors</span>
-p <span style="color: #40e0d0;">&lt;-</span> ggplot(data = murders)
+## define ggplot object, x and y vectors
+p &lt;- ggplot(data = murders)
 
-<span style="color: #00cd66;">## </span><span style="color: #00cd66;">add text label layer to the scatterplot and render</span>
+## add text label layer to the scatterplot and render
 p + geom_point(aes(x = population/10^6, y = total)) +
   geom_text(aes(x = population/10^6, y = total), label=murders$abb)
 </pre>
 </div>
 <p>
-This code leads to the output shown in figure <a href="#orgcd56b33">19</a>, which is
-identical to figure <a href="#org7a9d649">8</a>.
+This code leads to the output shown in figure <a href="#orgd87e6c1">19</a>, which is
+identical to figure <a href="#org45c3188">8</a>.
 </p></li>
 </ol>
 
 
-<div id="orgcd56b33" class="figure">
+<div id="orgd87e6c1" class="figure">
 <p><img src="./img_v2/index.png" alt="index.png" />
 </p>
 <p><span class="figure-number">Figure 19: </span>Labeling aesthetic mappings using <code>label=murders$abb</code> outside of <code>aes</code></p>
@@ -1299,26 +1224,26 @@ identical to figure <a href="#org7a9d649">8</a>.
 </div>
 </div>
 
-<div id="outline-container-orgc4a3900" class="outline-2">
-<h2 id="orgc4a3900"><span class="section-number-2">21</span> REFERENCES</h2>
+<div id="outline-container-org41f2ec8" class="outline-2">
+<h2 id="org41f2ec8"><span class="section-number-2">21</span> REFERENCES</h2>
 <div class="outline-text-2" id="text-21">
 <ul class="org-ul">
-<li><a id="org899a1c1"></a> Davies (2016). Book of R chapter 7. NoStarch Press.</li>
-<li><a id="org26982fe"></a> Grolemund/Wickham (2016). R for Data
+<li><a id="org63146ee"></a> Davies (2016). Book of R chapter 7. NoStarch Press.</li>
+<li><a id="org2d64f8d"></a> Grolemund/Wickham (2016). R for Data
 Science. O'Reilly. <a href="https://r4ds.had.co.nz/">Online: had.co.nz</a></li>
-<li><a id="org4fd4145"></a> Irizarry (2020). <a href="https://rafalab.github.io/dsbook/introduction-to-data-visualization.html">Introduction to Data Science</a>
+<li><a id="org86f559f"></a> Irizarry (2020). <a href="https://rafalab.github.io/dsbook/introduction-to-data-visualization.html">Introduction to Data Science</a>
 Chapter 7: ggplot2. CRC Press. Online: <a href="https://rafalab.github.io/dsbook/ggplot2.html">rafalab.github.io</a></li>
-<li><a id="org776228b"></a> Kumar (2020). Grid and Lattice Packages in R
+<li><a id="orgca494d2"></a> Kumar (2020). Grid and Lattice Packages in R
 Programming. <a href="https://www.geeksforgeeks.org/grid-and-lattice-packages-in-r-programming/">Online: geeksforgeeks.org</a></li>
-<li><a id="org0aa2722"></a> Matloff (2020). TidyverseSkeptic. <a href="https://github.com/matloff/TidyverseSkeptic">Online: github.com</a></li>
-<li><a id="orgf3e0ee8"></a> Wickham (2014). Tidy data. Journal of Statistical
+<li><a id="org0659bad"></a> Matloff (2020). TidyverseSkeptic. <a href="https://github.com/matloff/TidyverseSkeptic">Online: github.com</a></li>
+<li><a id="orgf5bbc7e"></a> Wickham (2014). Tidy data. Journal of Statistical
 Software 59(10). <a href="https://vita.had.co.nz/papers/tidy-data.pdf">Online: had.co.nz</a> (preprint), <code>tidyr</code>
 <a href="https://tidyr.tidyverse.org/articles/tidy-data.html">vignette</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgddd1553" class="outline-2">
-<h2 id="orgddd1553"><span class="section-number-2">22</span> SUMMARY</h2>
+<div id="outline-container-orga7d05d8" class="outline-2">
+<h2 id="orga7d05d8"><span class="section-number-2">22</span> SUMMARY</h2>
 <div class="outline-text-2" id="text-22">
 <ul class="org-ul">
 <li>Real data are mostly not "tidy" but "messy"</li>
@@ -1330,8 +1255,8 @@ Software 59(10). <a href="https://vita.had.co.nz/papers/tidy-data.pdf">Online: h
 </ul>
 </div>
 </div>
-<div id="outline-container-orgdb69192" class="outline-2">
-<h2 id="orgdb69192"><span class="section-number-2">23</span> CODE</h2>
+<div id="outline-container-org5d3c161" class="outline-2">
+<h2 id="org5d3c161"><span class="section-number-2">23</span> CODE</h2>
 <div class="outline-text-2" id="text-23">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -1431,7 +1356,10 @@ Software 59(10). <a href="https://vita.had.co.nz/papers/tidy-data.pdf">Online: h
 
 <div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
 The main source for this lecture is Rafael Irizarry's
-introductory data science course and book (<a href="#org4fd4145">Irizarry, 2019</a>).
+introductory data science course and book (<a href="#org86f559f">Irizarry, 2019</a>). As a sad
+pandemic update on the 2010 US gun murder figures used here: "Murder
+rates jumped more than 30 percent fall-over-fall and more than 40
+percent summer-over-summer from 2019 to 2020." (Source: <a href="https://quillette.com/2021/01/27/did-the-blm-protests-against-the-police-lead-to-the-2020-spike-in-homicides/">Quillette</a>).
 </p></div></div>
 
 <div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <div class="footpara"><p class="footpara">
@@ -1439,7 +1367,7 @@ I don't really know why but the whole "tidy" use of language
 ticks me off - though I don't particularly like things messy. Norman
 Matloff has a few interesting points to make on that in his essay
 "<a href="https://github.com/matloff/TidyverseSkeptic">TidyverseSceptic</a> - an alternative view of the Tidyverse 'dialect# of
-the R language, and its promotion by RStudio" (<a href="#org0aa2722">Matloff, 2020</a>).
+the R language, and its promotion by RStudio" (<a href="#org0659bad">Matloff, 2020</a>).
 </p></div></div>
 
 <div class="footdef"><sup><a id="fn.3" class="footnum" href="#fnr.3">3</a></sup> <div class="footpara"><p class="footpara">
@@ -1482,8 +1410,8 @@ ch. 7.12</a> .
 <div id="postamble" class="status">
 <p class="date">Date: Winter 2020</p>
 <p class="author">Author: Marcus Birkenkrahe</p>
-<p class="date">Created: 2021-01-21 Do 10:59</p>
-<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+<p class="date">Created: 2022-03-09 Wed 08:50</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
 </html>

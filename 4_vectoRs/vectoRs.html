@@ -1,0 +1,2568 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2020-12-07 Mo 19:26 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>VECTORS</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Marcus Birkenkrahe" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+
+<script type="text/javascript" src="https://orgmode.org/org-info.js">
+/**
+ *
+ * @source: https://orgmode.org/org-info.js
+ *
+ * @licstart  The following is the entire license notice for the
+ *  JavaScript code in https://orgmode.org/org-info.js.
+ *
+ * Copyright (C) 2012-2020 Free Software Foundation, Inc.
+ *
+ *
+ * The JavaScript code in this tag is free software: you can
+ * redistribute it and/or modify it under the terms of the GNU
+ * General Public License (GNU GPL) as published by the Free Software
+ * Foundation, either version 3 of the License, or (at your option)
+ * any later version.  The code is distributed WITHOUT ANY WARRANTY;
+ * without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+ *
+ * As additional permission under GNU GPL version 3 section 7, you
+ * may distribute non-source (e.g., minimized or compacted) forms of
+ * that code without the copy of the GNU GPL normally required by
+ * section 4, provided you include this license notice and a URL
+ * through which recipients can access the Corresponding Source.
+ *
+ * @licend  The above is the entire license notice
+ * for the JavaScript code in https://orgmode.org/org-info.js.
+ *
+ */
+</script>
+
+<script type="text/javascript">
+
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+
+<!--/*--><![CDATA[/*><!--*/
+org_html_manager.set("TOC_DEPTH", "3");
+org_html_manager.set("LINK_HOME", "");
+org_html_manager.set("LINK_UP", "");
+org_html_manager.set("LOCAL_TOC", "1");
+org_html_manager.set("VIEW_BUTTONS", "0");
+org_html_manager.set("MOUSE_HINT", "underline");
+org_html_manager.set("FIXED_TOC", "0");
+org_html_manager.set("TOC", "1");
+org_html_manager.set("VIEW", "info");
+org_html_manager.setup();  // activate after the parameters are set
+/*]]>*///-->
+</script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">VECTORS</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org84ebdba">1. WHAT WILL YOU LEARN?</a></li>
+<li><a href="#org5efb50e">2. EVERYTHING IS AN OBJECT</a></li>
+<li><a href="#org1ee5476">3. ASSIGNING OBJECTS</a></li>
+<li><a href="#orgce96bd3">4. WHY WE NEED VECTORS</a></li>
+<li><a href="#org130459d">5. CREATING VECTORS</a></li>
+<li><a href="#org9a08f76">6. DOWN THE NILE</a></li>
+<li><a href="#org7f1aa13">7. PLOTTING THE NILE</a></li>
+<li><a href="#org8d27201">8. THE OBVIOUS</a></li>
+<li><a href="#org742a687">9. CREATING SEQUENCES AND REPETITIONS</a>
+<ul>
+<li><a href="#org7ae7300">9.1. THE COLON OPERATOR</a></li>
+<li><a href="#org7dfa550">9.2. SEQUENCES</a></li>
+<li><a href="#orgb7d1fb7">9.3. REPETITION</a></li>
+</ul>
+</li>
+<li><a href="#org2a68b7a">10. SORTING AND MEASURING LENGTHS</a>
+<ul>
+<li><a href="#org3fe8694">10.1. SORT</a></li>
+<li><a href="#org95f6518">10.2. LENGTH</a></li>
+</ul>
+</li>
+<li><a href="#org8a3360f">11. EXERCISES AND SOLUTIONS</a></li>
+<li><a href="#org9b5b925">12. SUBSETTING</a>
+<ul>
+<li><a href="#orgbdf1e6c">12.1. Vectorization 1-2-3</a></li>
+<li><a href="#orga86b16d">12.2. The row labels, like <code>[1]</code>, correspond to the <b>index</b></a></li>
+<li><a href="#org06e7783">12.3. Subsetting: retrieving vector elements</a></li>
+<li><a href="#orged75712">12.4. Using colon operator in index</a></li>
+<li><a href="#org0ad8325">12.5. Careful with sequences: is <code>foo[n]:foo[m]==foo[n:m]</code>?</a></li>
+<li><a href="#org1264efc">12.6. Stats functions work on any vector subset: <code>mean</code>, <code>sum</code>,</a></li>
+<li><a href="#org61c01ba">12.7. Logical functions in vectors: <code>&lt;</code>, <code>&gt;</code>, <code>!=</code>, <code>==</code></a></li>
+<li><a href="#org873bb9a">12.8. Selecting with logical index vectors</a></li>
+<li><a href="#orge8660d5">12.9. Exercise with <code>Nile</code></a></li>
+<li><a href="#org7cd6fe0">12.10. Negative indices - removes elements (only output, no overwrite)</a></li>
+<li><a href="#orgd25c770">12.11. Putting dissected vectors back together</a></li>
+<li><a href="#orgeb2e600">12.12. Defining and using vectors of indices</a></li>
+<li><a href="#org9a30073">12.13. Overwriting a subvector with another vector</a></li>
+<li><a href="#orgc491596">12.14. Exercises and Solutions</a></li>
+<li><a href="#orgf36c632">12.15. Example: rescaling</a></li>
+<li><a href="#org1da185b">12.16. Vector Recycling</a></li>
+<li><a href="#org910c95f">12.17. Class exercise: rescale from inches to cm</a></li>
+<li><a href="#org4899b95">12.18. Exercises &amp; Solutions</a></li>
+</ul>
+</li>
+<li><a href="#org2c3d552">13. NAMING</a></li>
+<li><a href="#org6a5e232">14. EXAMPLE DATASET <code>islands</code></a></li>
+<li><a href="#org5122f2b">15. INDEXING VECTORS (AGAIN)</a></li>
+<li><a href="#orgca3dcd2">16. COERCION</a></li>
+<li><a href="#orgd9e60bb">17. SUMMARY</a></li>
+<li><a href="#org1282e1a">18. SOURCES</a></li>
+</ul>
+</div>
+</div>
+<hr />
+<div id="outline-container-org84ebdba" class="outline-2">
+<h2 id="org84ebdba"><span class="section-number-2">1</span> WHAT WILL YOU LEARN?</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+After this lesson, you should be able to:
+</p>
+
+<ul class="org-ul">
+<li>Understand assignment in R</li>
+<li>Creating vectors, sequences and repetitions</li>
+<li>Sorting and measuring vector length</li>
+<li>Subsetting and extracting vector elements</li>
+<li>Vectorizing (rescaling)</li>
+<li>Classes and logical vectors</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org5efb50e" class="outline-2">
+<h2 id="org5efb50e"><span class="section-number-2">2</span> EVERYTHING IS AN OBJECT</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+<a href="https://www.youtube.com/playlist?list=PL6SfZh1-kWXl3_YDc-8SS5EuG4h1aILHz">[Watch YouTube Playlist​]​</a>
+</p>
+
+<p>
+<a href="https://youtu.be/7Ab2RQs7Lj8">[Watch the video (4:33 min)]​</a>
+</p>
+<hr />
+<p>
+R is a functional, object-oriented language: everything's an object,
+and functions rule, as you already know. Because functions rule,
+there are usually many different ways to achieve the same
+result. They often differ in terms of performance, ease of use, and
+clarity. Performance becomes important when you work with truly
+large data sets, otherwise not so much. Ease of use to some extent
+determines the fun you do or don't have when using the
+language. Clarity is essential when communicating your methods
+(including your code) and your results to others. This is not a nice
+to have. Views of different packages (like the Tidyverse) differ
+massively regarding all of these.
+</p>
+</div>
+</div>
+<div id="outline-container-org1ee5476" class="outline-2">
+<h2 id="org1ee5476"><span class="section-number-2">3</span> ASSIGNING OBJECTS</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+<a href="https://youtu.be/WZqJ_AyoOEU">[Watch the video (10 min)]​</a>
+</p>
+<hr />
+<p>
+We talk about "assigning values to a variable" or "storing values
+in a variable." These expressions are interchangeable. We can use
+<code>&lt;-</code> or <code>=</code> for assignment. Whatever you do, try to be consistent.
+</p>
+<div class="org-src-container">
+<pre class="src src-R">x <span style="color: #40e0d0;">&lt;-</span> 5     <span style="color: #00cd66;"># </span><span style="color: #00cd66;">assigns 5 to a variable x</span>
+x          <span style="color: #00cd66;"># </span><span style="color: #00cd66;">prints the content of x to the screen</span>
+y = 10     <span style="color: #00cd66;"># </span><span style="color: #00cd66;">assigns 10 to a variable y</span>
+print(y)   <span style="color: #00cd66;"># </span><span style="color: #00cd66;">prints the content of y to the screen</span>
+x+y        <span style="color: #00cd66;"># </span><span style="color: #00cd66;">adds content of both variables</span>
+x <span style="color: #40e0d0;">&lt;-</span> x + 1 <span style="color: #00cd66;"># </span><span style="color: #00cd66;">overwrites value of x</span>
+x          <span style="color: #00cd66;"># </span><span style="color: #00cd66;">prints new content of x</span>
+</pre>
+</div>
+<p>
+The session results:
+</p>
+<pre class="example">
+&gt; x &lt;- 5
+&gt; x
+[1] 5
+&gt; y = 10
+&gt; print(y)
+[1] 10
+&gt; x+y
+[1] 15
+&gt; x &lt;- x+1
+&gt; x
+[1] 6
+</pre>
+<p>
+Because you can overwrite variables easily, <code>=</code> could be confusing,
+because it looks like mathematical equality (a status) while it
+actually is an action. <code>=</code> is usually reserved for setting arguments
+inside functions. You've seen this before: <code>log(x=100, b=10)</code>.
+</p>
+
+<p>
+There are also some naming rules: objects must start with a letter
+and they must avoid reserved words (like <code>TRUE</code> or
+<code>NA</code>). Interesting objects for us include: vectors, factors, and
+data frames.
+</p>
+
+<p>
+<b>Problem:</b>
+</p>
+<blockquote>
+<ol class="org-ol">
+<li>Create an object <code>a</code> that stores the value \(3^2\times 4^\frac{1}{8}\)</li>
+<li>Overwrite <code>a</code> with itself divided by \(2.33\). Print the result to
+the console.</li>
+<li>Create a new object <code>b</code> with the value \(-8.2\times 10^{-13}\)</li>
+<li>Print to the console the result of multiplying <code>a</code> and <code>b</code>.</li>
+</ol>
+</blockquote>
+
+<p>
+<b>Solution:</b>
+</p>
+<div class="org-src-container">
+<pre class="src src-R">a <span style="color: #40e0d0;">&lt;-</span> 3^2 * 4^(1/8)  <span style="color: #00cd66;"># </span><span style="color: #00cd66;">1) 10.70286</span>
+a <span style="color: #40e0d0;">&lt;-</span> a/2.33         <span style="color: #00cd66;"># </span><span style="color: #00cd66;">2) 4.593504</span>
+a
+b <span style="color: #40e0d0;">&lt;-</span> (-8.2) * 10^(-13) <span style="color: #00cd66;"># </span><span style="color: #00cd66;">3) -8.2e-13</span>
+a * b                  <span style="color: #00cd66;"># </span><span style="color: #00cd66;">4) -3.766673e-12</span>
+</pre>
+</div>
+<p>
+The session results:
+</p>
+<pre class="example">
+&gt; a &lt;- 3^2 * 4^(1/8)
+&gt; a &lt;- a/2.33
+&gt; a
+[1] 4.593504
+&gt; b &lt;- (-8.2)*10^(-13)
+&gt; b
+[1] -8.2e-13
+&gt; a * b
+[1] -3.766673e-12
+</pre>
+</div>
+</div>
+<div id="outline-container-orgce96bd3" class="outline-2">
+<h2 id="orgce96bd3"><span class="section-number-2">4</span> WHY WE NEED VECTORS</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+<a href="https://youtu.be/iFsB_34mnR0">[Watch the video (6:40)]​</a>
+</p>
+<hr />
+<p>
+We need vectors to handle multiple items in R (more than one data
+point). Interesting data are usually made up of multiple
+items. Think of a vector as a collection of observations or
+measurements concerning a single variable. An important condition
+for vectors is that all entries must be observations of the same
+type<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>.
+</p>
+
+<p>
+<b>CHALLENGE</b>
+</p>
+<blockquote>
+<p>
+Give three examples of such collections that could make up
+vectors: 1) numbers, 2) text, 3) logical values.
+</p>
+</blockquote>
+
+<p>
+<b>SOLUTION</b>
+</p>
+<blockquote>
+<ol class="org-ol">
+<li>the heights of every student of this class, in cm.</li>
+<li>the first names of every student of this class (strings).</li>
+<li>observations, if a student is male or not male (male means <code>TRUE</code>).</li>
+</ol>
+</blockquote>
+<p>
+Let's put some wood behind the arrow and define sample vectors for these:
+</p>
+<div class="org-src-container">
+<pre class="src src-R">s_heights <span style="color: #40e0d0;">&lt;-</span> c(180, 181, 158, 175, 179, 168)
+s_names <span style="color: #40e0d0;">&lt;-</span> c(<span style="color: #bdb76b;">"Vincent"</span>, <span style="color: #bdb76b;">"Natalija"</span>, <span style="color: #bdb76b;">"Adrian"</span>, <span style="color: #bdb76b;">"Andres"</span>, <span style="color: #bdb76b;">"Helena"</span>)
+s_male <span style="color: #40e0d0;">&lt;-</span> c(<span style="color: #7fffd4;">TRUE</span>, <span style="color: #7fffd4;">FALSE</span>, <span style="color: #7fffd4;">TRUE</span>, <span style="color: #7fffd4;">TRUE</span>, <span style="color: #7fffd4;">FALSE</span>)
+</pre>
+</div>
+
+<p>
+In order to check what R thinks about your observation or data type,
+you can use the function <code>class</code>. Look at the help page for details
+and enter the examples at the bottom of the help page.
+</p>
+
+<p>
+Let's call <code>class</code> for our three sample vectors:
+</p>
+<div class="org-src-container">
+<pre class="src src-R">class(s_heights) <span style="color: #00cd66;"># </span><span style="color: #00cd66;">what type vector is this?</span>
+class(s_names)   <span style="color: #00cd66;"># </span><span style="color: #00cd66;">what type vector is this?</span>
+class(s_male)    <span style="color: #00cd66;"># </span><span style="color: #00cd66;">what type vector is this?</span>
+</pre>
+</div>
+<p>
+The resulting session output:
+</p>
+<pre class="example">
+&gt; class(s_heights)
+[1] "numeric"
+&gt; class(s_names)
+[1] "character"
+&gt; class(s_male)
+[1] "logical"
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org130459d" class="outline-2">
+<h2 id="org130459d"><span class="section-number-2">5</span> CREATING VECTORS</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+<a href="https://youtu.be/Ov6SIrpY_io">[Watch the video (5:11)]​</a>
+</p>
+<hr />
+<p>
+The function to create a vector, or "combine values", is <code>c()</code>:
+</p>
+<div class="org-src-container">
+<pre class="src src-R">myvec <span style="color: #40e0d0;">&lt;-</span> c(1,3,1,42) <span style="color: #00cd66;"># </span><span style="color: #00cd66;">combine integers as vector</span>
+myvec                <span style="color: #00cd66;"># </span><span style="color: #00cd66;">prints 1 3 1 42</span>
+class(myvec)         <span style="color: #00cd66;"># </span><span style="color: #00cd66;">determine the data type - "numeric"</span>
+</pre>
+</div>
+
+<p>
+The session results:
+</p>
+<pre class="example">
+&gt; myvec &lt;- c(1,3,1,42)
+&gt; myvec
+[1]  1  3  1 42
+&gt; class(myvec)
+[1] "numeric"
+</pre>
+
+<p>
+Vector elements can be calculations or previously stored items:
+</p>
+<div class="org-src-container">
+<pre class="src src-R">foo <span style="color: #40e0d0;">&lt;-</span> 32.1
+myvec2 <span style="color: #40e0d0;">&lt;-</span> c(3, -3, 3.45, 1e+03, 64^0.5, 2+(3-1.1)/9.44, foo)
+myvec2
+</pre>
+</div>
+
+<p>
+The resulting output - note that <code>[1]</code> and <code>[7]</code> are row labels:
+</p>
+<pre class="example">
+[1]    3.000000   -3.000000    3.450000 1000.000000    8.000000    2.201271
+[7]   32.100000
+</pre>
+
+<p>
+The session results:
+</p>
+<pre class="example">
+&gt; foo &lt;- 32.1
+&gt; myvec2 &lt;- c(3, -3, 3.45, 1e+03, 64^0.5, 2+(3-1.1)/9.44, foo)
+&gt; myvec2
+[1]    3.000000   -3.000000    3.450000 1000.000000    8.000000    2.201271
+[7]   32.100000
+</pre>
+
+<p>
+Vector elements can even be vectors themselves:
+</p>
+<div class="org-src-container">
+<pre class="src src-R">myvec3 <span style="color: #40e0d0;">&lt;-</span> c(myvec, myvec2)
+myvec3
+class(myvec3)
+</pre>
+</div>
+
+<p>
+In the resulting output, the two vectors were put side by side. The
+new vector now has \(11 = 4 + 7\) elements:
+</p>
+<pre class="example">
+[1]    1.000000    3.000000    1.000000   42.000000    3.000000   -3.000000
+[7]    3.450000 1000.000000    8.000000    2.201271   32.100000
+[1] "numeric"
+</pre>
+
+<p>
+The session output:
+</p>
+<pre class="example">
+&gt; myvec3 &lt;- c(myvec, myvec2)
+&gt; myvec3
+[1]    1.000000    3.000000    1.000000   42.000000    3.000000   -3.000000
+[7]    3.450000 1000.000000    8.000000    2.201271   32.100000
+&gt; class(myvec3)
+[1] "numeric"
+</pre>
+
+<p>
+<b>Problem:</b>
+</p>
+<blockquote>
+<p>
+What about missing values, <code>NA</code>, and non-numbers, <code>NaN</code>, and what
+about the special values <code>Inf</code> and <code>-Inf</code> - can you have these in
+vectors, too? Can you think about a way to test this?
+</p>
+</blockquote>
+
+<p>
+<b>Solution:</b>
+</p>
+<div class="org-src-container">
+<pre class="src src-R">&gt; specvec <span style="color: #40e0d0;">&lt;-</span> c(<span style="color: #7fffd4;">NA</span>, <span style="color: #7fffd4;">NaN</span>) <span style="color: #00cd66;"># </span><span style="color: #00cd66;">a vector with a NA and a NaN</span>
+&gt; specvec
+[1]  <span style="color: #7fffd4;">NA</span> <span style="color: #7fffd4;">NaN</span>
+&gt; class(specvec)
+[1] <span style="color: #bdb76b;">"numeric"</span>
+&gt; is.nan(specvec)  <span style="color: #00cd66;"># </span><span style="color: #00cd66;">testing for NaN values</span>
+[1] <span style="color: #7fffd4;">FALSE</span>  <span style="color: #7fffd4;">TRUE</span>
+&gt; is.na(specvec)   <span style="color: #00cd66;"># </span><span style="color: #00cd66;">testing for NA values</span>
+[1] <span style="color: #7fffd4;">TRUE</span> <span style="color: #7fffd4;">TRUE</span>
+&gt; specvec1 <span style="color: #40e0d0;">&lt;-</span> c(specvec, <span style="color: #7fffd4;">Inf</span>, -<span style="color: #7fffd4;">Inf</span>) <span style="color: #00cd66;"># </span><span style="color: #00cd66;">a new vector with Inf, Inf</span>
+&gt; specvec1
+[1]   <span style="color: #7fffd4;">NA</span>  <span style="color: #7fffd4;">NaN</span>  <span style="color: #7fffd4;">Inf</span> -<span style="color: #7fffd4;">Inf</span>
+&gt; is.finite(specvec1)  <span style="color: #00cd66;"># </span><span style="color: #00cd66;">testing for finiteness</span>
+[1] <span style="color: #7fffd4;">FALSE</span> <span style="color: #7fffd4;">FALSE</span> <span style="color: #7fffd4;">FALSE</span> <span style="color: #7fffd4;">FALSE</span>
+&gt; is.infinite(specvec1)  <span style="color: #00cd66;"># </span><span style="color: #00cd66;">testint for infiniteness</span>
+[1] <span style="color: #7fffd4;">FALSE</span> <span style="color: #7fffd4;">FALSE</span>  <span style="color: #7fffd4;">TRUE</span>  <span style="color: #7fffd4;">TRUE</span>
+&gt; class(specvec1)
+[1] <span style="color: #bdb76b;">"numeric"</span>
+</pre>
+</div>
+
+<p>
+A more elaborate way of generating a non-number
+</p>
+</div>
+</div>
+<div id="outline-container-org9a08f76" class="outline-2">
+<h2 id="org9a08f76"><span class="section-number-2">6</span> DOWN THE NILE</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+<a href="https://youtu.be/wwsD2KuoKt8">[Watch the video (4:33)]​</a>
+</p>
+<hr />
+<p>
+Let's not forget that there are real data out there!  R
+(i.e. "<a href="https://rstudio.com/wp-content/uploads/2016/05/base-r.pdf">Base-R</a>") includes a number of built-in datasets (i.e. you
+don't have to install any packages to access them).
+</p>
+
+<p>
+<b>Problem:</b>
+</p>
+<blockquote>
+<p>
+Do you remember how to find these pre-loaded datasets? One of these
+is <code>Nile</code>. Do you remember how to get information on such a dataset
+(or on any R object)?
+</p>
+</blockquote>
+
+<p>
+<b>Solution:</b>
+</p>
+<div class="org-src-container">
+<pre class="src src-R">data()      <span style="color: #00cd66;"># </span><span style="color: #00cd66;">lists all available/loaded datasets</span>
+?Nile       <span style="color: #00cd66;"># </span><span style="color: #00cd66;">opens help page for the dataset Nile</span>
+</pre>
+</div>
+
+<p>
+<code>Nile</code> contains a so-called "time series", a sequence of numbers
+that correspond to measurements of the annual flow (in billion -
+10⁸ - cubic meters) of the river Nile at <a href="https://en.wikipedia.org/wiki/Aswan">Aswan</a>, measured between
+1871-1970. You can use <code>class</code> to confirm it:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">class(Nile)  <span style="color: #00cd66;"># </span><span style="color: #00cd66;">what type of dataset is this?</span>
+</pre>
+</div>
+<p>
+The output is <code>"ts"</code>, or time series. You may remember that we
+previously looked at large datasets. <code>mtcars</code> for example was a
+"data frame" (we'll learn more about them later).
+</p>
+
+<p>
+<b>Problem:</b>
+</p>
+<blockquote>
+<p>
+How can we print this dataset on the screen?
+</p>
+</blockquote>
+
+<p>
+<b>Solution:</b> there are different ways to look inside <code>Nile</code>:
+</p>
+<div class="org-src-container">
+<pre class="src src-R">str(Nile)   <span style="color: #00cd66;"># </span><span style="color: #00cd66;">show dataset structure</span>
+head(Nile)  <span style="color: #00cd66;"># </span><span style="color: #00cd66;">show first few elements</span>
+Nile        <span style="color: #00cd66;"># </span><span style="color: #00cd66;">this prints the whole dataset</span>
+</pre>
+</div>
+
+<p>
+Results from the session:
+</p>
+<pre class="example">
+&gt; str(Nile)
+Time-Series [1:100] from 1871 to 1970: 1120 1160 963 1210 1160 1160 813 1230 1370 1140 ...
+&gt; head(Nile)
+[1] 1120 1160  963 1210 1160 1160
+&gt; Nile
+Time Series:
+Start = 1871
+End = 1970
+Frequency = 1
+[1] 1120 1160  963 1210 1160 1160  813 1230 1370 1140  995  935 1110  994 1020
+[16]  960 1180  799  958 1140 1100 1210 1150 1250 1260 1220 1030 1100  774  840
+[31]  874  694  940  833  701  916  692 1020 1050  969  831  726  456  824  702
+[46] 1120 1100  832  764  821  768  845  864  862  698  845  744  796 1040  759
+[61]  781  865  845  944  984  897  822 1010  771  676  649  846  812  742  801
+[76] 1040  860  874  848  890  744  749  838 1050  918  986  797  923  975  815
+[91] 1020  906  901 1170  912  746  919  718  714  740
+</pre>
+<p>
+Because we don't know yet how to look at sub-vectors or individual
+vector elements, we cannot directly check what type the elements of
+<code>Nile</code> have, but the output seems to suggest that the Nile flow is
+measured in integer numbers.
+</p>
+
+<p>
+You can also see from the print output of <code>Nile</code> how row labels
+work: there are 15 numbers per row, and the second row starts with
+the 16th number, indicated by <code>[16]</code>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7f1aa13" class="outline-2">
+<h2 id="org7f1aa13"><span class="section-number-2">7</span> PLOTTING THE NILE</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+<a href="https://youtu.be/c_BvsnKU7T4">[Watch the video (4:10)]​</a>
+</p>
+<hr />
+<p>
+Looking at the numbers otherwise won't give us any idea about what's
+going on, but fortunately, R has amazing plotting
+capabilities. Let's begin with a histogram, for which we need the
+<code>hist</code> function.
+</p>
+
+<p>
+<b>Problem:</b>
+</p>
+<blockquote>
+<p>
+What does <code>hist</code> do? How does it work?
+</p>
+</blockquote>
+
+<p>
+<b>Solution:</b>
+</p>
+<blockquote>
+<p>
+You know of course what to do at this point: call for help using
+<code>?hist</code>. Skip to the <code>Examples</code> section at the end, where you find
+the command <code>hist(islands)</code>. This creates a histogram of another
+dataset, <code>islands</code>. With the help of <code>?islands</code>, you find out
+quickly that this is a "named vector of 48 elements". Never mind
+what this means, but you can enter the command, which will generate
+a plot. This is a histogram: it plots frequency of the data and
+distributes them into bins<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup>. Let's get back to the river Nile&#x2026;
+</p>
+</blockquote>
+
+<p>
+Like most R functions, <code>hist</code> has many options. If you execute
+<code>hist(Nile)</code>, you get the same type of graph as in the example (see
+figure <a href="#orgf4e27cf">1</a>), except that we know what the data are (annual
+Nile flow measurements in <code>10⁸ m³</code>, or 100,000,000 (100 million) of
+cubic metres.
+</p>
+
+
+<div id="orgf4e27cf" class="figure">
+<p><img src="./img/nile_hist.png" alt="nile_hist.png" />
+</p>
+<p><span class="figure-number">Figure 1: </span>Histogram of Nile - distribution of flow.</p>
+</div>
+
+<p>
+The <code>hist</code> function creates 10 bins by default and distributes the
+data accordingly. You can alter this number of bins by changing the
+argument <code>breaks</code>, e.g. <code>hist(Nile, breaks=20)</code> (try it!).
+</p>
+
+<p>
+We'll get back to the <code>Nile</code> once we know more about vectors! In the
+next four sections, we're going to look at useful functions.
+</p>
+</div>
+</div>
+<div id="outline-container-org8d27201" class="outline-2">
+<h2 id="org8d27201"><span class="section-number-2">8</span> THE OBVIOUS</h2>
+<div class="outline-text-2" id="text-8">
+<p>
+In the following, I won't waste more space with the obvious:
+whenever I mention a new function or dataset, or keyword, look the
+corresponding help up immediately. More often than not, you will
+take something away from it - at the very minimum an example. Over
+time, you'll understand things even though you don't know how you
+possibly could: this is because you've begun to develop a habit by
+using a system of learning - looking up the help content - and the
+more you look at help pages, the more you recognize known concepts.
+</p>
+</div>
+</div>
+<div id="outline-container-org742a687" class="outline-2">
+<h2 id="org742a687"><span class="section-number-2">9</span> CREATING SEQUENCES AND REPETITIONS</h2>
+<div class="outline-text-2" id="text-9">
+<p>
+<a href="https://youtu.be/G2P_MVq3eyM">[Watch the video (16:05)]​</a>
+</p>
+<hr />
+</div>
+<div id="outline-container-org7ae7300" class="outline-3">
+<h3 id="org7ae7300"><span class="section-number-3">9.1</span> THE COLON OPERATOR</h3>
+<div class="outline-text-3" id="text-9-1">
+<p>
+We already met the colon operator: remember how <code>1:n</code> creates a
+sequence of numbers separated by intervals of <code>1</code>:
+</p>
+<div class="org-src-container">
+<pre class="src src-R">3:27  <span style="color: #00cd66;"># </span><span style="color: #00cd66;">generate sequence of integers space by 1 from 3 to 27</span>
+</pre>
+</div>
+<p>
+The output looks like this:
+</p>
+<pre class="example">
+R&gt; 3:27
+[1]  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27
+</pre>
+<p>
+Simple enough! You'll need this e.g. when plotting data points. You
+can check that these are integer numbers with <code>class(3:27)</code>. You can
+also store the sequence, or use arithmetic to specify the range. Any
+calculation must strictly be in parentheses:
+</p>
+<div class="org-src-container">
+<pre class="src src-R">foo <span style="color: #40e0d0;">&lt;-</span> 5.3              <span style="color: #00cd66;"># </span><span style="color: #00cd66;">assign 5.3 to foo</span>
+bar <span style="color: #40e0d0;">&lt;-</span> foo:(-47+1.5)    <span style="color: #00cd66;"># </span><span style="color: #00cd66;">assign sequence to bar</span>
+</pre>
+</div>
+<p>
+The sequence <code>bar</code> looks like this:
+</p>
+<pre class="example">
+R&gt; bar
+  [1]   5.3   4.3   3.3   2.3   1.3   0.3  -0.7  -1.7  -2.7  -3.7  -4.7  -5.7
+ [13]  -6.7  -7.7  -8.7  -9.7 -10.7 -11.7 -12.7 -13.7 -14.7 -15.7 -16.7 -17.7
+ [25] -18.7 -19.7 -20.7 -21.7 -22.7 -23.7 -24.7 -25.7 -26.7 -27.7 -28.7 -29.7
+ [37] -30.7 -31.7 -32.7 -33.7 -34.7 -35.7 -36.7 -37.7 -38.7 -39.7 -40.7 -41.7
+ [49] -42.7 -43.7 -44.7
+</pre>
+<p>
+Try to understand what happened here by checking the numbers: the
+first value of the sequence is <code>foo = 5.3</code>. The last value is a
+negative value, <code>-47+1.5 = -45.5</code>. In order to generate the
+sequence, R counts down in steps of <code>1</code> from the first to the last
+value. It stops at <code>-44.7</code>, because the next value, <code>-45.7</code> would be
+outside of the interval \([5.3,-45.5])\).
+</p>
+
+<p>
+So far so good, but this isn't very flexible, because we cannot
+alter the "bin-size" (in histogram-speak), or the step-width of the
+sequence generator - it'll always be \(1\). We need a function!
+</p>
+</div>
+</div>
+<div id="outline-container-org7dfa550" class="outline-3">
+<h3 id="org7dfa550"><span class="section-number-3">9.2</span> SEQUENCES</h3>
+<div class="outline-text-3" id="text-9-2">
+<p>
+The function <code>seq</code> "generates regular sequences" (that's what the
+help says, which I am sure you looked up as soon as you saw the
+headline!). Alas, the help is a little obscure (esp. the
+examples). Let's make our own examples, or borrow them<sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup>: here
+is a variation on the last example, with step-width specified via
+the argument <code>by = 3</code>:
+</p>
+<pre class="example">
+R&gt; seq(from = 3, to = 27, by = 3)
+[1]  3  6  9 12 15 18 21 24 27
+</pre>
+<p>
+<code>seq</code> will always start at the <code>from</code> value but (just like in the
+earlier example) not always end exactly on the <code>to</code> value. In the
+following example, the last value <code>10</code> is not included, because it
+both last value and step-width are even. In the second example, the
+last value is odd, and then it works:
+</p>
+<pre class="example">
+R&gt; seq(1,10,2)
+[1] 1 3 5 7 9
+
+R&gt; seq(1,11,2)
+[1]  1  3  5  7  9 11
+</pre>
+<p>
+To end exactly on the last value, use the <code>length.out</code> argument
+instead:
+</p>
+<pre class="example">
+R&gt; seq(from = 3, to = 27, length.out = 40)
+[1]  3.000000  3.615385  4.230769  4.846154  5.461538  6.076923  6.692308
+[8]  7.307692  7.923077  8.538462  9.153846  9.769231 10.384615 11.000000
+[15] 11.615385 12.230769 12.846154 13.461538 14.076923 14.692308 15.307692
+[22] 15.923077 16.538462 17.153846 17.769231 18.384615 19.000000 19.615385
+[29] 20.230769 20.846154 21.461538 22.076923 22.692308 23.307692 23.923077
+[36] 24.538462 25.153846 25.769231 26.384615 27.000000
+</pre>
+<p>
+The intervals between the <code>40</code> values generated are exactly evenly
+spaced. If you want the sequence to decrease, <code>by</code> must be
+negative, like here:
+</p>
+<pre class="example">
+&gt; foo &lt;- 5.3
+&gt; myseq &lt;- seq(from=foo, to=(-47+1.5),by=-2.4)
+&gt; myseq
+[1]   5.3   2.9   0.5  -1.9  -4.3  -6.7  -9.1 -11.5 -13.9 -16.3 -18.7 -21.1
+[13] -23.5 -25.9 -28.3 -30.7 -33.1 -35.5 -37.9 -40.3 -42.7 -45.1
+</pre>
+<p>
+<code>length,out</code> can only be positive (there is no 'negative
+length'). This example creates a decreasing sequence of length \(5\):
+</p>
+<pre class="example">
+&gt; myseq2 &lt;- seq(from=foo, to=(-47+1.5), length.out=5)
+&gt; myseq2
+[1]   5.3  -7.4 -20.1 -32.8 -45.5
+</pre>
+</div>
+</div>
+<div id="outline-container-orgb7d1fb7" class="outline-3">
+<h3 id="orgb7d1fb7"><span class="section-number-3">9.3</span> REPETITION</h3>
+<div class="outline-text-3" id="text-9-3">
+<p>
+If you simply want to repeat a value, you can use the <code>rep</code>
+function. For example, to create a sequence of four numbers <code>1</code>, type:
+</p>
+<pre class="example">
+R&gt; rep(x=1, times=4)
+[1] 1 1 1 1
+</pre>
+<p>
+You can repeat any object! Here are three different repetitions of
+the numerical vector <code>c(3, 62, 8, 3)</code> - first guess the outcome,
+then type them into the R console to check your thinking:
+</p>
+<div class="org-src-container">
+<pre class="src src-R">rep(x=c(3,62,8,3), times=3)
+rep(x=c(3,62,8,3), each=2)
+rep(x=c(3,62,8,3), times=3, each=2)
+</pre>
+</div>
+<p>
+The argument <code>times</code> says how many <b>times</b> <code>x</code> is repeated. The
+argument <code>each</code> says how many times <b>each</b> element of <code>x</code> is
+repeated. The output should look like this:
+</p>
+<pre class="example">
+R&gt; rep(x=c(3,62,8,3), times=3)
+[1]  3 62  8  3  3 62  8  3  3 62  8  3
+
+R&gt; rep(x=c(3,62,8,3), each=2)
+[1]  3  3 62 62  8  8  3  3
+
+R&gt; rep(x=c(3,62,8,3), times=3, each=2)
+[1]  3  3 62 62  8  8  3  3  3  3 62 62  8  8  3  3  3  3 62 62  8  8  3  3
+</pre>
+<p>
+If neither are specified, the default is <code>times = each =
+   1</code>. Therefore, what do you think is the output of <code>rep(c(3,62,8,3))</code><sup><a id="fnr.4" class="footref" href="#fn.4">4</a></sup>?
+</p>
+
+<p>
+As with <code>seq</code>, you can include the result of <code>rep</code> in a vector of
+the same data type (e.g. "numeric"):
+</p>
+<pre class="example">
+R&gt; foo &lt;- 4
+R&gt; c(3,8.3,rep(x=32,times=foo), seq(from=-2,to=1,length.out=foo+1))
+[1]  3.0  8.3 32.0 32.0 32.0 32.0 32.0 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0
+</pre>
+
+<p>
+<code>rep</code> also works for characters and character vectors:
+</p>
+<pre class="example">
+R&gt; rep("data science", times=2)
+[1] "data science" "data science"
+
+R&gt; rep(c("data","science"), times=2)
+[1] "data"    "science" "data"    "science"
+
+R&gt; rep(c("data","science"), times=2, each=2)
+[1] "data"    "data"    "science" "science" "data"    "data"    "science"
+[8] "science"
+</pre>
+
+<p>
+Did you hear the "matching data type" remark? Try to mix characters
+and numbers in a vector and see what happens! (Tip: it's called
+"<a href="https://www.oreilly.com/library/view/r-in-a/9781449358204/ch05s08.html">coercion</a>").
+</p>
+
+<p>
+If you want a vector of a specified type and length, you can use the
+<code>vector</code> function. Each of the values in the result is zero,
+<code>FALSE</code>, or an empty string, or whatever the equivalent of "nothing"
+is. You can check the <code>class</code> yourself:
+</p>
+<pre class="example">
+R&gt; vector("numeric",5)
+[1] 0 0 0 0 0
+R&gt; vector("logical",5)
+[1] FALSE FALSE FALSE FALSE FALSE
+R&gt; vector("character",5)
+[1] "" "" "" "" ""
+</pre>
+<p>
+So-called "wrapper" functions exist, which achieve the same thing
+when creating vectors this way:
+</p>
+<pre class="example">
+R&gt; numeric(5)
+[1] 0 0 0 0 0
+R&gt; logical(5)
+[1] FALSE FALSE FALSE FALSE FALSE
+R&gt; character(5)
+[1] "" "" "" "" ""
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org2a68b7a" class="outline-2">
+<h2 id="org2a68b7a"><span class="section-number-2">10</span> SORTING AND MEASURING LENGTHS</h2>
+<div class="outline-text-2" id="text-10">
+<p>
+<a href="https://youtu.be/KRghGmuS6Ck">[Watch the video (9:30)]​</a>
+</p>
+<hr />
+</div>
+<div id="outline-container-org3fe8694" class="outline-3">
+<h3 id="org3fe8694"><span class="section-number-3">10.1</span> SORT</h3>
+<div class="outline-text-3" id="text-10-1">
+<p>
+Sorting and ordering and ranking vector elements comes up all the
+time, because what we wish to know, or show, or display, is
+irrelevant to the way the data are stored. We'll talk about ordering
+and ranking later, when we have introduced sub-setting vectors.
+</p>
+
+<p>
+R is simple, so of course the function we're looking for is called
+<code>sort</code>. Sorting a numerical vector rearranges the elements according
+to size. Let's look at a few examples
+</p>
+<pre class="example">
+R&gt; sort(x = c(2.5, -1, -10, 3.44), decreasing = FALSE)
+[1] -10.00  -1.00   2.50   3.44
+
+R&gt; sort(x = c(2.5, -1, -10, 3.44), decreasing = TRUE)
+[1]   3.44   2.50  -1.00 -10.00
+</pre>
+<p>
+You supply a vector to the function as the argument <code>x</code>, and a
+second argument, <code>decreasing</code>, to indicate the order you wish to
+sort in: <code>decreasing=FALSE</code> is the default (i.e. increasing) -
+sorting from smallest to largest, while <code>decreasing=TRUE</code> means
+searching from largest to smallest.
+</p>
+
+<p>
+Note: the argument value of <code>decreasing</code> is not <code>numeric</code>, it is
+<code>logical</code>.
+</p>
+</div>
+</div>
+<div id="outline-container-org95f6518" class="outline-3">
+<h3 id="org95f6518"><span class="section-number-3">10.2</span> LENGTH</h3>
+<div class="outline-text-3" id="text-10-2">
+<p>
+The <code>length</code> function (check the help!) gets or sets the length of
+vectors<sup><a id="fnr.5" class="footref" href="#fn.5">5</a></sup> - for vectors, <code>length(x)</code> determines, how many
+entries the vector has:
+</p>
+<pre class="example">
+R&gt; length(x=c(3,2,8,1))
+[1] 4
+R&gt; length(x=5:13)
+[1] 9
+</pre>
+
+<p>
+You can still include objects that need to be evaluated - arithmetic
+computations, or sequences, or repetitions - but <code>length</code> will tell
+you the number of entries after the inner functions have been executed.
+</p>
+
+<pre class="example">
+R&gt; foo &lt;- 4
+R&gt; bar &lt;- c(3, 8.3, rep(x=32, times=foo), seq(from=-2, to=1, length.out=foo+1))
+R&gt; length(bar)
+[1] 11
+R&gt; bar
+[1]  3.00  8.30 32.00 32.00 32.00 32.00 -2.00 -1.25 -0.50  0.25  1.00
+</pre>
+
+<p>
+The help page <code>?length</code> contains a peculiar example: you can measure
+the utility function <code>options()</code>, it seems! (In fact, I didn't know
+this!) Try it yourself: type <code>length(options())</code>. Can you figure out
+why the answer is <code>68</code>?
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org8a3360f" class="outline-2">
+<h2 id="org8a3360f"><span class="section-number-2">11</span> EXERCISES AND SOLUTIONS</h2>
+<div class="outline-text-2" id="text-11">
+<p>
+<a href="https://youtu.be/lKxNNR1l3u8">[Watch the solution video (10:27)]​</a>
+</p>
+<hr />
+
+<p>
+<b>Problem:</b>
+</p>
+<blockquote>
+<p>
+(a) Create and store a sequence of values from <code>5</code> to <code>-11</code> that
+progresses in steps of <code>0.3</code>.
+</p>
+</blockquote>
+
+<p>
+<b>Solution:</b>
+</p>
+<pre class="example">
+&gt; foo &lt;- seq(from=5, to=-11, by=-0.3)
+&gt; foo
+[1]   5.0   4.7   4.4   4.1   3.8   3.5   3.2   2.9   2.6   2.3   2.0   1.7
+[13]   1.4   1.1   0.8   0.5   0.2  -0.1  -0.4  -0.7  -1.0  -1.3  -1.6  -1.9
+[25]  -2.2  -2.5  -2.8  -3.1  -3.4  -3.7  -4.0  -4.3  -4.6  -4.9  -5.2  -5.5
+[37]  -5.8  -6.1  -6.4  -6.7  -7.0  -7.3  -7.6  -7.9  -8.2  -8.5  -8.8  -9.1
+[49]  -9.4  -9.7 -10.0 -10.3 -10.6 -10.9
+</pre>
+
+<p>
+<b>Problem:</b>
+</p>
+<blockquote>
+<p>
+(b) Overwrite the object from (a) using the same sequence with the order
+reversed.
+</p>
+</blockquote>
+
+<p>
+<b>Solution:</b>
+</p>
+<pre class="example">
+&gt; foo &lt;- sort(x=foo, decreasing=FALSE)
+&gt; foo
+[1] -10.9 -10.6 -10.3 -10.0  -9.7  -9.4  -9.1  -8.8  -8.5  -8.2  -7.9  -7.6
+[13]  -7.3  -7.0  -6.7  -6.4  -6.1  -5.8  -5.5  -5.2  -4.9  -4.6  -4.3  -4.0
+[25]  -3.7  -3.4  -3.1  -2.8  -2.5  -2.2  -1.9  -1.6  -1.3  -1.0  -0.7  -0.4
+[37]  -0.1   0.2   0.5   0.8   1.1   1.4   1.7   2.0   2.3   2.6   2.9   3.2
+[49]   3.5   3.8   4.1   4.4   4.7   5.0
+</pre>
+
+<p>
+<b>Problem:</b>
+</p>
+<blockquote>
+<p>
+(c) Repeat the vector <code>c(-1,3,-5,7,-9)</code> twice, with each element
+repeated <code>10</code> times, and store the result. Display the result sorted
+from largest to smallest.
+</p>
+</blockquote>
+
+<p>
+<b>Solution:</b>
+</p>
+<pre class="example">
+&gt; foo &lt;- rep(x=c(-1,3,-5,7,-9), times=2,each=10)
+&gt; foo
+[1] -1 -1 -1 -1 -1 -1 -1 -1 -1 -1  3  3  3  3  3  3  3  3  3  3 -5 -5 -5 -5 -5
+[26] -5 -5 -5 -5 -5  7  7  7  7  7  7  7  7  7  7 -9 -9 -9 -9 -9 -9 -9 -9 -9 -9
+[51] -1 -1 -1 -1 -1 -1 -1 -1 -1 -1  3  3  3  3  3  3  3  3  3  3 -5 -5 -5 -5 -5
+[76] -5 -5 -5 -5 -5  7  7  7  7  7  7  7  7  7  7 -9 -9 -9 -9 -9 -9 -9 -9 -9 -9
+
+&gt; sort(x=foo, decreasing=TRUE)
+[1]  7  7  7  7  7  7  7  7  7  7  7  7  7  7  7  7  7  7  7  7  3  3  3  3  3
+[26]  3  3  3  3  3  3  3  3  3  3  3  3  3  3  3 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[51] -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -5 -5 -5 -5 -5 -5 -5 -5 -5 -5 -5 -5 -5 -5 -5
+[76] -5 -5 -5 -5 -5 -9 -9 -9 -9 -9 -9 -9 -9 -9 -9 -9 -9 -9 -9 -9 -9 -9 -9 -9 -9
+</pre>
+
+<p>
+<b>Problem:</b>
+</p>
+<blockquote>
+<p>
+(d) Create and store a vector that contains, in any configuration,
+the following:
+</p>
+<ul class="org-ul">
+<li>A sequence of integers from <code>6</code> to <code>12</code> (inclusive)</li>
+<li>A threefold repetition of the value <code>5.3</code></li>
+<li>The number <code>-3</code></li>
+<li>A sequence of nine values starting at <code>102</code> and ending at the
+number that is the total length of the vector created in problem
+(c).</li>
+<li>Confirm that the length of the vector created is <code>20</code></li>
+</ul>
+</blockquote>
+
+<p>
+<b>Solution:</b>
+</p>
+<pre class="example">
+&gt; bar &lt;- c(6:12,rep(5.3,times=3),-3,seq(from=102,to=length(foo),length.out=9))
+&gt; bar
+[1]   6.00   7.00   8.00   9.00  10.00  11.00  12.00   5.30   5.30   5.30
+[11]  -3.00 102.00 101.75 101.50 101.25 101.00 100.75 100.50 100.25 100.00
+&gt; length(bar)
+[1] 20
+</pre>
+
+<p>
+(Source: <a href="#org3d7394c">Davies, 2016</a>)
+</p>
+</div>
+</div>
+<div id="outline-container-org9b5b925" class="outline-2">
+<h2 id="org9b5b925"><span class="section-number-2">12</span> SUBSETTING</h2>
+<div class="outline-text-2" id="text-12">
+<p>
+<a href="https://www.youtube.com/playlist?list=PL6SfZh1-kWXlA2axuHdNMzhwhuEhtGtlK">Watch YouTube Playlist</a>
+</p>
+<hr />
+</div>
+<div id="outline-container-orgbdf1e6c" class="outline-3">
+<h3 id="orgbdf1e6c"><span class="section-number-3">12.1</span> Vectorization 1-2-3</h3>
+<div class="outline-text-3" id="text-12-1">
+<p>
+If you'd use a programming language like <code>C</code> or <code>FORTRAN</code>, which is
+at its heart not interactive but procedural, or even <code>Python</code>,
+which can be used interactively (via a console), you'd have to
+write a loop to perform an operation on all the elements of a
+vector. Not so in <code>R</code>.
+</p>
+
+<p>
+There are three forms of vectorization in <code>R</code>:
+</p>
+
+<ol class="org-ol">
+<li><p>
+An operator or a function acts on each element of a vector
+without you having to explicitly write a loop (it's also much
+faster in terms of execution):
+</p>
+<pre class="example">
+&gt; foo &lt;- c(1, -1, 4, 4, 0, 59, 3)
+
+&gt; foo + 3               # add a number to the vector
+[1]  4  2  7  7  3 62  6
+
+&gt; foo/3.2               # divide vector by number
+[1]  0.3125 -0.3125  1.2500  1.2500  0.0000 18.4375  0.9375
+
+&gt; bar &lt;- foo[-c(4:length(foo))]  # delete part of a vector
+[1]  1 -1  4
+
+&gt; rep(x=bar, times=2)    # repeat a vector
+[1]  1 -1  4  1 -1  4
+
+&gt; exp(pi*1i)+1  # Euler's formula
+[1] 0+1.224647e-16i
+
+&gt; prod(c(1,2,3,4,5))
+[1] 120
+</pre></li>
+<li><p>
+A function takes a vector as input and calculates a summary
+statistic:
+</p>
+<pre class="example">
+&gt; 1:5
+[1] 1 2 3 4 5
+&gt; sum(1:5)
+[1] 15
+&gt; mean(1:5)
+[1] 3
+</pre></li>
+<li><p>
+A function calculates a summary statistic from several of its
+input arguments - does not always work:
+</p>
+<pre class="example">
+&gt; sum(1,2,3,4,5)  # OK
+[1] 15
+&gt; mean(1,2) # not OK
+[1] 1
+&gt; mean(c(1,2)) # OK
+[1] 1.5
+</pre></li>
+</ol>
+
+<p>
+Where does this leave us?
+</p>
+<ul class="org-ul">
+<li>How to get to parts of a vector</li>
+<li>How to control the indexing</li>
+<li>How to rescale vectors</li>
+<li>How to create matrices and arrays</li>
+<li>How to mix different data types</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga86b16d" class="outline-3">
+<h3 id="orga86b16d"><span class="section-number-3">12.2</span> The row labels, like <code>[1]</code>, correspond to the <b>index</b></h3>
+<div class="outline-text-3" id="text-12-2">
+<pre class="example">
+&gt; Nile
+Time Series:
+Start = 1871
+End = 1970
+Frequency = 1
+[1] 1120 1160  963 1210 1160 1160  813 1230 1370 1140  995  935 1110  994 1020
+[16]  960 1180  799  958 1140 1100 1210 1150 1250 1260 1220 1030 1100  774  840
+[31]  874  694  940  833  701  916  692 1020 1050  969  831  726  456  824  702
+[46] 1120 1100  832  764  821  768  845  864  862  698  845  744  796 1040  759
+[61]  781  865  845  944  984  897  822 1010  771  676  649  846  812  742  801
+[76] 1040  860  874  848  890  744  749  838 1050  918  986  797  923  975  815
+[91] 1020  906  901 1170  912  746  919  718  714  740
+</pre>
+</div>
+</div>
+<div id="outline-container-org06e7783" class="outline-3">
+<h3 id="org06e7783"><span class="section-number-3">12.3</span> Subsetting: retrieving vector elements</h3>
+<div class="outline-text-3" id="text-12-3">
+<pre class="example">
+&gt; Nile [1]
+[1] 1120
+&gt; Nile[length(Nile)]
+[1] 740
+</pre>
+</div>
+</div>
+<div id="outline-container-orged75712" class="outline-3">
+<h3 id="orged75712"><span class="section-number-3">12.4</span> Using colon operator in index</h3>
+<div class="outline-text-3" id="text-12-4">
+<pre class="example">
+&gt; foo &lt;- c(-1,3.0,4,67,330,-3) # assign vector to foo
+&gt; foo
+[1]  -1   3   4  67 330  -3
+
+&gt; bar &lt;- foo[2:5]  # assign subset of foo to bar
+&gt; bar
+[1]   3   4  67 330
+</pre>
+</div>
+</div>
+<div id="outline-container-org0ad8325" class="outline-3">
+<h3 id="org0ad8325"><span class="section-number-3">12.5</span> Careful with sequences: is <code>foo[n]:foo[m]==foo[n:m]</code>?</h3>
+<div class="outline-text-3" id="text-12-5">
+<pre class="example">
+&gt; bar &lt;- foo[2:5]   # assign a subset of foo to bar
+&gt; bar
+[1]   3   4  67 330
+
+&gt; baz &lt;- foo[2]:foo[5]  # asign a sequence to baz
+&gt;
+&gt; bar &lt;- foo[2:5]; bar
+[1]   3   4  67 330
+
+&gt; identical(bar,baz)  # are bar and baz identical?
+[1] FALSE
+&gt;
+&gt; all.equal(bar,baz)  # are they near equal at least?
+[1] "Numeric: lengths (4, 328) differ"
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org1264efc" class="outline-3">
+<h3 id="org1264efc"><span class="section-number-3">12.6</span> Stats functions work on any vector subset: <code>mean</code>, <code>sum</code>,</h3>
+<div class="outline-text-3" id="text-12-6">
+<pre class="example">
+&gt; mean(foo[2:5])
+[1] 101
+
+&gt; sum(foo)
+[1] 400
+
+&gt; summary(foo)
+Min. 1st Qu.  Median    Mean 3rd Qu.    Max.
+-3.00    0.00    3.50   66.67   51.25  330.00
+</pre>
+</div>
+</div>
+<div id="outline-container-org61c01ba" class="outline-3">
+<h3 id="org61c01ba"><span class="section-number-3">12.7</span> Logical functions in vectors: <code>&lt;</code>, <code>&gt;</code>, <code>!=</code>, <code>==</code></h3>
+<div class="outline-text-3" id="text-12-7">
+<pre class="example">
+&gt; foo &lt;- c(-1, 3, 4, 5, 67, 330, -3, -99, 0, 0, 44)
+&gt; foo_pos &lt;- c(foo &gt; 0)
+&gt; foo_neg &lt;- c(foo &lt; 0)
+&gt; foo_nul &lt;- c(foo == 0)  # Why not = instead of ==?
+
+&gt; c(foo=0)
+foo
+0
+
+&gt; foo_pos
+[1] FALSE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE FALSE FALSE FALSE  TRUE
+
+&gt; foo_neg
+[1]  TRUE FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE FALSE FALSE FALSE
+
+&gt; foo_nul
+[1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE FALSE
+
+&gt; sum(foo_pos)   # What do you expect here (vector is LOGICAL)?
+[1] 6
+&gt; sum(foo_neg)
+[1] 3
+&gt; sum(foo_nul)
+[1] 2
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org873bb9a" class="outline-3">
+<h3 id="org873bb9a"><span class="section-number-3">12.8</span> Selecting with logical index vectors</h3>
+<div class="outline-text-3" id="text-12-8">
+<pre class="example">
+&gt; foo[foo_pos]
+[1]   3   4   5  67 330  44
+
+&gt; foo[foo_neg]
+[1]  -1  -3 -99
+
+&gt; foo[foo_nul]
+[1] 0 0
+</pre>
+</div>
+</div>
+<div id="outline-container-orge8660d5" class="outline-3">
+<h3 id="orge8660d5"><span class="section-number-3">12.9</span> Exercise with <code>Nile</code></h3>
+<div class="outline-text-3" id="text-12-9">
+<ol class="org-ol">
+<li><p>
+How many entries does the time series vector <code>Nile</code> have?
+</p>
+<pre class="example">
+&gt; length(Nile)
+[1] 100
+</pre></li>
+<li><p>
+What is its last element?
+</p>
+<pre class="example">
+&gt; tail(Nile)
+[1] 912 746 919 718 714 740
+&gt; Nile[length(Nile)]
+[1] 740
+&gt; Nile[100]
+[1] 740
+&gt; Nile
+</pre></li>
+<li><p>
+What is the third to last element of <code>Nile</code>?
+</p>
+<pre class="example">
+&gt; Nile[length(Nile)-3]
+[1] 919
+</pre></li>
+<li><p>
+What is the average flow of the Nile between 1909-1969?
+</p>
+<pre class="example">
+&gt; 1909-1871
+[1] 38
+&gt; 1969-1871
+[1] 98
+&gt; mean(Nile[(1909-1871):(1969-1871)])
+[1] 860.3279
+</pre></li>
+<li><p>
+How many values are below, how many above the mean
+value?
+</p>
+<pre class="example">
+&gt; nile_pos &lt;- c(Nile &gt; mean(Nile))  # logical vector of values greater mean
+&gt; nile_pos
+[1]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE
+[13]  TRUE  TRUE  TRUE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+[25]  TRUE  TRUE  TRUE  TRUE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE
+[37] FALSE  TRUE  TRUE  TRUE FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE FALSE
+[49] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE
+[61] FALSE FALSE FALSE  TRUE  TRUE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE
+[73] FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE
+[85] FALSE  TRUE FALSE  TRUE  TRUE FALSE  TRUE FALSE FALSE  TRUE FALSE FALSE
+[97] FALSE FALSE FALSE FALSE
+
+&gt; nile_neg &lt;- c(Nile &lt; mean(Nile)) # logical vector of values smaller than mean
+&gt; nile_neg
+[1] FALSE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE
+[13] FALSE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE
+[25] FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE
+[37]  TRUE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE FALSE  TRUE
+[49]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE  TRUE
+[61]  TRUE  TRUE  TRUE FALSE FALSE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE
+[73]  TRUE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE
+[85]  TRUE FALSE  TRUE FALSE FALSE  TRUE FALSE  TRUE  TRUE FALSE  TRUE  TRUE
+[97]  TRUE  TRUE  TRUE  TRUE
+
+&gt; sum(nile_pos)
+[1] 43
+&gt; sum(nile_neg)
+[1] 57
+</pre></li>
+<li><p>
+How much water flowed down the Nile between 1871 and 1970?
+</p>
+<pre class="example">
+&gt; sum(Nile)
+[1] 91935
+</pre></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org7cd6fe0" class="outline-3">
+<h3 id="org7cd6fe0"><span class="section-number-3">12.10</span> Negative indices - removes elements (only output, no overwrite)</h3>
+<div class="outline-text-3" id="text-12-10">
+<pre class="example">
+&gt; foo[foo_len]
+[1] 44
+
+&gt; foo[-1]
+[1]  3   4   5  67 330  -3 -99   0   0  44
+
+&gt; foo[-foo_len]
+[1] -1   3   4   5  67 330  -3 -99   0   0
+
+&gt; foo   # foo is not changed (not overwritten)
+[1]  -1   3   4   5  67 330  -3 -99   0   0  44
+
+&gt; foo[-c(1,3)]   # remove elements 1 and 3 from foo
+[1]   3   5  67 330  -3 -99   0   0  44
+
+&gt; foo[-(1:2)]    # remove elements 1 and 2 from foo
+[1]   4   5  67 330  -3 -99   0   0  44
+</pre>
+
+<ul class="org-ul">
+<li><p>
+Exercise: fixing wrong entries?
+</p>
+<pre class="example">
+myvec &lt;- c(5,-2,3,4,4,4,6,8,10,40221,-8)
+&gt; myvec
+[1] 5 -2 3 4  4  4  6  8  10  40221  -8
+# I want 5 -2.3 4 4 4 6 8 10 40221 -8
+
+&gt; myvec[2] &lt;- -2.3     # change second element
+&gt; myvec[-3]            # does NOT change myvec!
+&gt; myvec &lt;- myvec[-3]   # delete third element
+&gt; myvec
+[1] 5.0 -2.3  4.0  4.0  4.0  6.0  8.0  10.0  40221.0  -8.0
+</pre></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgd25c770" class="outline-3">
+<h3 id="orgd25c770"><span class="section-number-3">12.11</span> Putting dissected vectors back together</h3>
+<div class="outline-text-3" id="text-12-11">
+<pre class="example">
+&gt; myvec &lt;- c(5,-2.3,4,4,4,6,8,10,40221,-8)  # assigning vector to myvec
+&gt; myvec
+[1]     5.0    -2.3     4.0     4.0     4.0     6.0     8.0    10.0 40221.0
+[10]    -8.0
+
+&gt; myvec.len &lt;- length(x=myvec)   # storing length of myvec in myvec.len
+&gt; myvec.len
+[1] 10
+
+&gt; bar &lt;- myvec[myvec.len-1]   # storing next-to-last entry of myvec in bar
+&gt; bar
+[1] 40221
+
+&gt; qux &lt;- myvec[-(myvec.len-1)]   # qux is myvec without the next-to-last element
+&gt; qux
+[1]  5.0 -2.3  4.0  4.0  4.0  6.0  8.0 10.0 -8.0
+
+## how can we put myvec from qux and bar back together?
+## 1. remove last element of qux
+## 2. add bar at the end
+## 3. put last element of qux back
+
+&gt; c(qux[-length(x=qux)], bar, qux[length(x=qux)])
+[1]     5.0    -2.3     4.0     4.0     4.0     6.0     8.0    10.0 40221.0
+[10]    -8.0
+
+&gt; identical(myvec,c(qux[-length(x=qux)], bar, qux[length(x=qux)]))
+[1] TRUE
+</pre>
+</div>
+</div>
+<div id="outline-container-orgeb2e600" class="outline-3">
+<h3 id="orgeb2e600"><span class="section-number-3">12.12</span> Defining and using vectors of indices</h3>
+<div class="outline-text-3" id="text-12-12">
+<pre class="example">
+&gt; foo &lt;- myvec[1:4]  # foo is a subset of myvec
+&gt; foo
+[1]  5.0 -2.3  4.0  4.0
+
+&gt; indexes &lt;- c(4, rep(x=2, times=3),1,1,2,3:1)
+&gt; indexes
+[1] 4 2 2 2 1 1 2 3 2 1
+
+&gt; foo[indexes]   # indexes uses foo to create a new vector
+[1]  4.0 -2.3 -2.3 -2.3  5.0  5.0 -2.3  4.0 -2.3  5.0
+
+&gt; indexes_bad &lt;- c(1,-1)   # this is not allowed
+&gt; foo[indexes_bad]
+Error in foo[indexes_bad] :
+only 0's may be mixed with negative subscripts
+</pre>
+</div>
+</div>
+<div id="outline-container-org9a30073" class="outline-3">
+<h3 id="org9a30073"><span class="section-number-3">12.13</span> Overwriting a subvector with another vector</h3>
+<div class="outline-text-3" id="text-12-13">
+<pre class="example">
+&gt; bar &lt;- c(3,2,4,4,1,2,4,1,0,0,5)
+&gt; bar
+[1] 3 2 4 4 1 2 4 1 0 0 5
+&gt; length(bar)
+[1] 11
+&gt; bar[1] &lt;- 6  # replace first entry in bar
+&gt; bar
+[1] 6 2 4 4 1 2 4 1 0 0 5
+&gt; bar[c(2,4,6)] &lt;- c(-2,0.5,-1) # same length vectors!
+&gt; bar
+[1]  6.0 -2.0  4.0  0.5  1.0 -1.0  4.0  1.0  0.0  0.0  5.0
+&gt; bar[7:10] &lt;- 100  # overwrite indices 7 to 10 with 100
+&gt; bar
+[1]   6.0  -2.0   4.0   0.5   1.0  -1.0 100.0 100.0 100.0 100.0   5.0
+</pre>
+</div>
+</div>
+<div id="outline-container-orgc491596" class="outline-3">
+<h3 id="orgc491596"><span class="section-number-3">12.14</span> Exercises and Solutions</h3>
+<div class="outline-text-3" id="text-12-14">
+<blockquote>
+<p>
+(1) Create and store a vector that contains the following, in this
+order:
+</p>
+<ul class="org-ul">
+<li>A sequence of length <code>5</code> from <code>3</code> to <code>6</code> (inclusive)</li>
+<li>A twofold repetition of the vector <code>c(2,-5.1,-33)</code></li>
+<li>The value \(\frac{7}{42}+2\)</li>
+</ul>
+</blockquote>
+<pre class="example">
+&gt; foo &lt;- c(seq(from=3, to=6, length.out=5), rep(x=c(2,-5.1,-33), times=2), 7/42+2)
+&gt; foo
+[1]   3.000000   3.750000   4.500000   5.250000   6.000000   2.000000
+[7]  -5.100000 -33.000000   2.000000  -5.100000 -33.000000   2.166667
+</pre>
+
+<blockquote>
+<p>
+(2) Extract the first and last elements of your vector in (1), and
+store them as a new object.
+</p>
+</blockquote>
+<pre class="example">
+&gt; bar &lt;- c(foo[1],foo[length(foo)])
+&gt; bar &lt;- foo[c(1,length(foo))]          # shorter solution
+&gt; bar
+[1] 3.000000 2.166667
+</pre>
+
+<blockquote>
+<p>
+(3) Store as a third object the values returned by omitting the
+first and last values of your vector in (1).
+</p>
+</blockquote>
+<pre class="example">
+&gt; baz &lt;- foo[-c(1,length(foo))]   # or: foo[c(-1,-length(foo))]
+[1]   3.75   4.50   5.25   6.00   2.00  -5.10 -33.00   2.00  -5.10 -33.00
+</pre>
+
+<blockquote>
+<p>
+(4) Use only (2) and (3) to reconstruct (1).
+</p>
+</blockquote>
+<pre class="example">
+&gt; foo  # reconstruct using only bar and baz
+[1]   3.000000   3.750000   4.500000   5.250000   6.000000   2.000000
+[7]  -5.100000 -33.000000   2.000000  -5.100000 -33.000000   2.166667
+
+&gt; bar                  # contains the first and last element of foo
+[1] 3.000000 2.166667
+
+&gt; baz                  # foo without bar
+[1]   3.75   4.50   5.25   6.00   2.00  -5.10 -33.00   2.00  -5.10 -33.00
+
+&gt; c(bar[1],baz,bar[2])
+[1]   3.000000   3.750000   4.500000   5.250000   6.000000   2.000000
+[7]  -5.100000 -33.000000   2.000000  -5.100000 -33.000000   2.166667
+
+&gt; identical(foo,c(bar[1],baz,bar[2]))    # check identity
+[1] TRUE
+</pre>
+
+<blockquote>
+<p>
+(5) Overwrite (1) with the same values sorted from smallest
+to largest.
+</p>
+</blockquote>
+<pre class="example">
+&gt; foo
+[1]   3.000000   3.750000   4.500000   5.250000   6.000000   2.000000
+[7]  -5.100000 -33.000000   2.000000  -5.100000 -33.000000   2.166667
+
+&gt; foo &lt;- sort(x=foo, decreasing=FALSE)  # from smallest to largest
+&gt; foo
+[1] -33.000000 -33.000000  -5.100000  -5.100000   2.000000   2.000000
+[7]   2.166667   3.000000   3.750000   4.500000   5.250000   6.000000
+</pre>
+
+<blockquote>
+<p>
+(6) Use the colon operator as an index vector to reverse the order
+of (5), and confirm this is identical to using <code>sort</code> on (5)
+with <code>decreasing=TRUE</code>.
+</p>
+</blockquote>
+<pre class="example">
+&gt; foo[length(foo):1]  # the index sequence is reversed
+[1]   6.000000   5.250000   4.500000   3.750000   3.000000   2.166667
+[7]   2.000000   2.000000  -5.100000  -5.100000 -33.000000 -33.000000
+
+&gt; sort(x=foo, decreasing=TRUE)  # sort from largest to smallest
+[1]   6.000000   5.250000   4.500000   3.750000   3.000000   2.166667
+[7]   2.000000   2.000000  -5.100000  -5.100000 -33.000000 -33.000000
+
+&gt; identical(foo[length(foo):1],sort(x=foo, decreasing=TRUE))
+[1] TRUE
+</pre>
+
+<blockquote>
+<p>
+(7) Create a vector from (3) that repeats the third element of (3)
+three times, the sixth element four times, and the last element
+once.
+</p>
+</blockquote>
+<pre class="example">
+&gt; baz[c(rep(x=3,times=3),rep(x=6,times=4),length(x=baz))]
+[1]   5.25   5.25   5.25  -5.10  -5.10  -5.10  -5.10 -33.00
+</pre>
+
+<blockquote>
+<p>
+(8) Create a new vector as a copy of (5) as to a newly named
+object. Using this new copy of (5), overwrite the first, the
+fifth to the seventh (inclusive), and the last element with the
+values <code>99</code> to <code>95</code> (inclusive), respectively.
+</p>
+</blockquote>
+<pre class="example">
+&gt; foo            # vector from (5)
+[1] -33.000000 -33.000000  -5.100000  -5.100000   2.000000   2.000000
+[7]   2.166667   3.000000   3.750000   4.500000   5.250000   6.000000
+
+&gt; qux &lt;- foo     # create copy
+&gt; qux
+[1] -33.000000 -33.000000  -5.100000  -5.100000   2.000000   2.000000
+[7]   2.166667   3.000000   3.750000   4.500000   5.250000   6.000000
+
+&gt; qux[c(1,5:7,length(qux))] &lt;- 99:95  # overwrite indices with sequence
+&gt; qux
+[1]  99.00 -33.00  -5.10  -5.10  98.00  97.00  96.00   3.00   3.75   4.50
+[11]   5.25  95.00
+</pre>
+<p>
+(Source: Davies, 2016, p. 32)
+</p>
+</div>
+</div>
+<div id="outline-container-orgf36c632" class="outline-3">
+<h3 id="orgf36c632"><span class="section-number-3">12.15</span> Example: rescaling</h3>
+<div class="outline-text-3" id="text-12-15">
+<p>
+In the example below, a vector of six values in increments of 1 is
+created. Then another vector is subtracted from it: the operation
+is carried out element-wise. The elements are matched up and the
+operation (subtraction) is carried out on each corresponding pair:
+</p>
+<pre class="example">
+&gt; foo &lt;- 5.5:0.5
+&gt; foo
+[1]  5.5 4.5 3.5 2.5 1.5 0.5
+&gt; foo-c(2,4,6,8,10,12)  # subtract another vector
+[1]   3.5   0.5  -2.5  -5.5  -8.5 -11.5
+</pre>
+
+<p>
+What if the vectors have different length?  Either the longer
+vector can be evenly divided by the shorter vector, or not.
+</p>
+<pre class="example">
+# Want to alternate entries of foo as positive and negative
+
+&gt; foo * c(1,-1,1,-1,1,-1) # explicit multiplcation by element
+[1]  5.5 -4.5  3.5 -2.5  1.5 -0.5
+
+&gt; bar &lt;- c(1,-1) # multiply by even multiple
+&gt; length(foo)
+[1] 6
+&gt; length(bar)
+[1] 2
+&gt; foo * bar
+[1]  5.5 -4.5  3.5 -2.5  1.5 -0.5
+
+&gt; baz &lt;- c(1, -1, 0.5, -0.5)
+&gt; length(baz)
+[1] 4
+&gt; foo*baz
+[1] 5.50 4.50 1.75 1.25 1.50 0.50
+Warning message:
+In foo * baz :
+longer object length is not a multiple of shorter object length
+</pre>
+
+<div id="orgf8ab796" class="figure">
+<p><img src="./img/vectors.png" alt="vectors.png" />
+</p>
+<p><span class="figure-number">Figure 2: </span>Element-wise operation on two vectors of differing lengths (Source: Davies, 2016)</p>
+</div>
+
+<pre class="example">
+&gt; foo
+[1] 5.5 4.5 3.5 2.5 1.5 0.5
+&gt; qux &lt;- 3
+
+&gt; foo + qux
+[1] 8.5 7.5 6.5 5.5 4.5 3.5
+
+&gt; foo + c(3,3,3,3,3,3)
+[1] 8.5 7.5 6.5 5.5 4.5 3.5
+
+&gt; foo+rep(x=3,times=length(x=foo))
+[1] 8.5 7.5 6.5 5.5 4.5 3.5
+</pre>
+
+<pre class="example">
+&gt; foo
+[1] 5.5 4.5 3.5 2.5 1.5 0.5
+
+&gt; foo[c(1,3,5,6)] &lt;- c(-99,99)
+&gt; foo
+[1] -99.0   4.5  99.0   2.5 -99.0  99.0
+</pre>
+</div>
+</div>
+<div id="outline-container-org1da185b" class="outline-3">
+<h3 id="org1da185b"><span class="section-number-3">12.16</span> Vector Recycling</h3>
+<div class="outline-text-3" id="text-12-16">
+<pre class="example">
+&gt; 1:5 + 1:6
+[1]  2  4  6  8 10  7
+Warning message:
+longer object length is not a multiple of shorter object length
+
+&gt; 1:5 + 1:7
+[1]  2  4  6  8 10  7  9
+Warning message:
+longer object length is not a multiple of shorter object length
+</pre>
+</div>
+</div>
+<div id="outline-container-org910c95f" class="outline-3">
+<h3 id="org910c95f"><span class="section-number-3">12.17</span> Class exercise: rescale from inches to cm</h3>
+<div class="outline-text-3" id="text-12-17">
+<p>
+*Problem: convert inches to cm (\(1\,inch\equiv 2.54\, cm\)):
+</p>
+<pre class="example">
+inches &lt;- c(69, 62, 66, 70, 70, 73, 67, 73, 67, 70)
+</pre>
+<p>
+<b>Solution:</b>
+</p>
+<pre class="example">
+&gt; cm &lt;- inches * 2.54
+&gt; cm
+[1] 175.26 157.48 167.64 177.80 177.80 185.42 170.18 185.42 170.18 177.80
+</pre>
+</div>
+</div>
+<div id="outline-container-org4899b95" class="outline-3">
+<h3 id="org4899b95"><span class="section-number-3">12.18</span> Exercises &amp; Solutions</h3>
+<div class="outline-text-3" id="text-12-18">
+<blockquote>
+<p>
+(1) Convert the vector <code>c(2,0.5,1,2,0.5,1,2,0.5,1)</code> to a vector of
+only ~1~s, using a vector of length \(3\).
+</p>
+</blockquote>
+<pre class="example">
+&gt; foo &lt;- c(2,0.5,1,2,0.5,1,2,0.5,1)
+&gt; bar &lt;- c(2,0.5,1)
+&gt; foo / bar
+[1] 1 1 1 1 1 1 1 1 1
+</pre>
+<blockquote>
+<p>
+(2) The conversion from a temperature measurement in degrees
+Fahrenheit \(F\) to Celsius \(C\) is performed using the following
+equation:
+</p>
+\begin{equation}
+C = \frac{5}{9}\left( F-32\right)
+\end{equation}
+<p>
+Use vector-oriented behavior in <code>R</code> to convert the temperatures
+\(45\), \(77\), \(20\), \(19\), \(101\), \(120\), and \(212\) in degrees
+Fahrenheit to degrees Celsius.
+</p>
+</blockquote>
+<pre class="example">
+&gt; temp &lt;- c(45, 77, 20, 19, 101, 120, 212)  # degrees Fahrenheit
+&gt; temp
+[1]  45  77  20  19 101 120 212
+
+&gt; temp_C &lt;- 5/9 * (temp - 32)  # degrees Celsius
+&gt; temp_C
+[1]   7.222222  25.000000  -6.666667  -7.222222  38.333333  48.888889 100.000000
+</pre>
+<blockquote>
+<p>
+(3) Use the vector <code>c(2,4,6)</code> and the vector <code>c(1,2)</code> in conjunction
+with <code>rep</code> and <code>*</code> to produce the vector <code>c(2,4,6,4,8,12)</code>.
+</p>
+</blockquote>
+<pre class="example">
+&gt; rep(x=c(2,4,6),times=2)
+[1] 2 4 6 2 4 6
+
+&gt; rep(x=c(1,2),each=3)
+[1] 1 1 1 2 2 2
+
+&gt; rep(x=c(2,4,6),times=2)*rep(x=c(1,2),each=3)
+[1]  2  4  6  4  8 12
+</pre>
+<blockquote>
+<p>
+(4) Overwrite the middle four elements of the resulting vector from
+(3) with the two recycled values <code>-0.1</code> and <code>-100</code>, in that
+order.
+</p>
+</blockquote>
+<pre class="example">
+&gt; foo &lt;- rep(x=c(2,4,6),times=2)*rep(x=c(1,2),each=3)
+&gt; foo
+[1]  2  4  6  4  8 12
+&gt; foo[2:5] &lt;- c(-0.1,-100)
+&gt; foo
+[1]    2.0   -0.1 -100.0   -0.1 -100.0   12.0
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org2c3d552" class="outline-2">
+<h2 id="org2c3d552"><span class="section-number-2">13</span> NAMING</h2>
+<div class="outline-text-2" id="text-13">
+<p>
+Each vector element can be given a name. This can make code much
+more readable. Elements can be named inside the vector definition:
+</p>
+<div class="org-src-container">
+<pre class="src src-R">c(apple = 1, banana = 2, <span style="color: #bdb76b;">"kiwi fruit"</span> = 3, 4)
+</pre>
+</div>
+
+<p>
+Or they can be named explicitly using the function <code>names</code><sup><a id="fnr.6" class="footref" href="#fn.6">6</a></sup>
+</p>
+<div class="org-src-container">
+<pre class="src src-R">x <span style="color: #40e0d0;">&lt;-</span> 1:4
+names(x) <span style="color: #40e0d0;">&lt;-</span> c(<span style="color: #bdb76b;">"apple"</span>, <span style="color: #bdb76b;">"bananas"</span>, <span style="color: #bdb76b;">"kiwi fruit"</span>, <span style="color: #bdb76b;">""</span>)
+x
+</pre>
+</div>
+
+<p>
+<code>names(x)</code> returns the names of a vector, and you can remove the
+names by overwriting <code>names(x)</code> with <code>NULL</code>, an object whose value
+is undefined (not to be mixed up with <code>NA</code> and <code>NaN</code>):
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">names(1:4)  <span style="color: #00cd66;"># </span><span style="color: #00cd66;">unnamed sequence vector has the value NULL</span>
+names(c(apple=1,banana=2,3))  <span style="color: #00cd66;"># </span><span style="color: #00cd66;">last element's name is empty ""</span>
+class(names)
+</pre>
+</div>
+
+<p>
+And here are some data type checks involving names:
+</p>
+<div class="org-src-container">
+<pre class="src src-R">class(names)             <span style="color: #00cd66;"># </span><span style="color: #00cd66;">"function"</span>
+class(names(1:4))        <span style="color: #00cd66;"># </span><span style="color: #00cd66;">"NULL"</span>
+class(c(apple=1))        <span style="color: #00cd66;"># </span><span style="color: #00cd66;">"numeric"</span>
+class(names(c(apple=1))) <span style="color: #00cd66;"># </span><span style="color: #00cd66;">"character"</span>
+</pre>
+</div>
+
+<p>
+What if your names are too short (or too long) for your vector?
+Watch this:
+</p>
+<div class="org-src-container">
+<pre class="src src-R">week <span style="color: #40e0d0;">&lt;-</span> c(<span style="color: #bdb76b;">"Mon"</span>, <span style="color: #bdb76b;">"Tue"</span>, <span style="color: #bdb76b;">"Wed"</span>, <span style="color: #bdb76b;">"Thu"</span>, <span style="color: #bdb76b;">"Fri"</span>, <span style="color: #bdb76b;">"Sat"</span>, <span style="color: #bdb76b;">"Sun"</span>)
+week    <span style="color: #00cd66;"># </span><span style="color: #00cd66;">"Mon" "Tue" "Wed" "Thu" "Fri" "Sat" "Sun"</span>
+vec <span style="color: #40e0d0;">&lt;-</span> rep(x=c(1,2,3,4,5,6,7),times=2)
+vec   <span style="color: #00cd66;">#  </span><span style="color: #00cd66;">1 2 3 4 5 6 7 1 2 3 4 5 6 7</span>
+names(vec) <span style="color: #40e0d0;">&lt;-</span> week
+vec   <span style="color: #00cd66;"># </span><span style="color: #00cd66;">this one shows seven NA names</span>
+vec[8:14]                 <span style="color: #00cd66;"># </span><span style="color: #00cd66;">subvector with the NA names only</span>
+names(vec)[8:14] <span style="color: #40e0d0;">&lt;-</span> week  <span style="color: #00cd66;"># </span><span style="color: #00cd66;">name the subvector (remove NA)</span>
+names(vec)[-(8:14)]       <span style="color: #00cd66;"># </span><span style="color: #00cd66;">deleting names subvector</span>
+names(vec) <span style="color: #40e0d0;">&lt;-</span> <span style="color: #7fffd4;">NULL</span>        <span style="color: #00cd66;"># </span><span style="color: #00cd66;">remove names</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org6a5e232" class="outline-2">
+<h2 id="org6a5e232"><span class="section-number-2">14</span> EXAMPLE DATASET <code>islands</code></h2>
+<div class="outline-text-2" id="text-14">
+<p>
+This is the example used in <code>help(names)</code>.
+</p>
+<pre class="example">
+&gt; str(islands)
+ Named num [1:48] 11506 5500 16988 2968 16 ...
+ - attr(*, "names")= chr [1:48] "Africa" "Antarctica" "Asia" "Australia" ...
+&gt; head(islands)
+      Africa   Antarctica         Asia    Australia Axel Heiberg       Baffin
+       11506         5500        16988         2968           16          184
+</pre>
+<p>
+(Yes, "Axel Heiberg Island" exists: <a href="https://en.wikipedia.org/wiki/Axel_Heiberg_Island">\(16,671\) square miles according to Wikipedia</a>.)
+</p>
+</div>
+</div>
+<div id="outline-container-org5122f2b" class="outline-2">
+<h2 id="org5122f2b"><span class="section-number-2">15</span> INDEXING VECTORS (AGAIN)</h2>
+<div class="outline-text-2" id="text-15">
+<p>
+[Watch video]
+</p>
+<hr />
+
+<ul class="org-ul">
+<li><p>
+Passing a vector of positive numbers returns the slice of the
+vector containing the elements at those locations.
+</p>
+<pre class="example">
+&gt; x &lt;- (1:5)^2   # example vector
+&gt; x
+[1]  1  4  9 16 25
+ &gt; x[c(1,3,5)]
+[1]  1  9 25
+</pre></li>
+<li><p>
+Passing a vector of negative numbers returns the slice of the
+vector containing the elements everywhere except at those
+locations.
+</p>
+<pre class="example">
+&gt; x[c(-2,-4)]
+[1]  1  9 25
+</pre></li>
+<li><p>
+Passing a logical vector returns the slice of the vector
+containing the elements where the index is TRUE.
+</p>
+<pre class="example">
+&gt; x[c(TRUE, FALSE, TRUE, FALSE, TRUE)]
+[1]  1  9 25
+</pre></li>
+<li><p>
+For named vectors, passing a character vector of names returns the
+slice of the vector containing the elements with those names.
+</p>
+<pre class="example">
+&gt; names(x) &lt;- c("one", "four", "nine", "sixteen", "twenty five")
+&gt; x[c("one", "nine", "twenty five")]
+   one        nine twenty five
+     1           9          25
+</pre></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgca3dcd2" class="outline-2">
+<h2 id="orgca3dcd2"><span class="section-number-2">16</span> COERCION</h2>
+<div class="outline-text-2" id="text-16">
+<p>
+All vector elements have to be of the same <code>class</code> or type:
+<code>logical</code>, <code>numeric</code>, or <code>character</code>. What happens when you mix
+these? R will make it happen at the price of "coercion". Let's look
+at a few examples:
+</p>
+
+<p>
+In the first example, <code>foo</code> contains a missing value, a number and a
+character, but the vector is still classified as a <code>character</code>
+vector, and the number is converted to a character, because R knows
+how to turn <code>3</code> into <code>"3"</code>, but does not know what number to assign
+to a character:
+</p>
+<div class="org-src-container">
+<pre class="src src-R">(foo <span style="color: #40e0d0;">&lt;-</span> c(<span style="color: #bdb76b;">"a"</span>,<span style="color: #7fffd4;">NA</span>,1))
+class(foo)
+</pre>
+</div>
+<p>
+Output:
+</p>
+<pre class="example">
+: [1] "a" NA  "1"
+: [1] "character"
+</pre>
+
+<p>
+With the <code>is.na</code> function, we can test for <code>NA</code> values, and with
+<code>as.character</code> and <code>is.numeric</code> for <code>character</code> and <code>numeric</code>
+values, respectively:
+</p>
+<div class="org-src-container">
+<pre class="src src-R">is.na(foo)         <span style="color: #00cd66;"># </span><span style="color: #00cd66;">check for missing values</span>
+is.character(foo)  <span style="color: #00cd66;"># </span><span style="color: #00cd66;">check for character vector</span>
+is.numeric(foo)    <span style="color: #00cd66;"># </span><span style="color: #00cd66;">check for numeric vector</span>
+</pre>
+</div>
+<p>
+Output:
+</p>
+<pre class="example">
+: [1] FALSE  TRUE FALSE
+: [1] TRUE
+: [1] FALSE
+</pre>
+
+<p>
+You can also (try to) explicitly convert the elements using
+<code>as.[class]</code>: Let's do this one by one to relish the results:
+</p>
+<div class="org-src-container">
+<pre class="src src-R">as.character(foo) <span style="color: #00cd66;"># </span><span style="color: #00cd66;">convert vector to character values</span>
+</pre>
+</div>
+<pre class="example">
+: [1] "a" NA  "1"
+</pre>
+<p>
+No surprises here. This is the default
+</p>
+
+<p>
+Now, force vector to numeric values:
+</p>
+<div class="org-src-container">
+<pre class="src src-R">as.numeric(foo)  <span style="color: #00cd66;"># </span><span style="color: #00cd66;">convert vector to numeric values</span>
+</pre>
+</div>
+<pre class="example">
+: [1] NA NA  1
+: Warning message:
+: NAs introduced by coercion
+</pre>
+<p>
+The output contains some surprises! The first element of the
+<code>"character"</code> vector is <code>"a"</code> and cannot be turned into a number,
+hence it becomes MIA, and R confesses to "coercion".
+</p>
+
+<p>
+And lastly, not to forget logical values:
+</p>
+<div class="org-src-container">
+<pre class="src src-R">as.logical(foo)   <span style="color: #00cd66;"># </span><span style="color: #00cd66;">convert vector to logical values</span>
+</pre>
+</div>
+<pre class="example">
+: [1] NA NA NA
+</pre>
+<p>
+This may come as a surprise, since we learnt that <code>TRUE</code> is stored
+as <code>1</code> and <code>FALSE</code> as <code>0</code> (remember summing with <code>sum</code> over a
+logical vector?). But the presence of <code>NA</code> and character <code>"a"</code>
+spoils it. The conversion of a vector consisting only of numbers
+does however work - sort of. In fact, any non-zero number is
+converted into <code>TRUE</code>:
+</p>
+<div class="org-src-container">
+<pre class="src src-R">as.logical(c(1,0,-1, 0.333, -<span style="color: #7fffd4;">Inf</span>,<span style="color: #7fffd4;">NaN</span> )) 
+</pre>
+</div>
+
+<pre class="example">
+: [1]  TRUE FALSE  TRUE  TRUE  TRUE    NA
+...except ~NaN~, but that's not a number, by definition):
+</pre>
+<p>
+I think that's enough evidence for you to stay away from mixing data
+types in vectors - though the conversion functions will come in very
+handy!
+</p>
+</div>
+</div>
+<div id="outline-container-orgd9e60bb" class="outline-2">
+<h2 id="orgd9e60bb"><span class="section-number-2">17</span> SUMMARY</h2>
+<div class="outline-text-2" id="text-17">
+<ul class="org-ul">
+<li>R is a functional language in which everything's an object.</li>
+<li>R functions differ in: performance (speed), ease-of-use and
+clarity.</li>
+<li>To assign values to objects, use the <code>&lt;-</code> operator.</li>
+<li>To assign values to arguments in functions, use the <code>=</code> operator.</li>
+<li>The elements of a numeric, character or logical vector are
+numbers, letters or truth values.</li>
+<li>A vector can have arithmetic calculations or vectors as elements.</li>
+<li>A histogram distributes data by frequency across evenly spaced
+bins.</li>
+<li>Sequences of numbers can be created using the colon operator, or
+the functions <code>seq</code> or <code>rep</code>.</li>
+<li>Vectors can be sorted with <code>sort</code> in either direction.</li>
+<li>Vector length can be measured as the number of vector elements with <code>length</code>.</li>
+<li>Index vectors can be used to select sub-vectors.</li>
+<li>Negative index values delete the corresponding vector elements</li>
+</ul>
+<hr />
+<p>
+<b>R CODE EXAMPLES:</b>
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left"><code>x &lt;- 5</code></td>
+<td class="org-left">assign <code>5</code> to object <code>x</code></td>
+</tr>
+
+<tr>
+<td class="org-left"><code>x &lt;- x+1</code></td>
+<td class="org-left">overwrite <code>x</code> (new value)</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>c(1,2,3,4)</code></td>
+<td class="org-left">define (numerical) vector</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>class(bar)</code></td>
+<td class="org-left">check type of object <code>bar</code></td>
+</tr>
+
+<tr>
+<td class="org-left"><code>hist(x,breaks=foo)</code></td>
+<td class="org-left">histogram of dataset <code>x</code> with <code>foo</code> bins</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>m:n</code></td>
+<td class="org-left">sequence <code>m</code> to <code>n</code> at intervals <code>= 1</code></td>
+</tr>
+
+<tr>
+<td class="org-left"><code>seq(from=foo,to=bar,by=baz)</code></td>
+<td class="org-left">sequence from <code>foo</code> to <code>bar</code> intervals <code>=baz</code></td>
+</tr>
+
+<tr>
+<td class="org-left"><code>seq(from=foo,to=bar,length.out=fuz)</code></td>
+<td class="org-left">seq. <code>foo</code> to <code>bar</code>, <code>fuz</code> equal intervals</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>rep(x=foo,times=bar,each=baz)</code></td>
+<td class="org-left">repeat <code>foo</code> times <code>bar</code>, and</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">repeat each element of <code>foo</code> times <code>baz</code></td>
+</tr>
+
+<tr>
+<td class="org-left"><code>vector("numeric",foo), numeric(foo)</code></td>
+<td class="org-left">empty numeric vector of length <code>foo</code></td>
+</tr>
+
+<tr>
+<td class="org-left"><code>vector("character",foo), character(foo)</code></td>
+<td class="org-left">empty numeric vector of length <code>foo</code></td>
+</tr>
+
+<tr>
+<td class="org-left"><code>vector("logical",foo), logical(foo)</code></td>
+<td class="org-left">empty numeric vector of length <code>foo</code></td>
+</tr>
+
+<tr>
+<td class="org-left"><code>sort(x=foo, decreasing=FALSE)</code></td>
+<td class="org-left">sort vector <code>foo</code> from smallest to largest</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>sort(x=foo, decreasing=TRUE)</code></td>
+<td class="org-left">sort vector <code>foo</code> from largest to smallest</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>length(x=foo)</code></td>
+<td class="org-left">print length of vector <code>foo</code></td>
+</tr>
+
+<tr>
+<td class="org-left"><code>[n]</code>, <code>[n:m]</code>, <code>[-n]</code></td>
+<td class="org-left">indices <code>n</code>, <code>n</code> to <code>m</code>, deleting element <code>n</code></td>
+</tr>
+
+<tr>
+<td class="org-left"><code>prod(foo)</code>, <code>sum(foo)</code></td>
+<td class="org-left">multiply / sum up all elements of vector foo</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>names(x)</code></td>
+<td class="org-left">return names of vector <code>x</code> (or <code>NULL</code>)</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>as.character</code>, <code>as.numeric</code>, <code>as.logical</code></td>
+<td class="org-left">coerce arguments to the resp. class</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-org1282e1a" class="outline-2">
+<h2 id="org1282e1a"><span class="section-number-2">18</span> SOURCES</h2>
+<div class="outline-text-2" id="text-18">
+<p>
+<a id="orgf5f8bc9"></a>
+</p>
+<ul class="org-ul">
+<li><a id="org7b57480"></a> Richie Cotton (2013). <a href="https://www.oreilly.com/library/view/learning-r/9781449357160/">Learning R. O'Reilly Media.</a></li>
+<li><a id="org3d7394c"></a> Tilman M. Davies (2016). <a href="https://nostarch.com/bookofr">The Book of R. (No Starch Press).</a></li>
+<li><a id="orgf2c59b3"></a> Rafael A. Irizarry (2020). <a href="https://rafalab.github.io/dsbook/">Introduction to Data
+Science</a> (also: CRC Press, 2019).</li>
+<li><a id="orga6fd271"></a> Norman Matloff (2020). <a href="https://github.com/matloff/fasteR">fasteR: Fast Lane to Learning R!</a>.</li>
+</ul>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+Note: If this is not the case, R coerces the vector elements to
+conform to one type, as we will see later. A data type that can hold
+any type of value is called a list.
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <div class="footpara"><p class="footpara">
+The <a href="https://en.wikipedia.org/wiki/Histogram">Wikipedia entry for "histogram"</a> is not bad as a start, lots
+of examples and you'll soon find out how to make these yourself! The
+origin of the name "histogram" is not clear - it was probably invented
+by Pearson, who introduced this type of graph, and is short for
+"HISTorical diaGRAM".
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.3" class="footnum" href="#fnr.3">3</a></sup> <div class="footpara"><p class="footpara">
+I am borrowing heavily everywhere in this script from several
+<a href="#orgf5f8bc9">sources</a>: the books that I've read on R, by Cotton (2013), Davies
+(2016), Irizarry (2019), and the tutorial by Matloff (2020). You
+should check them out. If you want to get one, get the book by Davies
+in print. The others are free online.
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.4" class="footnum" href="#fnr.4">4</a></sup> <div class="footpara"><p class="footpara">
+The answer is <code>[1] 3 62 8 3</code>. <code>times=each=1</code> means that the
+vector and each of its elements is repeated once, i.e. identical to
+the input vector.
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.5" class="footnum" href="#fnr.5">5</a></sup> <div class="footpara"><p class="footpara">
+Both <code>length</code> and <code>sort</code>, as you can read in the respective
+help pages, work both for vectors and for "factors". These are
+necessary whenever we deal with qualities (like "male" or "female")
+rather than quantities. You'll learn about them soon!
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.6" class="footnum" href="#fnr.6">6</a></sup> <div class="footpara"><p class="footpara">
+You should look up the examples in <code>help(names)</code>: the data set
+<code>islands</code> is a named vector suited to play around with vector naming.
+</p></div></div>
+
+
+</div>
+</div></div>
+<div id="postamble" class="status">
+<p class="date">Date: Winter 2020</p>
+<p class="author">Author: Marcus Birkenkrahe</p>
+<p class="date">Created: 2020-12-07 Mo 19:26</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
